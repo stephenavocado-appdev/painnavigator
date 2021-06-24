@@ -4,7 +4,7 @@
 #
 #  id                 :integer          not null, primary key
 #  courses_count      :integer
-#  dob                :string
+#  date_of_birth      :datetime
 #  email              :string
 #  first_name         :string
 #  goals_count        :integer
