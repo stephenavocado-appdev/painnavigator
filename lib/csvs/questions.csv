@@ -1,0 +1,24 @@
+question,input_type,answer_options,question_logic
+Enter your birthday:,Date,,
+What is your gender identity?,Select,"Man,Woman,Other,Prefer not to answer",
+How would you describe your activity level on average?,Select,"Not active,Mildly active (walk 30 minutes 5+ days/week),Moderately active (vigorous exercise 3+ days/week),Very active (vigorous exercise 5+ days/week)",
+How long have you been experiencing low back pain?,Select,"Less than 1 month,1 - 3 months,3 - 6 months,6 months - 1 year,1 - 3 years,More than 3 years",
+Do you have frequent pain traveling down one of both of your legs?,Select,"No,Yes - One Leg,Yes - Both Legs","If no, skip next 2 questions"
+Do you experience any of the following symptoms frequently traveling down one/both of your legs?,Select,"Burning,Numbness,Tingling,Cramping,Weakness",KM: Skip if answer to question in row 6 is no
+"What bothers you more, the symptoms in your low back or the symptoms in your leg(s)?",Select,"Low back,Legs",KM: Skip if answer to question in row 6 is no
+Do you experience any of the following symptoms in your low back?,Select,"Episodes of spasms or your back ""giving out"",Consistent pain or stiffness upon waking up or after periods of no movement,Consistent pain or stiffness during or after ""normal"" activities (such as walking or sweeping),Consistent pain or aching after performing ""vigorous"" activities (such as exercising or hiking)",
+Do you feel any limitations or pain when performing the following:,Select,"Bending forward to touch your toes,Bending backwards to look at the ceiling,Twisting to the right and/or left,Gently pushing on the area of pain",
+Have you been diagnosed by your healthcare provider with any of the following:,Select,"Pinched Nerve (such as sciatica),Spinal Stenosis,Arthritis,Muscle or Myofascial pain,Degenerated disc disease,None of the above",
+How would you rank your pain (on scale of 1-10) over the past 2 weeks?,Select,"0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+How anxious or nervous have you felt?Ê,Select,"Never,Infrequently,Occasionally,Often,Always",
+How much difficulty have you had reducing the amount of time you worry over the past 2 weeks?,Select,"Never,Infrequently,Occasionally,Often,Always",
+How concerned have you been by your lack of interest or pleasure in doing things?,Select,"Never,Infrequently,Occasionally,Often,Always",
+"How depressed, sad, or hopeless have you felt?",Select,"Never,Infrequently,Occasionally,Often,Always",
+How often did you have difficulty falling asleep?,Select,"Never,Infrequently,Occasionally,Often,Always",
+How often did you have difficulty staying asleep?,Select,"Never,Infrequently,Occasionally,Often,Always",
+"How tired, sluggish or sleepy did you feel during the day as the result of poor sleep?",Select,"Never,Infrequently,Occasionally,Often,Always",
+How impaired was your functioning during the day as the result of poor sleep?,Select,"Never,Infrequently,Occasionally,Often,Always",
+"When you were in pain, how often did you think that your pain was agonizing and would never get better?",Select,"Never,Infrequently,Occasionally,Often,Always",
+"When you were in pain, how often did you worry that your pain would continue to worsen?",Select,"Never,Infrequently,Occasionally,Often,Always",
+"When you were in pain, how often did you think that you could no longer tolerate it?",Select,"Never,Infrequently,Occasionally,Often,Always",
+"When you were in pain, how often did you have difficulty taking your mind off of it?",Select,"Never,Infrequently,Occasionally,Often,Always",
