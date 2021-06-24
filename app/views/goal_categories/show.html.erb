@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Goal category #<%= @the_goal_category.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/goal_categories">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_goal_category/<%= @the_goal_category.id %>">
+          Delete goal category
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Category
+      </dt>
+      <dd>
+        <%= @the_goal_category.category %>
+      </dd>
+
+      <dt>
+        Unit
+      </dt>
+      <dd>
+        <%= @the_goal_category.unit %>
+      </dd>
+
+      <dt>
+        Icon
+      </dt>
+      <dd>
+        <%= @the_goal_category.icon %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_goal_category.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_goal_category.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit goal category
+    </h2>
+
+    <form action="/modify_goal_category/<%= @the_goal_category.id %>"  method="post" >
+      <div>
+        <label for="category_box">
+          Category
+        </label>
+
+        <input type="text" id="category_box" name="query_category" value="<%= @the_goal_category.category %>">
+      </div>
+
+      <div>
+        <label for="unit_box">
+          Unit
+        </label>
+
+        <input type="text" id="unit_box" name="query_unit" value="<%= @the_goal_category.unit %>">
+      </div>
+
+      <div>
+        <label for="icon_box">
+          Icon
+        </label>
+
+        <input type="text" id="icon_box" name="query_icon" value="<%= @the_goal_category.icon %>">
+      </div>
+
+      <button>
+        Update goal category
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

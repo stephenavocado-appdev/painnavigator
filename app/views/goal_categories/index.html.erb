@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all goal categories
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new goal category
+    </h2>
+
+    <form action="/insert_goal_category" method="post">
+      <div>
+        <label for="category_box">
+          Category
+        </label>
+
+        <input type="text" id="category_box" name="query_category">
+      </div>
+
+      <div>
+        <label for="unit_box">
+          Unit
+        </label>
+
+        <input type="text" id="unit_box" name="query_unit">
+      </div>
+
+      <div>
+        <label for="icon_box">
+          Icon
+        </label>
+
+        <input type="text" id="icon_box" name="query_icon">
+      </div>
+
+      <button>
+        Create goal category
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Category
+        </th>
+
+        <th>
+          Unit
+        </th>
+
+        <th>
+          Icon
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_goal_categories.each do |a_goal_category| %>
+      <tr>
+        <td>
+          <%= a_goal_category.id %>
+        </td>
+
+        <td>
+          <%= a_goal_category.category %>
+        </td>
+
+        <td>
+          <%= a_goal_category.unit %>
+        </td>
+
+        <td>
+          <%= a_goal_category.icon %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_goal_category.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_goal_category.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/goal_categories/<%= a_goal_category.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

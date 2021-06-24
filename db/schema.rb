@@ -10,7 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_24_145835) do
+ActiveRecord::Schema.define(version: 2021_06_24_150009) do
+
+  create_table "goal_categories", force: :cascade do |t|
+    t.string "category"
+    t.string "unit"
+    t.string "icon"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "new_user_surveys", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "q_1"
+    t.string "q_2"
+    t.string "q_3"
+    t.string "q_4"
+    t.string "q_5"
+    t.string "q_6"
+    t.string "q_7"
+    t.string "q_8"
+    t.string "q_9"
+    t.string "q_10"
+    t.string "q_11"
+    t.string "q_12"
+    t.string "q_13"
+    t.string "q_14"
+    t.string "q_15"
+    t.string "q_16"
+    t.string "q_17"
+    t.string "q_18"
+    t.string "q_19"
+    t.string "q_20"
+    t.string "q_21"
+    t.string "q_22"
+    t.string "q_23"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+    t.string "input_type"
+    t.string "answer_options"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
