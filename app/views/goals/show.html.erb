@@ -1,0 +1,191 @@
+<div>
+  <div>
+    <h1>
+      Goal #<%= @the_goal.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/goals">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_goal/<%= @the_goal.id %>">
+          Delete goal
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_goal.name %>
+      </dd>
+
+      <dt>
+        Category
+      </dt>
+      <dd>
+        <%= @the_goal.category %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_goal.user_id %>
+      </dd>
+
+      <dt>
+        User goal
+      </dt>
+      <dd>
+        <%= @the_goal.user_goal %>
+      </dd>
+
+      <dt>
+        User result
+      </dt>
+      <dd>
+        <%= @the_goal.user_result %>
+      </dd>
+
+      <dt>
+        Target date
+      </dt>
+      <dd>
+        <%= @the_goal.target_date %>
+      </dd>
+
+      <dt>
+        Incremental steps
+      </dt>
+      <dd>
+        <%= @the_goal.incremental_steps %>
+      </dd>
+
+      <dt>
+        Reward
+      </dt>
+      <dd>
+        <%= @the_goal.reward %>
+      </dd>
+
+      <dt>
+        Status
+      </dt>
+      <dd>
+        <%= @the_goal.status %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_goal.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_goal.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit goal
+    </h2>
+
+    <form action="/modify_goal/<%= @the_goal.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_goal.name %>">
+      </div>
+
+      <div>
+        <label for="category_box">
+          Category
+        </label>
+
+        <input type="text" id="category_box" name="query_category" value="<%= @the_goal.category %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_goal.user_id %>">
+      </div>
+
+      <div>
+        <label for="user_goal_box">
+          User goal
+        </label>
+
+        <input type="text" id="user_goal_box" name="query_user_goal" value="<%= @the_goal.user_goal %>">
+      </div>
+
+      <div>
+        <label for="user_result_box">
+          User result
+        </label>
+
+        <input type="text" id="user_result_box" name="query_user_result" value="<%= @the_goal.user_result %>">
+      </div>
+
+      <div>
+        <label for="target_date_box">
+          Target date
+        </label>
+
+        <input type="date" id="target_date_box" name="query_target_date" value="<%= @the_goal.target_date %>">
+      </div>
+
+      <div>
+        <label for="incremental_steps_box">
+          Incremental steps
+        </label>
+
+        <input type="text" id="incremental_steps_box" name="query_incremental_steps" value="<%= @the_goal.incremental_steps %>">
+      </div>
+
+      <div>
+        <label for="reward_box">
+          Reward
+        </label>
+
+        <input type="text" id="reward_box" name="query_reward" value="<%= @the_goal.reward %>">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status" value="<%= @the_goal.status %>">
+      </div>
+
+      <button>
+        Update goal
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

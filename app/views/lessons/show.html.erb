@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Lesson #<%= @the_lesson.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/lessons">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_lesson/<%= @the_lesson.id %>">
+          Delete lesson
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Course
+      </dt>
+      <dd>
+        <%= @the_lesson.course_id %>
+      </dd>
+
+      <dt>
+        Status
+      </dt>
+      <dd>
+        <%= @the_lesson.status %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_lesson.name %>
+      </dd>
+
+      <dt>
+        Video
+      </dt>
+      <dd>
+        <%= @the_lesson.video_id %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_lesson.user_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_lesson.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_lesson.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit lesson
+    </h2>
+
+    <form action="/modify_lesson/<%= @the_lesson.id %>"  method="post" >
+      <div>
+        <label for="course_id_box">
+          Course
+        </label>
+
+        <input type="text" id="course_id_box" name="query_course_id" value="<%= @the_lesson.course_id %>">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status" value="<%= @the_lesson.status %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_lesson.name %>">
+      </div>
+
+      <div>
+        <label for="video_id_box">
+          Video
+        </label>
+
+        <input type="text" id="video_id_box" name="query_video_id" value="<%= @the_lesson.video_id %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_lesson.user_id %>">
+      </div>
+
+      <button>
+        Update lesson
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

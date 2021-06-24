@@ -1,0 +1,134 @@
+<div>
+  <div>
+    <h1>
+      List of all courses
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new course
+    </h2>
+
+    <form action="/insert_course" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status">
+      </div>
+
+      <div>
+        <label for="lessons_count_box">
+          Lessons count
+        </label>
+
+        <input type="text" id="lessons_count_box" name="query_lessons_count">
+      </div>
+
+      <button>
+        Create course
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Status
+        </th>
+
+        <th>
+          Lessons count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_courses.each do |a_course| %>
+      <tr>
+        <td>
+          <%= a_course.id %>
+        </td>
+
+        <td>
+          <%= a_course.user_id %>
+        </td>
+
+        <td>
+          <%= a_course.name %>
+        </td>
+
+        <td>
+          <%= a_course.status %>
+        </td>
+
+        <td>
+          <%= a_course.lessons_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_course.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_course.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/courses/<%= a_course.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

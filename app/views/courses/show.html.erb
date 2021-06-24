@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Course #<%= @the_course.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/courses">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_course/<%= @the_course.id %>">
+          Delete course
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_course.user_id %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_course.name %>
+      </dd>
+
+      <dt>
+        Status
+      </dt>
+      <dd>
+        <%= @the_course.status %>
+      </dd>
+
+      <dt>
+        Lessons count
+      </dt>
+      <dd>
+        <%= @the_course.lessons_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_course.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_course.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit course
+    </h2>
+
+    <form action="/modify_course/<%= @the_course.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_course.user_id %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_course.name %>">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status" value="<%= @the_course.status %>">
+      </div>
+
+      <div>
+        <label for="lessons_count_box">
+          Lessons count
+        </label>
+
+        <input type="text" id="lessons_count_box" name="query_lessons_count" value="<%= @the_course.lessons_count %>">
+      </div>
+
+      <button>
+        Update course
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

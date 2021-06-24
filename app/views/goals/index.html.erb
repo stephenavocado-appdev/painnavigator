@@ -1,0 +1,214 @@
+<div>
+  <div>
+    <h1>
+      List of all goals
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new goal
+    </h2>
+
+    <form action="/insert_goal" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="category_box">
+          Category
+        </label>
+
+        <input type="text" id="category_box" name="query_category">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="user_goal_box">
+          User goal
+        </label>
+
+        <input type="text" id="user_goal_box" name="query_user_goal">
+      </div>
+
+      <div>
+        <label for="user_result_box">
+          User result
+        </label>
+
+        <input type="text" id="user_result_box" name="query_user_result">
+      </div>
+
+      <div>
+        <label for="target_date_box">
+          Target date
+        </label>
+
+        <input type="date" id="target_date_box" name="query_target_date">
+      </div>
+
+      <div>
+        <label for="incremental_steps_box">
+          Incremental steps
+        </label>
+
+        <input type="text" id="incremental_steps_box" name="query_incremental_steps">
+      </div>
+
+      <div>
+        <label for="reward_box">
+          Reward
+        </label>
+
+        <input type="text" id="reward_box" name="query_reward">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status">
+      </div>
+
+      <button>
+        Create goal
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Category
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          User goal
+        </th>
+
+        <th>
+          User result
+        </th>
+
+        <th>
+          Target date
+        </th>
+
+        <th>
+          Incremental steps
+        </th>
+
+        <th>
+          Reward
+        </th>
+
+        <th>
+          Status
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_goals.each do |a_goal| %>
+      <tr>
+        <td>
+          <%= a_goal.id %>
+        </td>
+
+        <td>
+          <%= a_goal.name %>
+        </td>
+
+        <td>
+          <%= a_goal.category %>
+        </td>
+
+        <td>
+          <%= a_goal.user_id %>
+        </td>
+
+        <td>
+          <%= a_goal.user_goal %>
+        </td>
+
+        <td>
+          <%= a_goal.user_result %>
+        </td>
+
+        <td>
+          <%= a_goal.target_date %>
+        </td>
+
+        <td>
+          <%= a_goal.incremental_steps %>
+        </td>
+
+        <td>
+          <%= a_goal.reward %>
+        </td>
+
+        <td>
+          <%= a_goal.status %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_goal.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_goal.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/goals/<%= a_goal.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

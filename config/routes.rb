@@ -2,6 +2,82 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Course resource:
+
+  # CREATE
+  post("/insert_course", { :controller => "courses", :action => "create" })
+          
+  # READ
+  get("/courses", { :controller => "courses", :action => "index" })
+  
+  get("/courses/:path_id", { :controller => "courses", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_course/:path_id", { :controller => "courses", :action => "update" })
+  
+  # DELETE
+  get("/delete_course/:path_id", { :controller => "courses", :action => "destroy" })
+
+  #------------------------------
+
+  # Routes for the Lesson resource:
+
+  # CREATE
+  post("/insert_lesson", { :controller => "lessons", :action => "create" })
+          
+  # READ
+  get("/lessons", { :controller => "lessons", :action => "index" })
+  
+  get("/lessons/:path_id", { :controller => "lessons", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_lesson/:path_id", { :controller => "lessons", :action => "update" })
+  
+  # DELETE
+  get("/delete_lesson/:path_id", { :controller => "lessons", :action => "destroy" })
+
+  #------------------------------
+
+  # Routes for the Goal resource:
+
+  # CREATE
+  post("/insert_goal", { :controller => "goals", :action => "create" })
+          
+  # READ
+  get("/goals", { :controller => "goals", :action => "index" })
+  
+  get("/goals/:path_id", { :controller => "goals", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_goal/:path_id", { :controller => "goals", :action => "update" })
+  
+  # DELETE
+  get("/delete_goal/:path_id", { :controller => "goals", :action => "destroy" })
+
+  #------------------------------
+
+  # Routes for the Pain diary resource:
+
+  # CREATE
+  post("/insert_pain_diary", { :controller => "pain_diaries", :action => "create" })
+          
+  # READ
+  get("/pain_diaries", { :controller => "pain_diaries", :action => "index" })
+  
+  get("/pain_diaries/:path_id", { :controller => "pain_diaries", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_pain_diary/:path_id", { :controller => "pain_diaries", :action => "update" })
+  
+  # DELETE
+  get("/delete_pain_diary/:path_id", { :controller => "pain_diaries", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the New user survey resource:
 
   # CREATE

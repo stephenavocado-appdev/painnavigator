@@ -1,0 +1,262 @@
+<div>
+  <div>
+    <h1>
+      List of all pain diaries
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new pain diary
+    </h2>
+
+    <form action="/insert_pain_diary" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="pain_score_box">
+          Pain score
+        </label>
+
+        <input type="text" id="pain_score_box" name="query_pain_score">
+      </div>
+
+      <div>
+        <label for="activity_entry_box">
+          Activity entry
+        </label>
+
+        <input type="text" id="activity_entry_box" name="query_activity_entry">
+      </div>
+
+      <div>
+        <label for="mood_entry_box">
+          Mood entry
+        </label>
+
+        <input type="text" id="mood_entry_box" name="query_mood_entry">
+      </div>
+
+      <div>
+        <label for="social_entry_box">
+          Social entry
+        </label>
+
+        <input type="text" id="social_entry_box" name="query_social_entry">
+      </div>
+
+      <div>
+        <label for="location_entry_box">
+          Location entry
+        </label>
+
+        <input type="text" id="location_entry_box" name="query_location_entry">
+      </div>
+
+      <div>
+        <label for="medication_entry_box">
+          Medication entry
+        </label>
+
+        <input type="text" id="medication_entry_box" name="query_medication_entry">
+      </div>
+
+      <div>
+        <label for="coping_strategy_box">
+          Coping strategy
+        </label>
+
+        <input type="text" id="coping_strategy_box" name="query_coping_strategy">
+      </div>
+
+      <div>
+        <label for="coping_strategy_score_box">
+          Coping strategy score
+        </label>
+
+        <input type="text" id="coping_strategy_score_box" name="query_coping_strategy_score">
+      </div>
+
+      <div>
+        <label for="additional_notes_box">
+          Additional notes
+        </label>
+
+        <input type="text" id="additional_notes_box" name="query_additional_notes">
+      </div>
+
+      <div>
+        <label for="pain_duration_box">
+          Pain duration
+        </label>
+
+        <input type="text" id="pain_duration_box" name="query_pain_duration">
+      </div>
+
+      <div>
+        <label for="pain_score_post_box">
+          Pain score post
+        </label>
+
+        <input type="text" id="pain_score_post_box" name="query_pain_score_post">
+      </div>
+
+      <button>
+        Create pain diary
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Pain score
+        </th>
+
+        <th>
+          Activity entry
+        </th>
+
+        <th>
+          Mood entry
+        </th>
+
+        <th>
+          Social entry
+        </th>
+
+        <th>
+          Location entry
+        </th>
+
+        <th>
+          Medication entry
+        </th>
+
+        <th>
+          Coping strategy
+        </th>
+
+        <th>
+          Coping strategy score
+        </th>
+
+        <th>
+          Additional notes
+        </th>
+
+        <th>
+          Pain duration
+        </th>
+
+        <th>
+          Pain score post
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_pain_diaries.each do |a_pain_diary| %>
+      <tr>
+        <td>
+          <%= a_pain_diary.id %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.user_id %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.pain_score %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.activity_entry %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.mood_entry %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.social_entry %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.location_entry %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.medication_entry %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.coping_strategy %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.coping_strategy_score %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.additional_notes %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.pain_duration %>
+        </td>
+
+        <td>
+          <%= a_pain_diary.pain_score_post %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_pain_diary.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_pain_diary.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/pain_diaries/<%= a_pain_diary.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

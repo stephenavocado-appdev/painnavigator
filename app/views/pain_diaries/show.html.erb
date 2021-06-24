@@ -1,0 +1,236 @@
+<div>
+  <div>
+    <h1>
+      Pain diary #<%= @the_pain_diary.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/pain_diaries">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_pain_diary/<%= @the_pain_diary.id %>">
+          Delete pain diary
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_pain_diary.user_id %>
+      </dd>
+
+      <dt>
+        Pain score
+      </dt>
+      <dd>
+        <%= @the_pain_diary.pain_score %>
+      </dd>
+
+      <dt>
+        Activity entry
+      </dt>
+      <dd>
+        <%= @the_pain_diary.activity_entry %>
+      </dd>
+
+      <dt>
+        Mood entry
+      </dt>
+      <dd>
+        <%= @the_pain_diary.mood_entry %>
+      </dd>
+
+      <dt>
+        Social entry
+      </dt>
+      <dd>
+        <%= @the_pain_diary.social_entry %>
+      </dd>
+
+      <dt>
+        Location entry
+      </dt>
+      <dd>
+        <%= @the_pain_diary.location_entry %>
+      </dd>
+
+      <dt>
+        Medication entry
+      </dt>
+      <dd>
+        <%= @the_pain_diary.medication_entry %>
+      </dd>
+
+      <dt>
+        Coping strategy
+      </dt>
+      <dd>
+        <%= @the_pain_diary.coping_strategy %>
+      </dd>
+
+      <dt>
+        Coping strategy score
+      </dt>
+      <dd>
+        <%= @the_pain_diary.coping_strategy_score %>
+      </dd>
+
+      <dt>
+        Additional notes
+      </dt>
+      <dd>
+        <%= @the_pain_diary.additional_notes %>
+      </dd>
+
+      <dt>
+        Pain duration
+      </dt>
+      <dd>
+        <%= @the_pain_diary.pain_duration %>
+      </dd>
+
+      <dt>
+        Pain score post
+      </dt>
+      <dd>
+        <%= @the_pain_diary.pain_score_post %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_pain_diary.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_pain_diary.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit pain diary
+    </h2>
+
+    <form action="/modify_pain_diary/<%= @the_pain_diary.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_pain_diary.user_id %>">
+      </div>
+
+      <div>
+        <label for="pain_score_box">
+          Pain score
+        </label>
+
+        <input type="text" id="pain_score_box" name="query_pain_score" value="<%= @the_pain_diary.pain_score %>">
+      </div>
+
+      <div>
+        <label for="activity_entry_box">
+          Activity entry
+        </label>
+
+        <input type="text" id="activity_entry_box" name="query_activity_entry" value="<%= @the_pain_diary.activity_entry %>">
+      </div>
+
+      <div>
+        <label for="mood_entry_box">
+          Mood entry
+        </label>
+
+        <input type="text" id="mood_entry_box" name="query_mood_entry" value="<%= @the_pain_diary.mood_entry %>">
+      </div>
+
+      <div>
+        <label for="social_entry_box">
+          Social entry
+        </label>
+
+        <input type="text" id="social_entry_box" name="query_social_entry" value="<%= @the_pain_diary.social_entry %>">
+      </div>
+
+      <div>
+        <label for="location_entry_box">
+          Location entry
+        </label>
+
+        <input type="text" id="location_entry_box" name="query_location_entry" value="<%= @the_pain_diary.location_entry %>">
+      </div>
+
+      <div>
+        <label for="medication_entry_box">
+          Medication entry
+        </label>
+
+        <input type="text" id="medication_entry_box" name="query_medication_entry" value="<%= @the_pain_diary.medication_entry %>">
+      </div>
+
+      <div>
+        <label for="coping_strategy_box">
+          Coping strategy
+        </label>
+
+        <input type="text" id="coping_strategy_box" name="query_coping_strategy" value="<%= @the_pain_diary.coping_strategy %>">
+      </div>
+
+      <div>
+        <label for="coping_strategy_score_box">
+          Coping strategy score
+        </label>
+
+        <input type="text" id="coping_strategy_score_box" name="query_coping_strategy_score" value="<%= @the_pain_diary.coping_strategy_score %>">
+      </div>
+
+      <div>
+        <label for="additional_notes_box">
+          Additional notes
+        </label>
+
+        <input type="text" id="additional_notes_box" name="query_additional_notes" value="<%= @the_pain_diary.additional_notes %>">
+      </div>
+
+      <div>
+        <label for="pain_duration_box">
+          Pain duration
+        </label>
+
+        <input type="text" id="pain_duration_box" name="query_pain_duration" value="<%= @the_pain_diary.pain_duration %>">
+      </div>
+
+      <div>
+        <label for="pain_score_post_box">
+          Pain score post
+        </label>
+
+        <input type="text" id="pain_score_post_box" name="query_pain_score_post" value="<%= @the_pain_diary.pain_score_post %>">
+      </div>
+
+      <button>
+        Update pain diary
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

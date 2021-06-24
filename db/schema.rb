@@ -10,12 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_24_150009) do
+ActiveRecord::Schema.define(version: 2021_06_24_150228) do
+
+  create_table "courses", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "status"
+    t.integer "lessons_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "goal_categories", force: :cascade do |t|
     t.string "category"
     t.string "unit"
     t.string "icon"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.integer "user_id"
+    t.string "user_goal"
+    t.string "user_result"
+    t.date "target_date"
+    t.string "incremental_steps"
+    t.string "reward"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.integer "course_id"
+    t.string "status"
+    t.string "name"
+    t.integer "video_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -45,6 +78,23 @@ ActiveRecord::Schema.define(version: 2021_06_24_150009) do
     t.string "q_21"
     t.string "q_22"
     t.string "q_23"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pain_diaries", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "pain_score"
+    t.string "activity_entry"
+    t.string "mood_entry"
+    t.string "social_entry"
+    t.string "location_entry"
+    t.string "medication_entry"
+    t.string "coping_strategy"
+    t.string "coping_strategy_score"
+    t.string "additional_notes"
+    t.string "pain_duration"
+    t.string "pain_score_post"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
