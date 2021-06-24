@@ -1,0 +1,214 @@
+<div>
+  <div>
+    <h1>
+      List of all videos
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new video
+    </h2>
+
+    <form action="/insert_video" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="display_name_box">
+          Display name
+        </label>
+
+        <input type="text" id="display_name_box" name="query_display_name">
+      </div>
+
+      <div>
+        <label for="category_box">
+          Category
+        </label>
+
+        <input type="text" id="category_box" name="query_category">
+      </div>
+
+      <div>
+        <label for="video_ref_box">
+          Video ref
+        </label>
+
+        <input type="text" id="video_ref_box" name="query_video_ref">
+      </div>
+
+      <div>
+        <label for="course_box">
+          Course
+        </label>
+
+        <input type="text" id="course_box" name="query_course">
+      </div>
+
+      <div>
+        <label for="seconds_box">
+          Seconds
+        </label>
+
+        <input type="text" id="seconds_box" name="query_seconds">
+      </div>
+
+      <div>
+        <label for="pre_video_action_box">
+          Pre video action
+        </label>
+
+        <input type="text" id="pre_video_action_box" name="query_pre_video_action">
+      </div>
+
+      <div>
+        <label for="post_video_action_box">
+          Post video action
+        </label>
+
+        <input type="text" id="post_video_action_box" name="query_post_video_action">
+      </div>
+
+      <div>
+        <label for="lessons_count_box">
+          Lessons count
+        </label>
+
+        <input type="text" id="lessons_count_box" name="query_lessons_count">
+      </div>
+
+      <button>
+        Create video
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Display name
+        </th>
+
+        <th>
+          Category
+        </th>
+
+        <th>
+          Video ref
+        </th>
+
+        <th>
+          Course
+        </th>
+
+        <th>
+          Seconds
+        </th>
+
+        <th>
+          Pre video action
+        </th>
+
+        <th>
+          Post video action
+        </th>
+
+        <th>
+          Lessons count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_videos.each do |a_video| %>
+      <tr>
+        <td>
+          <%= a_video.id %>
+        </td>
+
+        <td>
+          <%= a_video.name %>
+        </td>
+
+        <td>
+          <%= a_video.display_name %>
+        </td>
+
+        <td>
+          <%= a_video.category %>
+        </td>
+
+        <td>
+          <%= a_video.video_ref %>
+        </td>
+
+        <td>
+          <%= a_video.course %>
+        </td>
+
+        <td>
+          <%= a_video.seconds %>
+        </td>
+
+        <td>
+          <%= a_video.pre_video_action %>
+        </td>
+
+        <td>
+          <%= a_video.post_video_action %>
+        </td>
+
+        <td>
+          <%= a_video.lessons_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_video.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_video.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/videos/<%= a_video.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

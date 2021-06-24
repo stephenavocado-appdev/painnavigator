@@ -1,0 +1,191 @@
+<div>
+  <div>
+    <h1>
+      Video #<%= @the_video.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/videos">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_video/<%= @the_video.id %>">
+          Delete video
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_video.name %>
+      </dd>
+
+      <dt>
+        Display name
+      </dt>
+      <dd>
+        <%= @the_video.display_name %>
+      </dd>
+
+      <dt>
+        Category
+      </dt>
+      <dd>
+        <%= @the_video.category %>
+      </dd>
+
+      <dt>
+        Video ref
+      </dt>
+      <dd>
+        <%= @the_video.video_ref %>
+      </dd>
+
+      <dt>
+        Course
+      </dt>
+      <dd>
+        <%= @the_video.course %>
+      </dd>
+
+      <dt>
+        Seconds
+      </dt>
+      <dd>
+        <%= @the_video.seconds %>
+      </dd>
+
+      <dt>
+        Pre video action
+      </dt>
+      <dd>
+        <%= @the_video.pre_video_action %>
+      </dd>
+
+      <dt>
+        Post video action
+      </dt>
+      <dd>
+        <%= @the_video.post_video_action %>
+      </dd>
+
+      <dt>
+        Lessons count
+      </dt>
+      <dd>
+        <%= @the_video.lessons_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_video.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_video.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit video
+    </h2>
+
+    <form action="/modify_video/<%= @the_video.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_video.name %>">
+      </div>
+
+      <div>
+        <label for="display_name_box">
+          Display name
+        </label>
+
+        <input type="text" id="display_name_box" name="query_display_name" value="<%= @the_video.display_name %>">
+      </div>
+
+      <div>
+        <label for="category_box">
+          Category
+        </label>
+
+        <input type="text" id="category_box" name="query_category" value="<%= @the_video.category %>">
+      </div>
+
+      <div>
+        <label for="video_ref_box">
+          Video ref
+        </label>
+
+        <input type="text" id="video_ref_box" name="query_video_ref" value="<%= @the_video.video_ref %>">
+      </div>
+
+      <div>
+        <label for="course_box">
+          Course
+        </label>
+
+        <input type="text" id="course_box" name="query_course" value="<%= @the_video.course %>">
+      </div>
+
+      <div>
+        <label for="seconds_box">
+          Seconds
+        </label>
+
+        <input type="text" id="seconds_box" name="query_seconds" value="<%= @the_video.seconds %>">
+      </div>
+
+      <div>
+        <label for="pre_video_action_box">
+          Pre video action
+        </label>
+
+        <input type="text" id="pre_video_action_box" name="query_pre_video_action" value="<%= @the_video.pre_video_action %>">
+      </div>
+
+      <div>
+        <label for="post_video_action_box">
+          Post video action
+        </label>
+
+        <input type="text" id="post_video_action_box" name="query_post_video_action" value="<%= @the_video.post_video_action %>">
+      </div>
+
+      <div>
+        <label for="lessons_count_box">
+          Lessons count
+        </label>
+
+        <input type="text" id="lessons_count_box" name="query_lessons_count" value="<%= @the_video.lessons_count %>">
+      </div>
+
+      <button>
+        Update video
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
