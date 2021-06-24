@@ -16,4 +16,5 @@
 #  updated_at        :datetime         not null
 #
 class Video < ApplicationRecord
+  has_many(:lessons, { :class_name => "Lesson", :foreign_key => "video_id", :dependent => :destroy })
 end
