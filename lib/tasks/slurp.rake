@@ -50,6 +50,8 @@ namespace :slurp do
     csv.each do |row|
       g = GoalCategory.new
       g.category = row["category"]
+      g.unit = row["unit"]
+      g.icon = row["icon"]
       g.save
       puts "#{g.category} saved" 
     end

@@ -1,0 +1,45 @@
+category,unit,icon
+Walking,Miles,fas fa-walking
+Running,Miles,fas fa-running
+Biking,Miles,fas fa-biking
+Stationary Biking,Minutes,fas fa-biking
+Aerobics,Minutes,fas fa-walking
+Badminton,Minutes,fas fa-trophy
+Baseball,Minutes,fas fa-baseball-ball
+Basketball,Minutes,fas fa-basketball-ball
+Boxing,Minutes,fas fa-trophy
+Climbing Stairs,Minutes,fas fa-walking
+Cross-country Skiing,Minutes,fas fa-skiing-nordic
+Dancing,Minutes,fas fa-running
+Elliptical,Minutes,fas fa-running
+Exercising,Minutes,fas fa-walking
+Golf,Minutes,fas fa-golf-ball
+Hiking,Minutes,fas fa-hiking
+Hockey,Minutes,fas fa-hockey-puck
+House Cleaning,Minutes,fas fa-hand-sparkles
+Hula Hoop,Minutes,fas fa-trophy
+Horseback Riding,Minutes,fas fa-horse
+Jump rope,Minutes,fas fa-trophy
+Kayaking,Minutes,fas fa-trophy
+Pilates,Minutes,fas fa-trophy
+Ping Pong,Minutes,fas fa-table-tennis
+Racquetball,Minutes,fas fa-trophy
+Rock Climbing,Minutes,fas fa-trophy
+Rowing,Minutes,fas fa-trophy
+Sit Ups,Minutes,fas fa-trophy
+Skating,Minutes,fas fa-skating
+Skiing,Minutes,fas fa-skiing
+Snowboarding,Minutes,fas fa-snowboarding
+Soccer,Minutes,fas fa-futbol
+Spinning,Minutes,fas fa-biking
+Squash,Minutes,fas fa-trophy
+Strength Training,Minutes,fas fa-dumbbell
+Swimming,Minutes,fas fa-swimming-pool
+Team Sports,Minutes,fas fa-trophy
+Tennis,Minutes,fas fa-trophy
+Volleyball,Minutes,fas fa-volleyball-ball
+Weight Lifting ,Minutes,fas fa-dumbbell
+Yard Work,Minutes,fas fa-home
+Yoga,Minutes,fas fa-trophy
+Zumba,Minutes,fas fa-trophy
+Custom,Minutes,fas fa-bullseye
