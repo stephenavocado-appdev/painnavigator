@@ -25,6 +25,11 @@ class NewUserSurveysController < ApplicationController
     @list_of_questions = matching_questions.order({ :id => :asc })
     @the_question = @list_of_questions.at(2)
 
+    the_id = @current_user.new_user_survey.id
+    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    the_new_user_survey.q_2 = params.fetch("query_q_2")
+    the_new_user_survey.save
+
     render({ :template => "new_user_surveys/q_3.html.erb" })
   end
 

@@ -77,23 +77,23 @@
 
 
 <% @q.answer_options.split(",").each do |a_option| %>
+
+<form action="/new_user/3">
+
 <div class="row mt-4">
 
   <div class="col">
   </div>
 
   <div class="col-md-4 text-center d-grid">
-    
-    <%# if @list_of_questions.at(@q_id.to_i - 1).input_type == "Select" %>
-    <input type="checkbox" class="btn-check" id="<%= a_option %>" autocomplete="off">
-    <label class="btn btn-outline-primary btn-lg" for="<%= a_option %>"><%= a_option %></label>
-    <%# end %> 
-
+      <input type="hidden" value="<%= a_option %>" name="query_q_2">
+      <button class="btn btn-outline btn-lg selectbtn" type="submit"><%= a_option %></button>
   </div>
 
   <div class="col">
   </div>
 </div>
+</form> 
 <% end %>
 
 <div class="row mt-4 mb-4">
