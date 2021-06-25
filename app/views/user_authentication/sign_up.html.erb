@@ -8,9 +8,12 @@ q
 <form action="/insert_user" method="post">
 
 <div class="row homebtncol mt-2">
-  <div class="col">
+  <div class="col needs-validation" novalidate>
     <label for="first_name_box" class="form-label formlabel">First Name</label>
-    <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="first_name_box" name="query_first_name">
+    <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="first_name_box" name="query_first_name" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
   </div>
   <div class="col">
     <label for="last_name_box" class="form-label formlabel">Last Name</label>

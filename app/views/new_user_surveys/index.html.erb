@@ -1,454 +1,93 @@
-<div>
-  <div>
-    <h1>
-      List of all new user surveys
-    </h1>
+<div class="row mt-5">
+
+  <div class="col">
+  </div>
+
+  <div class="col-md-4">
+    <div class="progress" style="height: 4px;">
+      <div class="progress-bar" role="progressbar" style="width: <%= @list_of_questions.at(@q_id.to_i - 1).id * 100 / 23 %>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <div class="col">
+  </div>
+
+</div>
+
+<div class="row mt-2">
+
+  <div class="col">
+  </div>
+
+  <div class="col-md-4 text-center">
+    <h6>User Profile</h6>
+  </div>
+
+  <div class="col">
   </div>
 </div>
 
-<hr>
+<div class="row mt-5">
 
-<div>
-  <div>
-    <h2>
-      Add a new new user survey
-    </h2>
+  <div class="col">
+  </div>
 
-    <form action="/insert_new_user_survey" method="post">
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
+  <div class="col-md-4 text-center">
+    <label for="<%= @list_of_questions.at(@q_id.to_i - 1)%>_box">
+      <%= @list_of_questions.at(@q_id.to_i - 1).question %>
+    </label>
+  </div>
 
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
-
-      <div>
-        <label for="q_1_box">
-          Q 1
-        </label>
-
-        <input type="text" id="q_1_box" name="query_q_1">
-      </div>
-
-      <div>
-        <label for="q_2_box">
-          Q 2
-        </label>
-
-        <input type="text" id="q_2_box" name="query_q_2">
-      </div>
-
-      <div>
-        <label for="q_3_box">
-          Q 3
-        </label>
-
-        <input type="text" id="q_3_box" name="query_q_3">
-      </div>
-
-      <div>
-        <label for="q_4_box">
-          Q 4
-        </label>
-
-        <input type="text" id="q_4_box" name="query_q_4">
-      </div>
-
-      <div>
-        <label for="q_5_box">
-          Q 5
-        </label>
-
-        <input type="text" id="q_5_box" name="query_q_5">
-      </div>
-
-      <div>
-        <label for="q_6_box">
-          Q 6
-        </label>
-
-        <input type="text" id="q_6_box" name="query_q_6">
-      </div>
-
-      <div>
-        <label for="q_7_box">
-          Q 7
-        </label>
-
-        <input type="text" id="q_7_box" name="query_q_7">
-      </div>
-
-      <div>
-        <label for="q_8_box">
-          Q 8
-        </label>
-
-        <input type="text" id="q_8_box" name="query_q_8">
-      </div>
-
-      <div>
-        <label for="q_9_box">
-          Q 9
-        </label>
-
-        <input type="text" id="q_9_box" name="query_q_9">
-      </div>
-
-      <div>
-        <label for="q_10_box">
-          Q 10
-        </label>
-
-        <input type="text" id="q_10_box" name="query_q_10">
-      </div>
-
-      <div>
-        <label for="q_11_box">
-          Q 11
-        </label>
-
-        <input type="text" id="q_11_box" name="query_q_11">
-      </div>
-
-      <div>
-        <label for="q_12_box">
-          Q 12
-        </label>
-
-        <input type="text" id="q_12_box" name="query_q_12">
-      </div>
-
-      <div>
-        <label for="q_13_box">
-          Q 13
-        </label>
-
-        <input type="text" id="q_13_box" name="query_q_13">
-      </div>
-
-      <div>
-        <label for="q_14_box">
-          Q 14
-        </label>
-
-        <input type="text" id="q_14_box" name="query_q_14">
-      </div>
-
-      <div>
-        <label for="q_15_box">
-          Q 15
-        </label>
-
-        <input type="text" id="q_15_box" name="query_q_15">
-      </div>
-
-      <div>
-        <label for="q_16_box">
-          Q 16
-        </label>
-
-        <input type="text" id="q_16_box" name="query_q_16">
-      </div>
-
-      <div>
-        <label for="q_17_box">
-          Q 17
-        </label>
-
-        <input type="text" id="q_17_box" name="query_q_17">
-      </div>
-
-      <div>
-        <label for="q_18_box">
-          Q 18
-        </label>
-
-        <input type="text" id="q_18_box" name="query_q_18">
-      </div>
-
-      <div>
-        <label for="q_19_box">
-          Q 19
-        </label>
-
-        <input type="text" id="q_19_box" name="query_q_19">
-      </div>
-
-      <div>
-        <label for="q_20_box">
-          Q 20
-        </label>
-
-        <input type="text" id="q_20_box" name="query_q_20">
-      </div>
-
-      <div>
-        <label for="q_21_box">
-          Q 21
-        </label>
-
-        <input type="text" id="q_21_box" name="query_q_21">
-      </div>
-
-      <div>
-        <label for="q_22_box">
-          Q 22
-        </label>
-
-        <input type="text" id="q_22_box" name="query_q_22">
-      </div>
-
-      <div>
-        <label for="q_23_box">
-          Q 23
-        </label>
-
-        <input type="text" id="q_23_box" name="query_q_23">
-      </div>
-
-      <button>
-        Create new user survey
-      </button>
-    </form>
+  <div class="col">
   </div>
 </div>
 
-<hr>
-<div>
-  <div>
-    <table>
-      <tr>
-        <th>
-          ID
-        </th>
+<% if @list_of_questions.at(@q_id.to_i - 1).input_type == "date" %>
+<div class="row mt-4">
 
-        <th>
-          User
-        </th>
+  <div class="col">
+  </div>
 
-        <th>
-          Q 1
-        </th>
+  <div class="col-md-4 text-center d-grid">
+    <input type="date" id="<%= @list_of_questions.at(@q_id.to_i - 1)%>_box" name="query_<%= @list_of_questions.at(@q_id.to_i - 1)%>">
+  </div>
 
-        <th>
-          Q 2
-        </th>
-
-        <th>
-          Q 3
-        </th>
-
-        <th>
-          Q 4
-        </th>
-
-        <th>
-          Q 5
-        </th>
-
-        <th>
-          Q 6
-        </th>
-
-        <th>
-          Q 7
-        </th>
-
-        <th>
-          Q 8
-        </th>
-
-        <th>
-          Q 9
-        </th>
-
-        <th>
-          Q 10
-        </th>
-
-        <th>
-          Q 11
-        </th>
-
-        <th>
-          Q 12
-        </th>
-
-        <th>
-          Q 13
-        </th>
-
-        <th>
-          Q 14
-        </th>
-
-        <th>
-          Q 15
-        </th>
-
-        <th>
-          Q 16
-        </th>
-
-        <th>
-          Q 17
-        </th>
-
-        <th>
-          Q 18
-        </th>
-
-        <th>
-          Q 19
-        </th>
-
-        <th>
-          Q 20
-        </th>
-
-        <th>
-          Q 21
-        </th>
-
-        <th>
-          Q 22
-        </th>
-
-        <th>
-          Q 23
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @list_of_new_user_surveys.each do |a_new_user_survey| %>
-      <tr>
-        <td>
-          <%= a_new_user_survey.id %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.user_id %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_1 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_2 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_3 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_4 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_5 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_6 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_7 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_8 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_9 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_10 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_11 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_12 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_13 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_14 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_15 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_16 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_17 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_18 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_19 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_20 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_21 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_22 %>
-        </td>
-
-        <td>
-          <%= a_new_user_survey.q_23 %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_new_user_survey.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_new_user_survey.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/new_user_surveys/<%= a_new_user_survey.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
+  <div class="col">
   </div>
 </div>
+<% end %>
 
-<hr>
+
+<% @list_of_questions.at(@q_id.to_i - 1).answer_options.split(",").each do |a_option| %>
+<div class="row mt-4">
+
+  <div class="col">
+  </div>
+
+  <div class="col-md-4 text-center d-grid">
+    
+    <%# if @list_of_questions.at(@q_id.to_i - 1).input_type == "Select" %>
+    <input type="checkbox" class="btn-check" id="<%= a_option %>" autocomplete="off">
+    <label class="btn btn-outline-primary btn-lg" for="<%= a_option %>"><%= a_option %></label>
+    <%# end %> 
+
+  </div>
+
+  <div class="col">
+  </div>
+</div>
+<% end %>
+
+<div class="row mt-4 mb-4">
+  <div class="col">
+  </div>
+
+  <div class="col-md-4 text-center d-grid">
+    <% if @list_of_questions.at(@q_id.to_i - 1).input_type == "Select_Multi" || @list_of_questions.at(@q_id.to_i - 1).input_type == "date"%>
+      <a href="/new_user_survey/<%=@q_id.to_i + 1%>" class="btn btn-primary btn-lg">Next</a>
+    <% end %>
+  </div>
+
+  <div class="col">
+  </div>
+</div>
