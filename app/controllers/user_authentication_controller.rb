@@ -74,7 +74,7 @@ class UserAuthenticationController < ApplicationController
       
           #the_lesson.save
         #end
-    end
+    #end
 
     if save_status == true
       session[:user_id] = @user.id

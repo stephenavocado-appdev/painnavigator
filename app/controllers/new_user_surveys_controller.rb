@@ -2,7 +2,7 @@ class NewUserSurveysController < ApplicationController
   def q_1
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(0)
+    @q = @list_of_questions.at(0)
 
     render({ :template => "new_user_surveys/q_1.html.erb" })
   end
@@ -10,7 +10,12 @@ class NewUserSurveysController < ApplicationController
   def q_2
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(1)
+    @q = @list_of_questions.at(1)
+
+    the_id = @current_user.pain_diaries.user_id
+    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    the_new_user_survey.q_1 = params.fetch("query_q_1")
+    the_new_user_survey.save
 
     render({ :template => "new_user_surveys/q_2.html.erb" })
   end
