@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_24_153403) do
+ActiveRecord::Schema.define(version: 2021_06_25_020538) do
 
   create_table "courses", force: :cascade do |t|
     t.integer "user_id"
@@ -95,6 +95,15 @@ ActiveRecord::Schema.define(version: 2021_06_24_153403) do
     t.string "additional_notes"
     t.string "pain_duration"
     t.string "pain_score_post"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pain_diary_questions", force: :cascade do |t|
+    t.string "category"
+    t.string "question"
+    t.string "input_type"
+    t.string "answer_options"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Pain diary question #<%= @the_pain_diary_question.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/pain_diary_questions">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_pain_diary_question/<%= @the_pain_diary_question.id %>">
+          Delete pain diary question
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Category
+      </dt>
+      <dd>
+        <%= @the_pain_diary_question.category %>
+      </dd>
+
+      <dt>
+        Question
+      </dt>
+      <dd>
+        <%= @the_pain_diary_question.question %>
+      </dd>
+
+      <dt>
+        Input type
+      </dt>
+      <dd>
+        <%= @the_pain_diary_question.input_type %>
+      </dd>
+
+      <dt>
+        Answer options
+      </dt>
+      <dd>
+        <%= @the_pain_diary_question.answer_options %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_pain_diary_question.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_pain_diary_question.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit pain diary question
+    </h2>
+
+    <form action="/modify_pain_diary_question/<%= @the_pain_diary_question.id %>"  method="post" >
+      <div>
+        <label for="category_box">
+          Category
+        </label>
+
+        <input type="text" id="category_box" name="query_category" value="<%= @the_pain_diary_question.category %>">
+      </div>
+
+      <div>
+        <label for="question_box">
+          Question
+        </label>
+
+        <input type="text" id="question_box" name="query_question" value="<%= @the_pain_diary_question.question %>">
+      </div>
+
+      <div>
+        <label for="input_type_box">
+          Input type
+        </label>
+
+        <input type="text" id="input_type_box" name="query_input_type" value="<%= @the_pain_diary_question.input_type %>">
+      </div>
+
+      <div>
+        <label for="answer_options_box">
+          Answer options
+        </label>
+
+        <input type="text" id="answer_options_box" name="query_answer_options" value="<%= @the_pain_diary_question.answer_options %>">
+      </div>
+
+      <button>
+        Update pain diary question
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

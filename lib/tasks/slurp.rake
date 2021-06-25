@@ -60,4 +60,24 @@ namespace :slurp do
 
   end
 
+  task paindiaryquestions: :environment do
+    require "csv"
+
+    csv_text = File.read(Rails.root.join("lib", "csvs", "pain_diary_questions.csv"))
+    csv = CSV.parse(csv_text.scrub, :headers => true, :encoding => "ISO-8859-1")
+    puts csv_text
+    csv.each do |row|
+      p = PainDiaryQuestion.new
+      p.category = row["category"]
+      p.question = row["question"]
+      p.input_type = row["input_type"]
+      p.answer_options = row["answer_options"]
+      p.save
+      puts "#{p.category} saved" 
+    end
+
+    puts "There are now #{PainDiaryQuestion.count} rows in the Pain Diary Questions table"
+
+  end
+
 end

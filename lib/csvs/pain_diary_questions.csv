@@ -1,0 +1,19 @@
+category,question,input_type,answer_options
+,My pain is a __ out of 10,select,"0,1,2,3,4,5,6,7,8,9,10"
+Activities,I was _________ when my pain increased,select,"Walking,Standing,Sitting,Running,Bending,Other
+"
+Mood,I was feeling _________ when my pain increased,select,"Happy,Sad,Angry,Anxious,Stressed,Other
+"
+Social,I was with _________ when my pain increased,select,"No one,Friends/family,Other
+"
+Location,I was _________ when my pain increased,select,"Home,Work,Other
+"
+Pain Management,Medication helps reduce my pain,select,"Yes,No,I don't take medication"
+Pain Management,I tried at least one of the following coping strategies:,select,"Belly breathing,Distraction,Mindfulness,Pacing,Quieting the mind,Socializing,Stretching,Recovery techniques (e.g.: ice/heat, electrical stimulation, massage),Exercise
+"
+Pain Management,Did the coping strategy/strategies help?,select,"Yes,No,Not applicable
+"
+,Additional notes I have about this pain episode:,input,
+,My pain flare lasted,select,"Less than 1 hour,1-3 hours,3-6 hours,6-12 hours,12-24 hours,More than 24 hours
+"
+,My pain AFTER this episode was a __ out of 10,select,"0,1,2,3,4,5,6,7,8,9,10"

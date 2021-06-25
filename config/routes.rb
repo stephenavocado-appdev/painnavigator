@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Pain diary question resource:
+
+  # CREATE
+  post("/insert_pain_diary_question", { :controller => "pain_diary_questions", :action => "create" })
+          
+  # READ
+  get("/pain_diary_questions", { :controller => "pain_diary_questions", :action => "index" })
+  
+  get("/pain_diary_questions/:path_id", { :controller => "pain_diary_questions", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_pain_diary_question/:path_id", { :controller => "pain_diary_questions", :action => "update" })
+  
+  # DELETE
+  get("/delete_pain_diary_question/:path_id", { :controller => "pain_diary_questions", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Course resource:
 
   # CREATE

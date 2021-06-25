@@ -1,0 +1,134 @@
+<div>
+  <div>
+    <h1>
+      List of all pain diary questions
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new pain diary question
+    </h2>
+
+    <form action="/insert_pain_diary_question" method="post">
+      <div>
+        <label for="category_box">
+          Category
+        </label>
+
+        <input type="text" id="category_box" name="query_category">
+      </div>
+
+      <div>
+        <label for="question_box">
+          Question
+        </label>
+
+        <input type="text" id="question_box" name="query_question">
+      </div>
+
+      <div>
+        <label for="input_type_box">
+          Input type
+        </label>
+
+        <input type="text" id="input_type_box" name="query_input_type">
+      </div>
+
+      <div>
+        <label for="answer_options_box">
+          Answer options
+        </label>
+
+        <input type="text" id="answer_options_box" name="query_answer_options">
+      </div>
+
+      <button>
+        Create pain diary question
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Category
+        </th>
+
+        <th>
+          Question
+        </th>
+
+        <th>
+          Input type
+        </th>
+
+        <th>
+          Answer options
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_pain_diary_questions.each do |a_pain_diary_question| %>
+      <tr>
+        <td>
+          <%= a_pain_diary_question.id %>
+        </td>
+
+        <td>
+          <%= a_pain_diary_question.category %>
+        </td>
+
+        <td>
+          <%= a_pain_diary_question.question %>
+        </td>
+
+        <td>
+          <%= a_pain_diary_question.input_type %>
+        </td>
+
+        <td>
+          <%= a_pain_diary_question.answer_options %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_pain_diary_question.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_pain_diary_question.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/pain_diary_questions/<%= a_pain_diary_question.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
