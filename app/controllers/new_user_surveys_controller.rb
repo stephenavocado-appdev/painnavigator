@@ -12,7 +12,7 @@ class NewUserSurveysController < ApplicationController
     @list_of_questions = matching_questions.order({ :id => :asc })
     @q = @list_of_questions.at(1)
 
-    the_id = @current_user.pain_diaries.user_id
+    the_id = @current_user.new_user_survey.id
     the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
     the_new_user_survey.q_1 = params.fetch("query_q_1")
     the_new_user_survey.save

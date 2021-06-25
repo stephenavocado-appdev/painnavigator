@@ -43,9 +43,6 @@ class UserAuthenticationController < ApplicationController
     @user.email = params.fetch("query_email")
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
-    # @user.courses_count = params.fetch("query_courses_count")
-    # @user.goals_count = params.fetch("query_goals_count")
-    # @user.diary_entries_count = params.fetch("query_diary_entries_count")
 
     save_status = @user.save
 
@@ -79,7 +76,7 @@ class UserAuthenticationController < ApplicationController
     if save_status == true
       session[:user_id] = @user.id
    
-      redirect_to("/user_sign_up", { :alert => "User account failed to create successfully."})
+      redirect_to("/new_user/1")
     else
       redirect_to("/user_sign_up", { :alert => "User account failed to create successfully."})
     end
