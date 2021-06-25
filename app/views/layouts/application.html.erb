@@ -55,8 +55,13 @@
 
     <style>
 
+      {
+        border: thin red solid;
+      }
+
       :is(h1, h2, h3, h4, h5, h6) {
         font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
       }
 
       .goalcard {
@@ -74,12 +79,37 @@
         background-color: #F4D8FF;
       }
 
+      .homebtn {
+        background-color: #61C7ED;
+        color: white;
+        border-color: #61C7ED;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      .homebtncol {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .homelogocol {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .homebtn:hover {
+      background-color: #A4DEF4;
+      border-color: #A4DEF4;
+      color: white;
+      }
+
     </style>
 
   </head>
 
   <body>
 
+  <% if request.path != "/" %>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">PainNavigator</a>
@@ -97,7 +127,9 @@
       </div>
     </nav>
 
-    <div class="container">
+    <% end %>
+
+    <div class="container-fluid" style="background-color: #FEFAFA; color: #FEFAFA">
     
     <%= notice %>
     <%= alert %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  get("/", { :controller => "application", :action => "home"})
 
   # Routes for the Pain diary question resource:
 
