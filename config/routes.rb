@@ -103,7 +103,7 @@ Rails.application.routes.draw do
   post("/insert_new_user_survey", { :controller => "new_user_surveys", :action => "create" })
           
   # READ
-  get("/new_user_sign_up", { :controller => "new_user_surveys", :action => "index" })
+  get("/new_user", { :controller => "new_user_surveys", :action => "dob" })
   
   get("/new_user_surveys/:path_id", { :controller => "new_user_surveys", :action => "show" })
   

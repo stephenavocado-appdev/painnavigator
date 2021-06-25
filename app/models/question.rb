@@ -8,6 +8,7 @@
 #  question       :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  q_id           :string
 #
 class Question < ApplicationRecord
 end

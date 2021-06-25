@@ -26,6 +26,7 @@
 #  q_7        :string
 #  q_8        :string
 #  q_9        :string
+#  status     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer
