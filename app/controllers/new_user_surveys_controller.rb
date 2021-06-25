@@ -1,8 +1,8 @@
 class NewUserSurveysController < ApplicationController
   def index
-    matching_new_user_surveys = NewUserSurvey.all
+    matching_questions = Question.all
 
-    @list_of_new_user_surveys = matching_new_user_surveys.order({ :created_at => :desc })
+    @list_of_questions = matching_questions.order({ :id => :asc })
 
     render({ :template => "new_user_surveys/index.html.erb" })
   end

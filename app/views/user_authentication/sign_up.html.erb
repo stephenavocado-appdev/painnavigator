@@ -15,30 +15,33 @@ q
       Looks good!
     </div>
   </div>
-  <div class="col">
+  <div class="col needs-validation" novalidate>
     <label for="last_name_box" class="form-label formlabel">Last Name</label>
-    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="last_name_box" name="query_last_name">
+    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="last_name_box" name="query_last_name" required>
+  </div>
+  <div class="valid-feedback">
+    Looks good!
   </div>
 </div>
 
-<div class="row mt-2 homebtncol">
+<div class="row mt-2 homebtncol needs-validation" novalidate>
   <div>
     <label for="email_box" class="form-label formlabel">Email</label>
-    <input id="email_box" class="form-control" aria-label="Email" name="query_email" placeholder="Email" type="text">
+    <input id="email_box" class="form-control" aria-label="Email" name="query_email" placeholder="Email" type="text" required>
   </div>
 </div>
          
-<div class="row mt-2 homebtncol">
+<div class="row mt-2 homebtncol needs-validation" novalidate>
   <div>
     <label for="password_box" class="form-label formlabel">Password</label>
-    <input type="text" class="form-control" placeholder="Password" aria-label="Password" id="password_box" name="query_password">
+    <input type="text" class="form-control" placeholder="Password" aria-label="Password" id="password_box" name="query_password" required>
   </div>
 </div>
 
-<div class="row mt-2 homebtncol">
+<div class="row mt-2 homebtncol needs-validation" novalidate>
   <div>
     <label for="password_confirmation_box" class="form-label formlabel">Confirm Password</label>
-    <input type="text" class="form-control" placeholder="Confirm Password" aria-label="Confirm Password" id="password_confirmation_box" name="query_password_confirmation">
+    <input type="text" class="form-control" placeholder="Confirm Password" aria-label="Confirm Password" id="password_confirmation_box" name="query_password_confirmation" required>
   </div>
 </div>
 
