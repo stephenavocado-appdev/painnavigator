@@ -103,6 +103,30 @@
       color: white;
       }
 
+      .backgrounddiv {
+        color: #FEFAFA
+      }
+
+      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #FEFAFA;
+        opacity: 1; /* Firefox */
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+      }
+
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #FEFAFA;
+      }
+
+      ::-ms-input-placeholder { /* Microsoft Edge */
+      color: #FEFAFA;
+      }
+
+      .formlabel {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+      }
+
     </style>
 
   </head>
@@ -110,26 +134,30 @@
   <body>
 
   <% if request.path != "/" %>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">PainNavigator</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
-            <a class="nav-link" href="/courses">Courses</a>
-            <a class="nav-link" href="/goals">Goals</a>
-            <a class="nav-link" href="#">Pain Diary</a>
-          </div>
-        </div>
-      </div>
-    </nav>
+
+  <div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-light p-4">
+    <h5 class="text-white h4">Collapsed content</h5>
+    <span class="text-muted">Toggleable via the navbar brand.</span>
+  </div>
+</div>
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="PN_transparent.png" alt="" width="200" height="24">
+    </a>
+  </div>
+</nav>
 
     <% end %>
 
-    <div class="container-fluid" style="background-color: #FEFAFA; color: #FEFAFA">
+    <div class="container-fluid" style="background-color: #FEFAFA">
     
     <%= notice %>
     <%= alert %>

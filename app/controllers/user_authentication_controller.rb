@@ -38,17 +38,39 @@ class UserAuthenticationController < ApplicationController
 
   def create
     @user = User.new
+    @user.firt_name = params.fetch("first_name")
+    @user.last_name = params.fetch("last_name")
     @user.email = params.fetch("query_email")
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
-    @user.first_name = params.fetch("query_first_name")
-    @user.last_name = params.fetch("query_last_name")
-    @user.dob = params.fetch("query_dob")
-    @user.goals_count = params.fetch("query_goals_count")
-    @user.courses_count = params.fetch("query_courses_count")
-    @user.pain_diaries_count = params.fetch("query_pain_diaries_count")
+    # @user.courses_count = params.fetch("query_courses_count")
+    # @user.goals_count = params.fetch("query_goals_count")
+    # @user.diary_entries_count = params.fetch("query_diary_entries_count")
 
     save_status = @user.save
+
+    @the_course = Course.new
+    @the_course.user_id = @user.id
+    @the_course.name = "Lower Back Pain"
+    @the_course.status = "In Progress"
+
+    @the_course.save
+
+    @list_of_videos = Video.all.order({ :id => :asc })
+    
+    @list_of_videos.each do |a_video|
+        if a_video.course_name == "lbp_1"
+
+          the_lesson = Lesson.new
+          the_lesson.course_id = @the_course.id
+          the_lesson.status = "Enrolled"
+          the_lesson.name = a_video.name
+          the_lesson.video_id = a_video.id
+          the_lesson.user_id = @user.id
+      
+          the_lesson.save
+        end
+    end
 
     if save_status == true
       session[:user_id] = @user.id

@@ -2,64 +2,42 @@
 
 <form action="/insert_user" method="post">
 
-  <div>
-    <label for="email_box">Email</label>
-    <input id="email_box" name="query_email" placeholder="Choose a email..." type="text">
+<div class="row">
+  <div class="col">
+    <label for="first_name_box" class="form-label formlabel">First Name</label>
+    <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="first_name_box" name="query_first_name">
   </div>
-                 
-  <div>
-    <label for="first_name_box">First name</label>
-      
-    <input type="text" id="first_name_box" name="query_first_name">
+  <div class="col">
+    <label for="last_name_box" class="form-label formlabel">Last Name</label>
+    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="last_name_box" name="query_last_name">
   </div>
-         
-  <div>
-    <label for="last_name_box">Last name</label>
-      
-    <input type="text" id="last_name_box" name="query_last_name">
-  </div>
-         
-  <div>
-    <label for="dob_box">Dob</label>
-      
-    <input type="text" id="dob_box" name="query_dob">
-  </div>
-         
-  <div>
-    <label for="goals_count_box">Goals count</label>
-      
-    <input type="text" id="goals_count_box" name="query_goals_count">
-  </div>
-         
-  <div>
-    <label for="courses_count_box">Courses count</label>
-      
-    <input type="text" id="courses_count_box" name="query_courses_count">
-  </div>
-         
-  <div>
-    <label for="pain_diaries_count_box">Pain diaries count</label>
-      
-    <input type="text" id="pain_diaries_count_box" name="query_pain_diaries_count">
-  </div>
-    
-  <div>
-    <label for="password_box">Password</label>
-    <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
-  </div>
+</div>
 
+<div class="row mt-2">
   <div>
-    <label for="password_confirmation_box">Password Confirmation</label>
-    <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+    <label for="email_box" class="form-label formlabel">Email</label>
+    <input id="email_box" class="form-control" aria-label="Email" name="query_email" placeholder="Email" type="text">
   </div>
+</div>
+         
+<div class="row mt-2">
+  <div>
+    <label for="password_box" class="form-label formlabel">Password</label>
+    <input type="text" class="form-control" placeholder="Password" aria-label="Password" id="password_box" name="query_password">
+  </div>
+</div>
 
-  <button>
-    Sign up
-  </button>
+<div class="row mt-2">
+  <div>
+    <label for="password_confirmation_box" class="form-label formlabel">Confirm Password</label>
+    <input type="text" class="form-control" placeholder="Confirm Password" aria-label="Confirm Password" id="password_confirmation_box" name="query_password_confirmation">
+  </div>
+</div>
+
+<div class="row mt-2">
+  <div class="d-grid gap-2 homebtncol">
+    <button class="btn homebtn">Create Account</button>
+  </div>
+</div>
+
 </form>
-
-<hr>
-
-<p>
-  Or, <a href="/user_sign_in">Sign in</a> instead.
-</p>
