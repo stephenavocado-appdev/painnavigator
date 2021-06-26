@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
     render({ :template => "home/home.html.erb" })
   end
 
+  def dashboard
+    render({ :template => "dashboard/dashboard.html.erb" }) 
+  end
+
 end

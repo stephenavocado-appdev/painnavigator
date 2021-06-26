@@ -306,6 +306,16 @@ class NewUserSurveysController < ApplicationController
 
     render({ :template => "new_user_surveys/q_5.html.erb" })
   end
+
+  def q_24
+    the_id = @current_user.new_user_survey.id
+    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    the_new_user_survey.q_23 = params.fetch("query_q_23")
+    the_new_user_survey.status = "Complete"
+    the_new_user_survey.save
+
+    redirect_to("/dashboard")
+  end
   
   def index
     matching_questions = Question.all

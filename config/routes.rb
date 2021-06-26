@@ -34,6 +34,10 @@ Rails.application.routes.draw do
   get("/new_user/21", { :controller => "new_user_surveys", :action => "q_21" })
   get("/new_user/22", { :controller => "new_user_surveys", :action => "q_22" })
   get("/new_user/23", { :controller => "new_user_surveys", :action => "q_23" })  
+  get("/new_user/24", { :controller => "new_user_surveys", :action => "q_24" }) 
+  get("/dashboard", { :controller => "application", :action => "dashboard" })
+ 
+
   
   # UPDATE
   
