@@ -110,6 +110,10 @@ Rails.application.routes.draw do
   # Routes for the Goal resource:
 
   # CREATE
+  get("/creategoal", { :controller => "goals", :action => "selectcategory" })
+  get("/creategoal/:category", { :controller => "goals", :action => "creategoal" })
+
+
   post("/insert_goal", { :controller => "goals", :action => "create" })
           
   # READ
@@ -170,9 +174,9 @@ Rails.application.routes.draw do
   post("/insert_goal_category", { :controller => "goal_categories", :action => "create" })
           
   # READ
-  get("/goal_categories", { :controller => "goal_categories", :action => "index" })
+  #get("/goal_categories", { :controller => "goal_categories", :action => "index" })
   
-  get("/goal_categories/:path_id", { :controller => "goal_categories", :action => "show" })
+  #get("/goal_categories/:path_id", { :controller => "goal_categories", :action => "show" })
   
   # UPDATE
   

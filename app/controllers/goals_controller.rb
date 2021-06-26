@@ -1,10 +1,16 @@
 class GoalsController < ApplicationController
-  def index
-    matching_goals = Goal.all
+  def selectcategory
+    matching_goal_categories = GoalCategory.all
 
-    @list_of_goals = matching_goals.order({ :created_at => :desc })
+    @list_of_goal_categories = matching_goal_categories.order({ :created_at => :asc })
 
-    render({ :template => "goals/index.html.erb" })
+    render({ :template => "goals/selectcategory.html.erb" })
+  end
+
+  def creategoal
+    @category = params.fetch("category")
+
+    render({ :template => "goals/creategoal.html.erb" })
   end
 
   def show
