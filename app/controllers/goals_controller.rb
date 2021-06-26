@@ -8,7 +8,8 @@ class GoalsController < ApplicationController
   end
 
   def creategoal
-    @category = params.fetch("category")
+    the_id = params.fetch("category")
+    @category = GoalCategory.where({ :id => the_id }).at(0)
 
     render({ :template => "goals/creategoal.html.erb" })
   end
