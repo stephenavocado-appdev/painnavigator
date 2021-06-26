@@ -246,17 +246,10 @@
 
   <% if request.path == "/dashboard" %>
 
-  <div class="collapse" id="navbarToggleExternalContent">
-  <div class="bg-light p-4">
-    <h5 class="text-white h4">Collapsed content</h5>
-    <span class="text-muted">Toggleable via the navbar brand.</span>
-  </div>
-</div>
-
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <div class="col-md-1">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu" style="border: none">
       <span class="navbar-toggler-icon"></span>
     </button>
     </div>
@@ -268,6 +261,28 @@
   </div>
 </nav>
 
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
     <% end %>
 
     <div class="container-fluid" style="background-color: #F6F8F9; height: 100vh">
@@ -278,6 +293,13 @@
     <%= yield %>
     
     </div>
+
+    <script>
+      var offcanvasElementList = [].slice.call(document.querySelectorAll('.offcanvas'))
+      var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
+        return new bootstrap.Offcanvas(offcanvasEl)
+      })
+    </script>
 
     <script>
       var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
