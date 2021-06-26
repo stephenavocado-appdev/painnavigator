@@ -1,5 +1,5 @@
 <div class="row mt-1">
-<h3>Welcome back, <%= @current_user.first_name %>!</h3>
+<h2>Welcome back, <%= @current_user.first_name %>!</h2>
 </div>
 
 <div class="row mt-2">
@@ -7,9 +7,59 @@
 </div>
 
 <div class="row mt-2">
-<h5>Up Next</h5>
+  <div class="col">
+    <h5>Up Next</h5>
+  </div>
+  <div class="col text-end">
+    <a class="dashbtn-lesson">More Lessons <i class="fas fa-angle-right"></i></a>
+  </div>
 </div>
 
-<div class="row mt-2">
-<h5>Today's Goals</h5>
+<% @current_user.lessons.each do |a_lesson| %>
+<div class="row mt-2 homebtncol">
+  <div class="card lessoncard">
+    <div class="card-body">
+      <h6><%=a_lesson.name%></h6>
+      <a><i class="far fa-clock"></i> <%=a_lesson.video.seconds.to_i / 60%> minutes</a>
+      <a>Play Lesson <i class="far fa-play-circle"></i></a>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<div class="row mt-4">
+  <div class="col">
+    <h5>Today's Goals</h5>
+  </div>
+  <div class="col text-end">
+    <a class="dashbtn-goal">More Goals <i class="fas fa-angle-right"></i></a>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col text-center">
+    <h6><a class="dashbtn-newgoal" href="#newgoal" data-bs-toggle="modal" data-bs-target="#newgoal">New Goal <i class="fas fa-plus-circle"></i></a></h6>
+  </div>
+  <div class="col text-center">
+    <h6><a class="dashbtn-newgoal">Pain Score <i class="fas fa-plus-circle"></i></i></a></h6>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newgoal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newgoal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newgoal">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
 </div>

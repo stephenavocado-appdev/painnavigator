@@ -1,23 +1,39 @@
-<h1>Sign in</h1>
+<div class="row backgrounddiv">
+q
+</div>
+
+<div class="row text-center mt-2">
+  <div class="colhomelogocol">
+    <img src="/PN_transparent.png" class="img-fluid" width="200" height="24">
+  </div>
+</div>
+<div class="row homebtncol mt-4">
+<h1>Sign In</h1>
+</div>
 
 <form action="/user_verify_credentials" method="post">
-  <div>
-    <label for="email_box">Email</label>
-    <input id="email_box" name="query_email" placeholder="Enter your email..." type="text">
+  <div class="row mt-2 homebtncol needs-validation" novalidate>
+    <div>
+      <label for="email_box" class="form-label"><h6>Email</h6></label>
+      <input id="email_box" class="form-control" aria-label="Email" name="query_email" placeholder="Email" type="text" required>
+    </div>
+  </div>
+          
+  <div class="row mt-2 homebtncol needs-validation" novalidate>
+    <div>
+      <label for="password_box" class="form-label formlabel"><h6>Password</h6></label>
+      <input type="text" class="form-control" placeholder="Password" aria-label="Password" id="password_box" name="query_password" required>
+    </div>
   </div>
 
-  <div>
-    <label for="password_box">Password</label>
-    <input id="password_box" name="query_password" placeholder="Enter your password..." type="password">
+  <div class="row mt-4 homebtncol">
+    <div class="d-grid gap-2">
+      <button class="btn homebtn">Sign In</button>
+    </div>
   </div>
 
-  <button>
-    Sign in
-  </button>
+  <div class="row mt-2 backgrounddiv">
+  q
+  </div>
+
 </form>
-
-<hr>
-
-<p>
-  Or, <a href="/user_sign_up">Sign up</a> instead.
-</p>

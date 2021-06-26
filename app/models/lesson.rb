@@ -14,4 +14,5 @@
 class Lesson < ApplicationRecord
   belongs_to(:course, { :required => false, :class_name => "Course", :foreign_key => "course_id", :counter_cache => true })
   belongs_to(:video, { :required => false, :class_name => "Video", :foreign_key => "video_id", :counter_cache => true })
+  belongs_to(:user, { :required => false, :class_name => "User", :foreign_key => "user_id", :counter_cache => true })
 end
