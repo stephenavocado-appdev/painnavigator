@@ -26,21 +26,21 @@ class GoalsController < ApplicationController
 
   def create
     the_goal = Goal.new
-    the_goal.name = params.fetch("query_name")
+    #the_goal.name = params.fetch("query_name")
     the_goal.category = params.fetch("query_category")
     the_goal.user_id = params.fetch("query_user_id")
     the_goal.user_goal = params.fetch("query_user_goal")
-    the_goal.user_result = params.fetch("query_user_result")
+    #the_goal.user_result = params.fetch("query_user_result")
     the_goal.target_date = params.fetch("query_target_date")
     the_goal.incremental_steps = params.fetch("query_incremental_steps")
     the_goal.reward = params.fetch("query_reward")
-    the_goal.status = params.fetch("query_status")
+    #the_goal.status = params.fetch("query_status")
 
     if the_goal.valid?
       the_goal.save
-      redirect_to("/goals", { :notice => "Goal created successfully." })
+      redirect_to("/dashboard")
     else
-      redirect_to("/goals", { :notice => "Goal failed to create successfully." })
+      redirect_to("/dashbaord", { :notice => "Goal failed to create successfully." })
     end
   end
 

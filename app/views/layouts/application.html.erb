@@ -244,7 +244,7 @@
 
   <body>
 
-  <% if request.path == "/dashboard" %>
+<% if request.path != "/" || "/user_sign_up" || "//user_sign_in"%>
 
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
@@ -254,9 +254,9 @@
     </button>
     </div>
     <div class="col-md-11" style="padding-left: 0px">
-    <a class="navbar-brand" href="#">
-      <img src="PN_transparent.png" alt="" width="200" height="24">
-    </a>
+      <a class="navbar-brand">
+        <img src="PN_transparent.png" alt="" width="200" height="24">
+      </a>
     </div>
   </div>
 </nav>
