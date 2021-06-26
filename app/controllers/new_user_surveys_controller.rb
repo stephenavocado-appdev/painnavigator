@@ -23,7 +23,7 @@ class NewUserSurveysController < ApplicationController
   def q_3
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(2)
+    @q = @list_of_questions.at(2)
 
     the_id = @current_user.new_user_survey.id
     the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
@@ -36,7 +36,12 @@ class NewUserSurveysController < ApplicationController
   def q_4
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(3)
+    @q = @list_of_questions.at(3)
+
+    the_id = @current_user.new_user_survey.id
+    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    the_new_user_survey.q_3 = params.fetch("query_q_3")
+    the_new_user_survey.save
 
     render({ :template => "new_user_surveys/q_4.html.erb" })
   end
@@ -44,7 +49,12 @@ class NewUserSurveysController < ApplicationController
   def q_5
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(4)
+    @q = @list_of_questions.at(4)  
+
+    the_id = @current_user.new_user_survey.id
+    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    the_new_user_survey.q_4 = params.fetch("query_q_#{@q.id-1}")
+    the_new_user_survey.save
 
     render({ :template => "new_user_surveys/q_5.html.erb" })
   end
@@ -52,7 +62,7 @@ class NewUserSurveysController < ApplicationController
   def q_6
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(5)
+    @q = @list_of_questions.at(5)
 
     render({ :template => "new_user_surveys/q_6.html.erb" })
   end
@@ -60,7 +70,7 @@ class NewUserSurveysController < ApplicationController
   def q_7
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(6)
+    @q = @list_of_questions.at(6)
 
     render({ :template => "new_user_surveys/q_7.html.erb" })
   end
@@ -68,7 +78,7 @@ class NewUserSurveysController < ApplicationController
   def q_8
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(7)
+    @q = @list_of_questions.at(7)
 
     render({ :template => "new_user_surveys/q_8.html.erb" })
   end
@@ -76,7 +86,7 @@ class NewUserSurveysController < ApplicationController
   def q_9
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(8)
+    @q = @list_of_questions.at(8)
 
     render({ :template => "new_user_surveys/q_9.html.erb" })
   end
@@ -84,7 +94,7 @@ class NewUserSurveysController < ApplicationController
   def q_10
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(9)
+    @q = @list_of_questions.at(9)
 
     render({ :template => "new_user_surveys/q_10.html.erb" })
   end
@@ -92,7 +102,7 @@ class NewUserSurveysController < ApplicationController
   def q_11
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(10)
+    @q = @list_of_questions.at(10)
 
     render({ :template => "new_user_surveys/q_11.html.erb" })
   end
@@ -100,7 +110,7 @@ class NewUserSurveysController < ApplicationController
   def q_12
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(11)
+    @q = @list_of_questions.at(11)
 
     render({ :template => "new_user_surveys/q_12.html.erb" })
   end
@@ -108,7 +118,7 @@ class NewUserSurveysController < ApplicationController
   def q_13
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(12)
+    @q = @list_of_questions.at(12)
 
     render({ :template => "new_user_surveys/q_13.html.erb" })
   end
@@ -116,7 +126,7 @@ class NewUserSurveysController < ApplicationController
   def q_14
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(13)
+    @q = @list_of_questions.at(13)
 
     render({ :template => "new_user_surveys/q_14.html.erb" })
   end
@@ -124,7 +134,7 @@ class NewUserSurveysController < ApplicationController
   def q_15
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(14)
+    @q = @list_of_questions.at(14)
 
     render({ :template => "new_user_surveys/q_15.html.erb" })
   end
@@ -132,7 +142,7 @@ class NewUserSurveysController < ApplicationController
   def q_16
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(15)
+    @q = @list_of_questions.at(15)
 
     render({ :template => "new_user_surveys/q_16.html.erb" })
   end
@@ -140,7 +150,7 @@ class NewUserSurveysController < ApplicationController
   def q_17
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(16)
+    @q = @list_of_questions.at(16)
 
     render({ :template => "new_user_surveys/q_17.html.erb" })
   end
@@ -148,7 +158,7 @@ class NewUserSurveysController < ApplicationController
   def q_18
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(17)
+    @q = @list_of_questions.at(17)
 
     render({ :template => "new_user_surveys/q_18.html.erb" })
   end
@@ -156,7 +166,7 @@ class NewUserSurveysController < ApplicationController
   def q_19
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(18)
+    @q = @list_of_questions.at(18)
 
     render({ :template => "new_user_surveys/q_19.html.erb" })
   end
@@ -164,7 +174,7 @@ class NewUserSurveysController < ApplicationController
   def q_20
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(19)
+    @q = @list_of_questions.at(19)
 
     render({ :template => "new_user_surveys/q_20.html.erb" })
   end
@@ -172,7 +182,7 @@ class NewUserSurveysController < ApplicationController
   def q_21
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(20)
+    @q = @list_of_questions.at(20)
 
     render({ :template => "new_user_surveys/q_21.html.erb" })
   end
@@ -180,7 +190,7 @@ class NewUserSurveysController < ApplicationController
   def q_22
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(21)
+    @q = @list_of_questions.at(21)
 
     render({ :template => "new_user_surveys/q_22.html.erb" })
   end
@@ -188,7 +198,7 @@ class NewUserSurveysController < ApplicationController
   def q_23
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @the_question = @list_of_questions.at(22)
+    @q = @list_of_questions.at(22)
 
     render({ :template => "new_user_surveys/q_23.html.erb" })
   end
