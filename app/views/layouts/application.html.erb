@@ -74,13 +74,13 @@
 
       .lessoncard {
         border: none;
-        background-color: #D0FFCA;
         border-radius: 10px;
-        color: #0AB211;
         text-decoration: none;
         text-weight: 500;
         font-family: 'Poppins', sans-serif;
         font-size: 12px;
+        background-color: #D0FFCA;
+        color: #0AB211;
       }
 
       .dashbtn-goal {
@@ -114,11 +114,12 @@
       .goalcard {
         color: #5AAAEF;
         background-color: #D4EBFE;
-      }
-
-      .lessoncard {
-        color: #0AB211;
-        background-color: #D0FFCA;
+        border: none;
+        border-radius: 10px;
+        text-decoration: none;
+        text-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
       }
 
       .streak {
@@ -244,7 +245,7 @@
 
   <body>
 
-<% if request.path != "/" || "/user_sign_up" || "//user_sign_in"%>
+<% if request.path != "/" %>
 
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
