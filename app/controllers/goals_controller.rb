@@ -34,7 +34,7 @@ class GoalsController < ApplicationController
     the_goal.target_date = params.fetch("query_target_date")
     the_goal.incremental_steps = params.fetch("query_incremental_steps")
     the_goal.reward = params.fetch("query_reward")
-    #the_goal.status = params.fetch("query_status")
+    the_goal.status = "Created"
 
     if the_goal.valid?
       the_goal.save

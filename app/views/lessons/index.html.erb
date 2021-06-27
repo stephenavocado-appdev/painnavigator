@@ -1,150 +1,17 @@
-<div>
-  <div>
-    <h1>
-      List of all lessons
-    </h1>
-  </div>
-</div>
+<h5>Upcoming:</h5>
 
-<hr>
+  <% a_course.lessons.each do |a_course| %>
+    <% if a_course.status == "Enrolled"%>
+    
+    <%= render "courses/course_card", { :the_course => a_course } %>
+    <p><strong><%=a_course.name%></strong></p>
+    <p><%=a_course.status%></p>
 
-<div>
-  <div>
-    <h2>
-      Add a new lesson
-    </h2>
+    <% end %>
+  <% end %>
 
-    <form action="/insert_lesson" method="post">
-      <div>
-        <label for="course_id_box">
-          Course
-        </label>
+  <% if a_course.lessons.first.status == "Complete" %>
+    <h5>Completed:</h5>
+  <% end %>
 
-        <input type="text" id="course_id_box" name="query_course_id">
-      </div>
-
-      <div>
-        <label for="status_box">
-          Status
-        </label>
-
-        <input type="text" id="status_box" name="query_status">
-      </div>
-
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name">
-      </div>
-
-      <div>
-        <label for="video_id_box">
-          Video
-        </label>
-
-        <input type="text" id="video_id_box" name="query_video_id">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
-
-      <button>
-        Create lesson
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
-<div>
-  <div>
-    <table>
-      <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Course
-        </th>
-
-        <th>
-          Status
-        </th>
-
-        <th>
-          Name
-        </th>
-
-        <th>
-          Video
-        </th>
-
-        <th>
-          User
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @list_of_lessons.each do |a_lesson| %>
-      <tr>
-        <td>
-          <%= a_lesson.id %>
-        </td>
-
-        <td>
-          <%= a_lesson.course_id %>
-        </td>
-
-        <td>
-          <%= a_lesson.status %>
-        </td>
-
-        <td>
-          <%= a_lesson.name %>
-        </td>
-
-        <td>
-          <%= a_lesson.video_id %>
-        </td>
-
-        <td>
-          <%= a_lesson.user_id %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_lesson.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_lesson.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/lessons/<%= a_lesson.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-</div>
-
-<hr>
+<% end %>
