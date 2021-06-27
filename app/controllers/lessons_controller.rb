@@ -8,6 +8,27 @@ class LessonsController < ApplicationController
   end
 
   def show
+    the_id = params.fetch("path_id").to_i
+    previous_id = the_id-1
+
+    matching_lessons = Lesson.where({ :id => the_id })
+    previous_lesson = Lesson.where({ :id => previous_id })
+
+    @the_lesson = matching_lessons.at(0)
+    @the_lesson.status = "In Progress"
+    @the_lesson.save
+
+    @previous_lesson = previous_lesson.at(0)
+
+    if @the_lesson.name != "Intro to Pain Navigator"
+      @previous_lesson.status = "Completed"
+      @previous_lesson.save
+    end
+
+    render({ :template => "lessons/show.html.erb" })
+  end
+
+  def first
     the_id = params.fetch("path_id")
 
     matching_lessons = Lesson.where({ :id => the_id })

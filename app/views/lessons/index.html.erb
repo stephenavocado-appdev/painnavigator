@@ -1,17 +1,43 @@
-<h5>Upcoming:</h5>
+<div class="row homebtncol">
+<div class="row mt-2">
+</div>
+  <div class="col">
+    <h5>Up Next</h5>
+  </div>
+</div>
 
-  <% a_course.lessons.each do |a_course| %>
-    <% if a_course.status == "Enrolled"%>
-    
-    <%= render "courses/course_card", { :the_course => a_course } %>
-    <p><strong><%=a_course.name%></strong></p>
-    <p><%=a_course.status%></p>
-
-    <% end %>
-  <% end %>
-
-  <% if a_course.lessons.first.status == "Complete" %>
-    <h5>Completed:</h5>
-  <% end %>
-
+<% @current_user.lessons.each do |a_lesson| %>
+  <% if a_lesson.status == "In Progress" %>
+<div class="row mt-2 homebtncol">
+  <div class="card goalcard">
+    <div class="card-body">
+      <a href="/lessons/<%=a_lesson.id%>" style="text-decoration: none"><h6><%=a_lesson.name%> <i class="far fa-play-circle"></i></h6></a>
+      <a><i class="far fa-clock"></i> <%=a_lesson.video.seconds.to_i / 60%> minutes</a>
+    </div>
+  </div>
+</div>
 <% end %>
+<% end %>
+
+<div class="row mt-4 homebtncol">
+  <div class="col">
+    <h5>Upcoming</h5>
+  </div>
+</div>
+
+<% @current_user.lessons.each do |a_lesson| %>
+  <% if a_lesson.status == "Enrolled" %>
+<div class="row mt-2 homebtncol">
+  <div class="card goalcard">
+    <div class="card-body">
+      <a href="/lessons/<%=a_lesson.id%>" style="text-decoration: none"><h6><%=a_lesson.name%> <i class="far fa-play-circle"></i></h6></a>
+      <a><i class="far fa-clock"></i> <%=a_lesson.video.seconds.to_i / 60%> minutes</a>
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
+
+<div class="row mt-2">
+  <a style="color: white"> a </a>
+</div>

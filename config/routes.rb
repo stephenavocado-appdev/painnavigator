@@ -95,6 +95,8 @@ Rails.application.routes.draw do
           
   # READ
   get("/lessons", { :controller => "lessons", :action => "index" })
+
+  #get("/lessons/getstarted"), { :controller => "lessons", :action => "first" })
   
   get("/lessons/:path_id", { :controller => "lessons", :action => "show" })
   

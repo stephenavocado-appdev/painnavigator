@@ -1,7 +1,11 @@
-<div class="row mt-4">
-  <h1>
+<div class="row homebtncol">
+<div class="row mt-2">
+</div>
+  <div class="col">
+    <h5>
     <%= @the_lesson.name %>
-  </h1>
+  </h5>
+  </div>
 </div>
 
 <div class="row mt-2 align-items-center">
@@ -17,7 +21,7 @@
   </div>
 
   <div class="col-md-4 text-center d-grid">
-    <a href="/lessons/<%=@the_lesson.id + 1%>" class="dashbtn-lesson"><h5>Next Lesson <i class="fas fa-angle-right"></i></h5></a>
+    <a href="/lessons/<%=@the_lesson.id + 1%>" class="dashbtn-goal">Next Lesson <i class="fas fa-angle-right"></i></a>
   </div>
 
 </div>
