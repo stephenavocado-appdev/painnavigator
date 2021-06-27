@@ -239,7 +239,7 @@
 
   <body>
 
-<% if request.path != "/" && request.path != "/user_sign_in" && request.path != "/user_sign_up" %>
+<% if request.path != "/" && request.path != "/user_sign_in" && request.path != "/user_sign_up" && request.path.first(9) != "/new_user" %>
 
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
@@ -267,8 +267,9 @@
         <li><a href="/dashboard"><h5>Dashboard <i class="fas fa-angle-right"></i></h5></a></li>
         <li><a href="/lessons"><h5>Lessons <i class="fas fa-angle-right"></i></h5></a></li>
         <li><a href="/goals"><h5>Goals <i class="fas fa-angle-right"></i></h5></a></li>
-        <li><a href="/creategoal" class="addcard"><h5>New Goal <i class="fas fa-trophy"></i></h5></a></li
-        <li><a href="/goals" class="addcard"><h5>Pain Diary <i class="fas fa-book-medical"></i></h5></a></li
+        <li><a href="/creategoal" class="addcard"><h5><i class="fas fa-trophy"></i> New Goal</h5></a></li>
+        <li><a href="/goals" class="addcard"><h5><i class="fas fa-book-medical"></i> Pain Diary</h5></a></li>
+        <li><a href="/user_sign_out" class="addcard"><h5><i class="fas fa-sign-out-alt"></i> Sign Out</h5></a></li>
       </ul>
     </div>
   </div>

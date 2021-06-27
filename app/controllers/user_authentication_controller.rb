@@ -29,7 +29,7 @@ class UserAuthenticationController < ApplicationController
   def destroy_cookies
     reset_session
 
-    redirect_to("/", { :notice => "Signed out successfully." })
+    redirect_to("/")
   end
 
   def sign_up_form
@@ -46,32 +46,38 @@ class UserAuthenticationController < ApplicationController
 
     save_status = @user.save
 
-    #@the_course = Course.new
-    #@the_course.user_id = @user.id
-    #@the_course.name = "Lower Back Pain"
-    #@the_course.status = "In Progress"
-    #@the_course.save
+    @the_course = Course.new
+    @the_course.user_id = @user.id
+    @the_course.name = "Lower Back Pain"
+    @the_course.status = "In Progress"
+    @the_course.save
 
     the_new_user_survey = NewUserSurvey.new
     the_new_user_survey.user_id = @user.id
     the_new_user_survey.status = "Started"
     the_new_user_survey.save
 
-    #@list_of_videos = Video.all.order({ :id => :asc })
+    @list_of_videos = Video.all.order({ :id => :asc })
     
-    #@list_of_videos.each do |a_video|
-        #if a_video.course == "lbp_1"
+    @list_of_videos.each do |a_video|
+        if a_video.course == "lbp_1"
 
-          #the_lesson = Lesson.new
-          #the_lesson.course_id = @the_course.id
-          #the_lesson.status = "Enrolled"
-          #the_lesson.name = a_video.display_name
-          #the_lesson.video_id = a_video.id
-          #the_lesson.user_id = @user.id
+          the_lesson = Lesson.new
+          the_lesson.course_id = @the_course.id
+          the_lesson.status = "Enrolled"
+          the_lesson.name = a_video.display_name
+          the_lesson.video_id = a_video.id
+          the_lesson.user_id = @user.id
       
-          #the_lesson.save
-        #end
-    #end
+          the_lesson.save
+        end
+
+    @list_of_lessons = @user.lessons.order({ :id => :asc })
+    first_lesson = @list_of_lessons.first
+    first_lesson.status = "In Progress"
+    first_lesson.save
+    
+    end
 
     if save_status == true
       session[:user_id] = @user.id

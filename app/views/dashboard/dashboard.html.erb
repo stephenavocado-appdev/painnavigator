@@ -10,6 +10,7 @@
 </div>
 
 <% @current_user.lessons.each do |a_lesson| %>
+  <% if a_lesson.status == "In Progress" %>
 <div class="row mt-2 homebtncol">
   <div class="card lessoncard">
     <div class="card-body">
@@ -18,7 +19,7 @@
     </div>
   </div>
 </div>
-
+<% end %>
 <% end %>
 
 <div class="row mt-4 homebtncol">
