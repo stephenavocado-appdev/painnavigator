@@ -15,9 +15,8 @@
 <div class="row mt-2 homebtncol">
   <div class="card lessoncard">
     <div class="card-body">
-      <h6><%=a_lesson.name%></h6>
+      <h6><%=a_lesson.name%> <i class="far fa-play-circle"></i></h6>
       <a><i class="far fa-clock"></i> <%=a_lesson.video.seconds.to_i / 60%> minutes</a>
-      <a>Play Lesson <i class="far fa-play-circle"></i></a>
     </div>
   </div>
 </div>
@@ -34,7 +33,10 @@
 </div>
 
 <% @current_user.goals.each do |a_goal| %>
+  <% if a_goal.target_date == Date.today %>
+
   <% category = a_goal.category %>
+
     <% the_category = GoalCategory.where({ :category => category }).at(0) %>
 <div class="row mt-2 homebtncol">
   <div class="card goalcard">
@@ -51,13 +53,14 @@
           <h6><%= a_goal.user_goal %> <%= the_category.unit%></h6>
           </div>
           <div class="row no-gutters">
-          <a><% diff = a_goal.target_date - Date.today %><%= diff.to_i%> days away</a>
+          <a><i class="fas fa-calendar-alt"></i> Today</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>   
+</div>  
+<% end %>
 <% end %>
 
 <div class="row mt-2">

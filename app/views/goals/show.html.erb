@@ -4,6 +4,10 @@
       Goal #<%= @the_goal.id %> details
     </h1>
 
+     <div class="row no-gutters">
+          <a><i class="fas fa-calendar-alt"></i> <% diff = a_goal.target_date - Date.today %>  <%= diff.to_i%> days away</a>
+          </div>
+
     <div>
       <div>
         <a href="/goals">
