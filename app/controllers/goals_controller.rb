@@ -14,6 +14,11 @@ class GoalsController < ApplicationController
     render({ :template => "goals/creategoal.html.erb" })
   end
 
+  def index 
+    @list_of_goals = @current_user.goals.order({ :target_date => :asc })
+
+    render({ :template => "goals/index.html.erb" })
+  end
   def show
     the_id = params.fetch("path_id")
 
@@ -40,7 +45,7 @@ class GoalsController < ApplicationController
       the_goal.save
       redirect_to("/dashboard")
     else
-      redirect_to("/dashbaord", { :notice => "Goal failed to create successfully." })
+      redirect_to("/dashboard", { :notice => "Goal failed to create successfully." })
     end
   end
 

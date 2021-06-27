@@ -1,116 +1,9 @@
-<div>
-  <div>
-    <h1>
-      Goal #<%= @the_goal.id %> details
-    </h1>
+
 
      <div class="row no-gutters">
           <a><i class="fas fa-calendar-alt"></i> <% diff = a_goal.target_date - Date.today %>  <%= diff.to_i%> days away</a>
           </div>
 
-    <div>
-      <div>
-        <a href="/goals">
-          Go back
-        </a>
-      </div>
-
-      <div>
-        <a href="/delete_goal/<%= @the_goal.id %>">
-          Delete goal
-        </a>
-      </div>
-    </div>
-
-    <dl>
-      <dt>
-        Name
-      </dt>
-      <dd>
-        <%= @the_goal.name %>
-      </dd>
-
-      <dt>
-        Category
-      </dt>
-      <dd>
-        <%= @the_goal.category %>
-      </dd>
-
-      <dt>
-        User
-      </dt>
-      <dd>
-        <%= @the_goal.user_id %>
-      </dd>
-
-      <dt>
-        User goal
-      </dt>
-      <dd>
-        <%= @the_goal.user_goal %>
-      </dd>
-
-      <dt>
-        User result
-      </dt>
-      <dd>
-        <%= @the_goal.user_result %>
-      </dd>
-
-      <dt>
-        Target date
-      </dt>
-      <dd>
-        <%= @the_goal.target_date %>
-      </dd>
-
-      <dt>
-        Incremental steps
-      </dt>
-      <dd>
-        <%= @the_goal.incremental_steps %>
-      </dd>
-
-      <dt>
-        Reward
-      </dt>
-      <dd>
-        <%= @the_goal.reward %>
-      </dd>
-
-      <dt>
-        Status
-      </dt>
-      <dd>
-        <%= @the_goal.status %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_goal.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_goal.updated_at) %> ago
-      </dd>
-    </dl>
-  </div>
-</div>
-
-<hr>
-
-
-<div>
-  <div>
-    <h2>
-      Edit goal
-    </h2>
 
     <form action="/modify_goal/<%= @the_goal.id %>"  method="post" >
       <div>
@@ -118,38 +11,13 @@
           Name
         </label>
 
-        <input type="text" id="name_box" name="query_name" value="<%= @the_goal.name %>">
-      </div>
-
-      <div>
-        <label for="category_box">
-          Category
-        </label>
-
-        <input type="text" id="category_box" name="query_category" value="<%= @the_goal.category %>">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          User
+     
         </label>
 
         <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_goal.user_id %>">
       </div>
 
       <div>
-        <label for="user_goal_box">
-          User goal
-        </label>
-
-        <input type="text" id="user_goal_box" name="query_user_goal" value="<%= @the_goal.user_goal %>">
-      </div>
-
-      <div>
-        <label for="user_result_box">
-          User result
-        </label>
-
         <input type="text" id="user_result_box" name="query_user_result" value="<%= @the_goal.user_result %>">
       </div>
 

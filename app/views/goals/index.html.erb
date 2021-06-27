@@ -1,0 +1,43 @@
+<div class="row homebtncol">
+<div class="row mt-2">
+</div>
+  <div class="col">
+    <h5>Your Goals</h5>
+  </div>
+</div>
+
+<% @list_of_goals.each do |a_goal| %>
+  <% if a_goal.status == "Created" %>
+    <% category = a_goal.category %>
+      <% the_category = GoalCategory.where({ :category => category }).at(0) %>
+        <div class="row mt-2 homebtncol">
+          <div class="card goalcard">
+            <div class="card-body">
+              <div class="row no-gutters">
+                <div class="col-auto">
+                  <h6><i class="<%= the_category.icon %> fa-4x"></i></h6>
+                </div>
+                <div class="col-auto">
+                  <div class="row no-gutters">
+                  <a><%= a_goal.category %></a>
+                  </div>
+                  <div class="row no-gutters mt-1">
+                  <h6><%= a_goal.user_goal %> <%= the_category.unit%></h6>
+                  </div>
+                  <% if a_goal.target_date != Date.today %>
+                  <div class="row no-gutters">
+                    <a><i class="fas fa-calendar-alt"></i> <% diff = a_goal.target_date - Date.today %>  <%= diff.to_i%> days away</a>
+                  </div>
+                  <% elsif a_goal.target_date == Date.today %>
+                  <div class="row no-gutters">
+                    <a><i class="fas fa-calendar-alt"></i> Today</a>
+                  </div>
+                  <% else %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+  <% end %>
+<% end %>
