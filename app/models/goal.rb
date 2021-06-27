@@ -17,4 +17,5 @@
 #
 class Goal < ApplicationRecord
   belongs_to(:user, { :required => false, :class_name => "User", :foreign_key => "user_id", :counter_cache => true })
+  validates :target_date, after_date: Date.today
 end

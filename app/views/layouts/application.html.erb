@@ -64,63 +64,60 @@
         border: thin red solid;
       }
 
+      :is(h1, h2, h3, h4, h5, h6) {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+      
+      }
+
       .dashbtn-lesson {
         text-decoration: none;
         text-weight: 500;
         font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        color: #0AB211;
+        font-size: 14px;
+        color: /* #0AB211 */ #80C976;
       }
 
       .lessoncard {
-        border-radius: 10px;
+        border-radius: 5px;
         text-decoration: none;
         text-weight: 500;
         font-family: 'Poppins', sans-serif;
         font-size: 12px;
-        color: #0AB211;
+        color: #80C976;
         border: none;
-        background-color: #D0FFCA;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+        /* background-color: #D0FFCA; */
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
       }
 
       .dashbtn-goal {
         text-decoration: none;
         text-weight: 500;
         font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        color: #5AAAEF;
+        font-size: 14px;
+        color: /* #5AAAEF */ #61C7ED;
       }
-
-        .dashbtn-newgoal {
-        border: none;
-        background-color: #D4EBFE;
-        color: #5AAAEF;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
-        border-radius:10px;
-        text-decoration: none;
-        text-weight: 900;
-        font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-      }
-
-      :is(h1, h2, h3, h4, h5, h6) {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 900;      }
 
       .goalcard {
-        color: #5AAAEF;
-        background-color: #D4EBFE;
+        color: /* #5AAAEF */ #61C7ED;
+        /* background-color: #D4EBFE; */
         border: none;
-        border-radius: 10px;
+        border-radius: 5px;
         text-decoration: none;
         text-weight: 500;
         font-family: 'Poppins', sans-serif;
         font-size: 12px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+      }
+
+       .addcard {
+        border-radius: 5px;
+        color: #61C7ED;
+        /* background-color: #D4EBFE; */
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        text-decoration: none;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
       }
 
@@ -219,17 +216,6 @@
         text-align: center
       }
 
-      .addcard {
-        border-radius: 10px;
-        color: #5AAAEF;
-        background-color: #D4EBFE;
-        border: none;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        text-decoration: none;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-      }
-
       a {
         color: inherit;
         text-decoration: none;
@@ -281,6 +267,8 @@
         <li><a href="/dashboard"><h5>Dashboard <i class="fas fa-angle-right"></i></h5></a></li>
         <li><a href="/lessons"><h5>Lessons <i class="fas fa-angle-right"></i></h5></a></li>
         <li><a href="/goals"><h5>Goals <i class="fas fa-angle-right"></i></h5></a></li>
+        <li><a href="/creategoal" class="addcard"><h5>New Goal <i class="fas fa-trophy"></i></h5></a></li
+        <li><a href="/goals" class="addcard"><h5>Pain Diary <i class="fas fa-book-medical"></i></h5></a></li
       </ul>
     </div>
   </div>
