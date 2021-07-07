@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get("/", { :controller => "application", :action => "home"})
+  get 'user_sign_up' => 'user_authentication#sign_up_form'        
+  post 'insert_user' => 'user_authentication#create'
 
   # Routes for the New user survey resource:
 
@@ -210,10 +212,7 @@ Rails.application.routes.draw do
 
   # Routes for the User account:
 
-  # SIGN UP FORM
-  get("/user_sign_up", { :controller => "user_authentication", :action => "sign_up_form" })        
-  # CREATE RECORD
-  post("/insert_user", { :controller => "user_authentication", :action => "create"  })
+ 
       
   # EDIT PROFILE FORM        
   get("/edit_user_profile", { :controller => "user_authentication", :action => "edit_profile_form" })       
