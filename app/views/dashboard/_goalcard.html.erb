@@ -1,0 +1,31 @@
+<% category = the_goal.category %>
+
+<% the_category = GoalCategory.where({ :category => category }).at(0) %>
+
+<div class="row mt-2 homebtncol">
+    <div class="card goalcard">
+        <div class="card-body">
+            <div class="row no-gutters">
+
+                <div class="col-auto">
+                    <h6><i class="<%= the_category.icon %> fa-4x"></i></h6>
+                </div>
+
+                <div class="col-auto">
+                    <div class="row no-gutters">
+                        <a><%= the_goal.category %></a>
+                    </div>
+
+                    <div class="row no-gutters mt-1">
+                        <h6><%= the_goal.user_goal %> <%= the_category.unit%></h6>
+                    </div>
+
+                    <div class="row no-gutters">
+                        <a><i class="fas fa-calendar-alt"></i> Today</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
