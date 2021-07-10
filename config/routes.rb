@@ -1,36 +1,35 @@
 Rails.application.routes.draw do
 
-  get '/'            => 'application#home'
-  get 'user_sign_up' => 'user_authentication#sign_up_form'        
-  post 'insert_user' => 'user_authentication#create'
+  get '/'             => 'application#home'
+  get 'dashboard'     => 'application#dashboard'
+  
+  get 'user_sign_up'  => 'user_authentication#sign_up_form'        
+  post 'insert_user'  => 'user_authentication#create'
 
-  get("/new_user/1", { :controller => "new_user_surveys", :action => "q_1" })
-  get("/new_user/2", { :controller => "new_user_surveys", :action => "q_2" })
-  get("/new_user/3", { :controller => "new_user_surveys", :action => "q_3" })
-  get("/new_user/4", { :controller => "new_user_surveys", :action => "q_4" })
-  get("/new_user/5", { :controller => "new_user_surveys", :action => "q_5" })
-  get("/new_user/6", { :controller => "new_user_surveys", :action => "q_6" })
-  get("/new_user/7", { :controller => "new_user_surveys", :action => "q_7" })
-  get("/new_user/8", { :controller => "new_user_surveys", :action => "q_8" })
-  get("/new_user/9", { :controller => "new_user_surveys", :action => "q_9" })
-  get("/new_user/10", { :controller => "new_user_surveys", :action => "q_10" })
-  get("/new_user/11", { :controller => "new_user_surveys", :action => "q_11" })
-  get("/new_user/12", { :controller => "new_user_surveys", :action => "q_12" })
-  get("/new_user/13", { :controller => "new_user_surveys", :action => "q_13" })
-  get("/new_user/14", { :controller => "new_user_surveys", :action => "q_14" })
-  get("/new_user/15", { :controller => "new_user_surveys", :action => "q_15" })
-  get("/new_user/16", { :controller => "new_user_surveys", :action => "q_16" })
-  get("/new_user/17", { :controller => "new_user_surveys", :action => "q_17" })
-  get("/new_user/18", { :controller => "new_user_surveys", :action => "q_18" })
-  get("/new_user/19", { :controller => "new_user_surveys", :action => "q_19" })
-  get("/new_user/18", { :controller => "new_user_surveys", :action => "q_18" })
-  get("/new_user/19", { :controller => "new_user_surveys", :action => "q_19" })
-  get("/new_user/20", { :controller => "new_user_surveys", :action => "q_20" })
-  get("/new_user/21", { :controller => "new_user_surveys", :action => "q_21" })
-  get("/new_user/22", { :controller => "new_user_surveys", :action => "q_22" })
-  get("/new_user/23", { :controller => "new_user_surveys", :action => "q_23" })  
-  get("/new_user/24", { :controller => "new_user_surveys", :action => "q_24" }) 
-  get("/dashboard", { :controller => "application", :action => "dashboard" })
+  get 'new_user/1'    => 'new_user_surveys#q_1'
+  get 'new_user/2'    => 'new_user_surveys#q_2'
+  get 'new_user/3'    => 'new_user_surveys#q_3'
+  get 'new_user/4'    => 'new_user_surveys#q_4'
+  get 'new_user/5'    => 'new_user_surveys#q_5'
+  get 'new_user/6'    => 'new_user_surveys#q_6'
+  get 'new_user/7'    => 'new_user_surveys#q_7'
+  get 'new_user/8'    => 'new_user_surveys#q_8'
+  get 'new_user/9'    => 'new_user_surveys#q_9'
+  get 'new_user/10'   => 'new_user_surveys#q_10'
+  get 'new_user/11'   => 'new_user_surveys#q_11'
+  get 'new_user/12'   => 'new_user_surveys#q_12'
+  get 'new_user/13'   => 'new_user_surveys#q_13'
+  get 'new_user/14'   => 'new_user_surveys#q_14'
+  get 'new_user/15'   => 'new_user_surveys#q_15'
+  get 'new_user/16'   => 'new_user_surveys#q_16'
+  get 'new_user/17'   => 'new_user_surveys#q_17'
+  get 'new_user/18'   => 'new_user_surveys#q_18'
+  get 'new_user/19'   => 'new_user_surveys#q_19'
+  get 'new_user/20'   => 'new_user_surveys#q_20'
+  get 'new_user/21'   => 'new_user_surveys#q_21'
+  get 'new_user/22'   => 'new_user_surveys#q_22'
+  get 'new_user/23'   => 'new_user_surveys#q_23'
+  get 'new_user/24'   => 'new_user_surveys#q_24'
 
   # Routes for the Goal resource:
 
