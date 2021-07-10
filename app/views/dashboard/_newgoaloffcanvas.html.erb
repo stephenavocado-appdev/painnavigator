@@ -4,6 +4,26 @@
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body small">
-    ...
+    
+
+  <div class="row mt-1">
+
+  <% @list_of_goal_categories.each do |a_category| %>
+    <div class="col-6 text-center">
+      <div class="row mt-2 homebtncol">
+        <div class="card addcard">
+          <div class="card-body">
+            <a href="/creategoal/<%=a_category.id%>"><h6 class="mt-2"><i class="<%=a_category.icon%> fa-3x"></i></h6></a>
+            <a><%=a_category.category%></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+
+
   </div>
 </div>

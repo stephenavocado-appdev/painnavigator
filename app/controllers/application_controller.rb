@@ -20,6 +20,11 @@ class ApplicationController < ActionController::Base
   end
 
   def dashboard
+
+    matching_goal_categories = GoalCategory.all
+
+    @list_of_goal_categories = matching_goal_categories.order({ :id => :asc })
+
     render({ :template => "dashboard/dashboard.html.erb" }) 
   end
 
