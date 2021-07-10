@@ -2,7 +2,7 @@ class PainDiaryQuestionsController < ApplicationController
   def index
     matching_pain_diary_questions = PainDiaryQuestion.all
 
-    @list_of_pain_diary_questions = matching_pain_diary_questions.order({ :created_at => :desc })
+    @list_of_pain_diary_questions = matching_pain_diary_questions.order({ :id => :asc })
 
     render({ :template => "pain_diary_questions/index.html.erb" })
   end

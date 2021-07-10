@@ -17,20 +17,10 @@ class PainDiariesController < ApplicationController
     render({ :template => "pain_diaries/show.html.erb" })
   end
 
-  def create
+  def pain_score
     the_pain_diary = PainDiary.new
     the_pain_diary.user_id = @current_user.id
     the_pain_diary.pain_score = params.fetch("query_pain_score")
-    #the_pain_diary.activity_entry = params.fetch("query_activity_entry")
-    #the_pain_diary.mood_entry = params.fetch("query_mood_entry")
-    #the_pain_diary.social_entry = params.fetch("query_social_entry")
-    #the_pain_diary.location_entry = params.fetch("query_location_entry")
-    #the_pain_diary.medication_entry = params.fetch("query_medication_entry")
-    #the_pain_diary.coping_strategy = params.fetch("query_coping_strategy")
-    #the_pain_diary.coping_strategy_score = params.fetch("query_coping_strategy_score")
-    #the_pain_diary.additional_notes = params.fetch("query_additional_notes")
-    #the_pain_diary.pain_duration = params.fetch("query_pain_duration")
-    #the_pain_diary.pain_score_post = params.fetch("query_pain_score_post")
 
     if the_pain_diary.valid?
       the_pain_diary.save
@@ -38,6 +28,13 @@ class PainDiariesController < ApplicationController
     else
       redirect_to("/dashboard", { :notice => "Pain diary failed to create successfully." })
     end
+  end
+
+  def
+    the_id = params.fetch("path_id")
+    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
+    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+
   end
 
   def update

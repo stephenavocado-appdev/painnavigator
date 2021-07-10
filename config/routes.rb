@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   post 'modify_goal/:path_id' => 'goals#update'
   get 'delete_goal/:path_id'  => 'goals#destroy'
 
-  post 'insert_pain_diary'    => 'pain_diaries#create'
+  post 'pain_score'    => 'pain_diaries#pain_score'
             
   # READ
   get("/pain_diaries", { :controller => "pain_diaries", :action => "index" })
