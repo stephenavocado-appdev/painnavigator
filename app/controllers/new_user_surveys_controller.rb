@@ -4,7 +4,7 @@ class NewUserSurveysController < ApplicationController
     @list_of_questions = matching_questions.order({ :id => :asc })
     @q = @list_of_questions.at(0)
 
-    render({ :template => "new_user_surveys/q_1.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_2
@@ -17,7 +17,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_1 = params.fetch("query_q_1")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_2.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_3
@@ -30,7 +30,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_2 = params.fetch("query_q_2")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_3.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_4
@@ -43,7 +43,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_3 = params.fetch("query_q_3")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_4.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_5
@@ -56,7 +56,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_4 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_6
@@ -74,14 +74,14 @@ class NewUserSurveysController < ApplicationController
     @list_of_questions = matching_questions.order({ :id => :asc })
     @q = @list_of_questions.at(7)
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
     
     else
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
     @q = @list_of_questions.at(5)
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
     end
   end
 
@@ -95,7 +95,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_6 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_8
@@ -109,7 +109,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.save
 
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_9
@@ -122,7 +122,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_8 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_10
@@ -135,7 +135,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_9 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_11
@@ -148,7 +148,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_10 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_12
@@ -161,7 +161,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_11 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_13
@@ -174,7 +174,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_12 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_14
@@ -187,7 +187,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_13 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
   
   def q_15
@@ -200,7 +200,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_14 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_16
@@ -213,7 +213,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_15 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_17
@@ -226,7 +226,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_16 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_18
@@ -239,7 +239,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_17 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_19
@@ -252,7 +252,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_18 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_20
@@ -265,7 +265,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_19 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
   
   def q_21
@@ -278,7 +278,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_20 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
   
   def q_22
@@ -291,7 +291,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_21 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_23
@@ -304,7 +304,7 @@ class NewUserSurveysController < ApplicationController
     the_new_user_survey.q_22 = params.fetch("query_q_#{@q.id-1}")
     the_new_user_survey.save
 
-    render({ :template => "new_user_surveys/q_5.html.erb" })
+    render({ :template => "new_user_surveys/question.html.erb" })
   end
 
   def q_24
