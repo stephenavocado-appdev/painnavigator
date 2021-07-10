@@ -6,14 +6,16 @@
   <div class="offcanvas-body small">
 
   <div class="row text-center">
-  <output></output>
+    
+      <a class="rangetext">My pain is a <output></output> out of 10</a>
+  
   </div>
   
   <form action="/insert_pain_diary" method="post">
 
-    <input type="range" class="form-range painscorerange" style="color: white" id="customRange1" name="query_pain_score" min="0" max="10">
+    <input type="range" class="form-range painscorerange mt-5" style="color: white" id="customRange1" name="query_pain_score" min="0" max="10">
     
-    <div class="row mt-4 homebtncol">
+    <div class="row mt-4 homebtncol mt-5">
       <div class="d-grid gap-2">
         <button class="btn homebtn">Log Pain Score</button>
       </div>
@@ -26,14 +28,12 @@
 
 <script>
 
-let i = document.querySelector('input'),
-    o = document.querySelector('output');
+  let i = document.querySelector('input'),
+      o = document.querySelector('output');
+      o.innerHTML = i.value;
 
-o.innerHTML = i.value;
-
-// use 'change' instead to see the difference in response
-i.addEventListener('input', function () {
-  o.innerHTML = i.value;
-}, false);
+  i.addEventListener('input', function () {
+    o.innerHTML = i.value;
+  }, false);
 
 </script>
