@@ -24,12 +24,10 @@
   </div>
 </div>
 
-<% @current_user.goals.each do |a_goal| %>
-  <% if a_goal.target_date == Date.today && a_goal.status == "Created" %>
+<% @current_user.todays_goals.each do |a_goal| %>
 
   <%= render "/dashboard/goalcard", {:the_goal => a_goal} %>
 
-<% end %>
 <% end %>
 
   <div class="row mt-1 g-1">
