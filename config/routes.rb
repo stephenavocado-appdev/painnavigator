@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get '/'             => 'application#home'
   get 'dashboard'     => 'application#dashboard'
-  
+
   get 'user_sign_up'  => 'user_authentication#sign_up_form'        
   post 'insert_user'  => 'user_authentication#create'
 
@@ -31,26 +31,14 @@ Rails.application.routes.draw do
   get 'new_user/23'   => 'new_user_surveys#q_23'
   get 'new_user/24'   => 'new_user_surveys#q_24'
 
-  # Routes for the Goal resource:
-
-  # CREATE
-  get("/creategoal", { :controller => "goals", :action => "selectcategory" })
-  get("/creategoal/:category", { :controller => "goals", :action => "creategoal" })
-
-
-  post("/insert_goal", { :controller => "goals", :action => "create" })
+  get 'creategoal'           => 'goals#selectcategory'
+  get 'creategoal/:category' => 'goals#creategoal'
+  post 'insert_goal'         => 'goals#create'
           
-  # READ
-  get("/goals", { :controller => "goals", :action => "index" })
-  
-  get("/goals/:path_id", { :controller => "goals", :action => "show" })
-  
-  # UPDATE
-  
-  post("/modify_goal/:path_id", { :controller => "goals", :action => "update" })
-  
-  # DELETE
-  get("/delete_goal/:path_id", { :controller => "goals", :action => "destroy" })
+  get 'goals'                 => 'goals#index'
+  get 'goals/:path_id'        => 'goals#show'
+  post 'modify_goal/:path_id' => 'goals#update'
+  get 'delete_goal/:path_id'  => 'goals#destroy'
 
   #------------------------------
 
