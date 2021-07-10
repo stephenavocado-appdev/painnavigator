@@ -23,6 +23,12 @@
     min-height: 100vh"
  }
 
+ .painscorerange {
+    height: 5px;
+    background: #61C7ED;
+
+ }
+
  :is(h1, h2, h3, h4, h5, h6) {
    font-family: 'Poppins', sans-serif;
    font-weight: 900;
