@@ -257,24 +257,7 @@
   </div>
 </nav>
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menu">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="PN_transparent.png" alt="" width="200" height="24"></h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-      <ul style="list-style-type:none;">
-        <li><a href="/dashboard"><h5>Dashboard <i class="fas fa-angle-right"></i></h5></a></li>
-        <li><a href="/lessons"><h5>Lessons <i class="fas fa-angle-right"></i></h5></a></li>
-        <li><a href="/goals"><h5>Goals <i class="fas fa-angle-right"></i></h5></a></li>
-        <li><a href="/creategoal" class="addcard"><h5><i class="fas fa-trophy"></i> New Goal</h5></a></li>
-        <li><a href="/goals" class="addcard"><h5><i class="fas fa-book-medical"></i> Pain Diary</h5></a></li>
-        <li><a href="/user_sign_out" class="addcard"><h5><i class="fas fa-sign-out-alt"></i> Sign Out</h5></a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+<%= render "dashboard/sidebaroffcanvas.html.erb" %>
 
     <% end %>
 
