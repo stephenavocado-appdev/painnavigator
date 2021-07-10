@@ -4,9 +4,18 @@
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body small">
-    
-  <label for="customRange1" class="form-label">Example range</label>
-  <input type="range" class="form-range painscorerange" style="color: white" id="customRange1">
+  
+  <form action="/insert_pain_diary" method="post">
+    <label for="customRange1" class="form-label">Example range</label>
+    <input type="range" class="form-range painscorerange" style="color: white" id="customRange1" name="query_pain_score">
+
+    <div class="row mt-4 homebtncol">
+      <div class="d-grid gap-2">
+        <button class="btn homebtn">Log Pain Score</button>
+      </div>
+    </div>
+
+    </form>
   
   </div>
 </div>

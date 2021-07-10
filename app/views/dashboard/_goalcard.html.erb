@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="row no-gutters mt-1">
-                        <h6><%= the_goal.user_goal %> <%= the_category.unit%></h6>
+                        <h6><%= the_goal.user_goal %> <% if the_goal.user_goal = 1 %> <%= the_category.unit.singularize%><% end %></h6>
                     </div>
 
                     <div class="row no-gutters">

@@ -19,6 +19,7 @@ class GoalsController < ApplicationController
 
     render({ :template => "goals/index.html.erb" })
   end
+  
   def show
     the_id = params.fetch("path_id")
 
