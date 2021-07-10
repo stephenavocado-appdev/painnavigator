@@ -17,6 +17,12 @@
    border: thin red solid;
  }
 
+ .background {
+    background-color: #F6F8F9; 
+    height: 100%; 
+    min-height: 100vh"
+ }
+
  :is(h1, h2, h3, h4, h5, h6) {
    font-family: 'Poppins', sans-serif;
    font-weight: 900;
