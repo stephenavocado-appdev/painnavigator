@@ -46,11 +46,11 @@ class UserAuthenticationController < ApplicationController
 
     save_status = @user.save
 
-    @the_course = Course.new
-    @the_course.user_id = @user.id
-    @the_course.name = "Lower Back Pain"
-    @the_course.status = "In Progress"
-    @the_course.save
+    #@the_course = Course.new
+    #@the_course.user_id = @user.id
+    #@the_course.name = "Lower Back Pain"
+    #@the_course.status = "In Progress"
+    #@the_course.save
 
     the_new_user_survey = NewUserSurvey.new
     the_new_user_survey.user_id = @user.id
@@ -60,17 +60,17 @@ class UserAuthenticationController < ApplicationController
     @list_of_videos = Video.all.order({ :id => :asc })
     
     @list_of_videos.each do |a_video|
-        if a_video.course == "lbp_1"
+        #if a_video.course == "lbp_1"
 
           the_lesson = Lesson.new
-          the_lesson.course_id = @the_course.id
+          #the_lesson.course_id = @the_course.id
           the_lesson.status = "Enrolled"
           the_lesson.name = a_video.display_name
           the_lesson.video_id = a_video.id
           the_lesson.user_id = @user.id
       
           the_lesson.save
-        end
+        #end
 
     @list_of_lessons = @user.lessons.order({ :id => :asc })
     first_lesson = @list_of_lessons.first
