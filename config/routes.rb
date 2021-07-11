@@ -40,7 +40,17 @@ Rails.application.routes.draw do
   post 'modify_goal/:path_id' => 'goals#update'
   get 'delete_goal/:path_id'  => 'goals#destroy'
 
-  post 'pain_score'    => 'pain_diaries#pain_score'
+  get 'pain_diary/1'          => 'pain_diaries#pain_score'
+  get 'pain_diary/2'          => 'pain_diaries#activity_entry'
+  get 'pain_diary/3'          => 'pain_diaries#mood_entry'
+  get 'pain_diary/4'          => 'pain_diaries#social_entry'
+  get 'pain_diary/5'          => 'pain_diaries#location_entry'
+  get 'pain_diary/6'          => 'pain_diaries#medication_entry'
+  get 'pain_diary/7'          => 'pain_diaries#coping_strategy'
+  get 'pain_diary/8'          => 'pain_diaries#coping_strategy_score'
+  get 'pain_diary/9'          => 'pain_diaries#additional_notes'
+  get 'pain_diary/10'         => 'pain_diaries#pain_duration'
+  get 'pain_diary/11'         => 'pain_diaries#pain_score_post'
             
   # READ
   get("/pain_diaries", { :controller => "pain_diaries", :action => "index" })

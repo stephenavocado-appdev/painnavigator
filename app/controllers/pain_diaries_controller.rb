@@ -30,11 +30,64 @@ class PainDiariesController < ApplicationController
     end
   end
 
-  def
+  def activity_entry
     the_id = params.fetch("path_id")
     matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
     @the_pain_diary_question = matching_pain_diary_questions.at(0)
+  end
 
+  def mood_entry
+    the_id = params.fetch("path_id")
+    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
+    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+  end
+
+  def social_entry
+    the_id = params.fetch("path_id")
+    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
+    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+  end
+
+  def location_entry
+    the_id = params.fetch("path_id")
+    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
+    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+  end
+
+  def medication_entry
+    the_id = params.fetch("path_id")
+    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
+    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+  end
+
+  def coping_strategy
+    the_id = params.fetch("path_id")
+    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
+    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+  end
+
+  def coping_strategy_score
+    the_id = params.fetch("path_id")
+    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
+    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+  end
+
+  def additional_notes
+    the_id = params.fetch("path_id")
+    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
+    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+  end
+
+  def pain_duration
+    the_id = params.fetch("path_id")
+    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
+    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+  end
+
+  def pain_score_post
+    the_id = params.fetch("path_id")
+    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
+    @the_pain_diary_question = matching_pain_diary_questions.at(0)
   end
 
   def update
