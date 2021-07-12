@@ -13,7 +13,7 @@
 
   <div class="col-md-4 mt-2">
     <div class="progress" style="height: 10px;">
-      <div class="progress-bar" role="progressbar" style="background-color: #61C7ED; width: <%= @q.id * 100 / 23 %>%;" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="progress-bar" role="progressbar" style="background-color: #61C7ED; width: <%= @q.id * 100 / 11 %>%;" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
   </div>
 
@@ -50,7 +50,7 @@
   </div>
 </div>
 
-<% if @q.input_type == "Input" %>
+<% if @q.input_type == "input" %>
 <div class="row mt-4">
 
   <div class="col">
@@ -58,7 +58,7 @@
 
   
   <div class="col-md-4 text-center d-grid needs-validation" novalidate>
-  <form action="/new_user/<%=@q.id.to_i+1%>">
+  <form action="/pain_diary/<%=@q.id.to_i+1%>">
     <input type="text" class="form-control textinput" id="<%= @q.id %>_box" name="query_q_<%= @q.id %>" required>
      <div class="valid-feedback">
       Looks good!
@@ -68,12 +68,14 @@
   <div class="col">
   </div>
 </div>
-<% end %>
 
+<form action="/pain_diary/<%=@q.id+1%>">
+
+<% else %>
 
 <% @q.answer_options.split(",").each do |a_option| %>
 
-<form action="/new_user/<%=@q.id+1%>">
+<form action="/pain_diary/<%=@q.id+1%>">
 
 <div class="row mt-4">
 
@@ -90,13 +92,14 @@
 </div>
 </form> 
 <% end %>
+<% end %>
 
 <div class="row mt-4 mb-4">
   <div class="col">
   </div>
 
   <div class="col-md-4 text-center d-grid">
-    <% if @q.input_type == "Select_Multi" || @q.input_type == "Input"%>
+    <% if @q.input_type == "input"%>
       <button class="btn btn-primary homebtn">Next</button>
     <% end %>
     </form>

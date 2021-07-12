@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   get   'pain_diary/9'         => 'pain_diaries#additional_notes'
   get   'pain_diary/10'        => 'pain_diaries#pain_duration'
   get   'pain_diary/11'        => 'pain_diaries#pain_score_post'
+  get   'pain_diary/12'        => 'pain_diaries#pain_score_post_answer'
 
   get   'lessons'              => 'lessons#index'
   get   'lessons/:path_id'     => 'lessons#show'

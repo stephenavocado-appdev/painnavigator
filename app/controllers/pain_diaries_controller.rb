@@ -31,63 +31,77 @@ class PainDiariesController < ApplicationController
   end
 
   def activity_entry
-    the_id = params.fetch("path_id")
-    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
-    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+    matching_pain_diary_questions = PainDiaryQuestion.all
+    @q = matching_pain_diary_questions.at(1)
+
+    render({ :template => "pain_diaries/question.html.erb" })
   end
 
   def mood_entry
-    the_id = params.fetch("path_id")
-    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
-    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+    matching_pain_diary_questions = PainDiaryQuestion.all
+    @q = matching_pain_diary_questions.at(2)
+
+    render({ :template => "pain_diaries/question.html.erb" })
   end
 
   def social_entry
-    the_id = params.fetch("path_id")
-    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
-    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+    matching_pain_diary_questions = PainDiaryQuestion.all
+    @q = matching_pain_diary_questions.at(3)
+
+    render({ :template => "pain_diaries/question.html.erb" })
   end
 
   def location_entry
-    the_id = params.fetch("path_id")
-    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
-    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+    matching_pain_diary_questions = PainDiaryQuestion.all
+    @q = matching_pain_diary_questions.at(4)
+
+    render({ :template => "pain_diaries/question.html.erb" })
   end
 
   def medication_entry
-    the_id = params.fetch("path_id")
-    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
-    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+    matching_pain_diary_questions = PainDiaryQuestion.all
+    @q = matching_pain_diary_questions.at(5)
+
+    render({ :template => "pain_diaries/question.html.erb" })
   end
 
   def coping_strategy
-    the_id = params.fetch("path_id")
-    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
-    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+    matching_pain_diary_questions = PainDiaryQuestion.all
+    @q = matching_pain_diary_questions.at(6)
+
+    render({ :template => "pain_diaries/question.html.erb" })
   end
 
   def coping_strategy_score
-    the_id = params.fetch("path_id")
-    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
-    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+    matching_pain_diary_questions = PainDiaryQuestion.all
+    @q = matching_pain_diary_questions.at(7)
+
+    render({ :template => "pain_diaries/question.html.erb" })
   end
 
   def additional_notes
-    the_id = params.fetch("path_id")
-    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
-    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+    matching_pain_diary_questions = PainDiaryQuestion.all
+    @q = matching_pain_diary_questions.at(8)
+
+    render({ :template => "pain_diaries/question.html.erb" })
   end
 
   def pain_duration
-    the_id = params.fetch("path_id")
-    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
-    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+    matching_pain_diary_questions = PainDiaryQuestion.all
+    @q = matching_pain_diary_questions.at(9)
+
+    render({ :template => "pain_diaries/question.html.erb" })
   end
 
   def pain_score_post
-    the_id = params.fetch("path_id")
-    matching_pain_diary_questions = PainDiaryQuestion.where({ :id => the_id })
-    @the_pain_diary_question = matching_pain_diary_questions.at(0)
+    matching_pain_diary_questions = PainDiaryQuestion.all
+    @q = matching_pain_diary_questions.at(10)
+    
+    render({ :template => "pain_diaries/question.html.erb" })
+  end
+
+  def pain_score_post_answer
+    redirect_to("/dashboard")
   end
 
   def update
