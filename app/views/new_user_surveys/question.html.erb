@@ -68,8 +68,9 @@
   <div class="col">
   </div>
 </div>
-<% end %>
 
+
+<% else %>
 
 <% @q.answer_options.split(",").each do |a_option| %>
 
@@ -89,6 +90,7 @@
   </div>
 </div>
 </form> 
+<% end %>
 <% end %>
 
 <div class="row mt-4 mb-4">
