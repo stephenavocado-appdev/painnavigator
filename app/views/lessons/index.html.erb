@@ -6,17 +6,10 @@
   </div>
 </div>
 
-<% @current_user.lessons.each do |a_lesson| %>
-  <% if a_lesson.status == "In Progress" %>
-<div class="row mt-2 homebtncol">
-  <div class="card goalcard">
-    <div class="card-body">
-      <a href="/lessons/<%=a_lesson.id%>" style="text-decoration: none"><h6><%=a_lesson.name%> <i class="far fa-play-circle"></i></h6></a>
-      <a><i class="far fa-clock"></i> <%=a_lesson.video.seconds.to_i / 60%> minutes</a>
-    </div>
-  </div>
-</div>
-<% end %>
+<% @current_user.next_lessons.each do |a_lesson| %>
+
+  <%= render "/lessons/nextlessoncard", {:the_lesson => a_lesson} %>
+
 <% end %>
 
 <div class="row mt-4 homebtncol">
@@ -25,17 +18,10 @@
   </div>
 </div>
 
-<% @current_user.lessons.each do |a_lesson| %>
-  <% if a_lesson.status == "Enrolled" %>
-<div class="row mt-2 homebtncol">
-  <div class="card goalcard">
-    <div class="card-body">
-      <a href="/lessons/<%=a_lesson.id%>" style="text-decoration: none"><h6><%=a_lesson.name%> <i class="far fa-play-circle"></i></h6></a>
-      <a><i class="far fa-clock"></i> <%=a_lesson.video.seconds.to_i / 60%> minutes</a>
-    </div>
-  </div>
-</div>
-<% end %>
+<% @current_user.upcoming_lessons.each do |a_lesson| %>
+
+  <%= render "/lessons/upcominglessoncard", {:the_lesson => a_lesson} %>
+
 <% end %>
 
 <div class="row mt-2">

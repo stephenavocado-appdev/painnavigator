@@ -15,13 +15,12 @@
 
 </div>
 
-<div class="row mt-2">
+  <form action="/markcomplete">
 
-  <div class="col-md-4">
-  </div>
-
-  <div class="col-md-4 text-center d-grid">
-    <a href="/lessons/<%=@the_lesson.id + 1%>" class="dashbtn-goal">Next Lesson <i class="fas fa-angle-right"></i></a>
-  </div>
-
-</div>
+    <div class="row mt-2 homebtncol">
+      <div class="d-grid gap-2">
+        <input type="hidden" name="lesson_id" value="<%=@the_lesson.id%>">
+        <button class="btn homebtn"><i class="fas fa-check"></i> Mark Complete</button>
+      </div>
+    </div>
+  </form>

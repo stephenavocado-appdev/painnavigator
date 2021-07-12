@@ -57,6 +57,7 @@ Rails.application.routes.draw do
 
   get   'lessons'              => 'lessons#index'
   get   'lessons/:path_id'     => 'lessons#show'
+  get   'markcomplete'         => 'lessons#markcomplete'
             
   # READ
   get("/pain_diaries", { :controller => "pain_diaries", :action => "index" })

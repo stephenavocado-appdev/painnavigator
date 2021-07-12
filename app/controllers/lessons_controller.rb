@@ -7,6 +7,17 @@ class LessonsController < ApplicationController
     render({ :template => "lessons/index.html.erb" })
   end
 
+  def markcomplete
+    lesson_id = params.fetch("lesson_id").to_i
+    next_lesson_id = lesson_id+1
+
+    the_lesson = Lesson.where({ :id => lesson_id }).at(0)
+    the_lesson.status = "Completed"
+    the_lesson.save
+    
+    render({ :template => "lessons/congratulations" })
+  end
+
   def show
     the_id = params.fetch("path_id").to_i
     previous_id = the_id-1

@@ -103,8 +103,7 @@
     }
     
     .goalcard {
-      color: /* #5AAAEF */ #61C7ED;
-      /* background-color: #D4EBFE; */
+      color: #61C7ED;
       border: none;
       border-radius: 5px;
       text-decoration: none;
@@ -281,9 +280,11 @@
     <% end %>
 
     <div class="container-fluid background">
-    
+   
     <%= notice %>
-    <%= alert %>
+    <% if alert != nil %>
+      <div class="alert alert-danger" role="alert"><%= alert %></div>
+    <% end %>
    
     <%= yield %>
     
