@@ -59,26 +59,16 @@ Rails.application.routes.draw do
   get   'lessons/:path_id'     => 'lessons#show'
   get   'markcomplete'         => 'lessons#markcomplete'
             
-  # READ
-  get("/pain_diaries", { :controller => "pain_diaries", :action => "index" })
+  get   'pain_diaries'          => 'pain_diaries#index'
   
-  get("/pain_diaries/:path_id", { :controller => "pain_diaries", :action => "show" })
+  get   'pain_diaries/:path_id' => 'pain_diaries#show'
   
-  # UPDATE
+  post  'update_diary/:path_id' => 'pain_diaries#update'
+  get   'delete_diary/:path_id' => 'pain_diaries#destroy'
+    
+  get    'edit_profile'         => 'user_authentication#edit_profile_form'       
+  post   'modify_user'          => 'user_authentication#update'
   
-  post("/modify_pain_diary/:path_id", { :controller => "pain_diaries", :action => "update" })
-  
-  # DELETE
-  get("/delete_pain_diary/:path_id", { :controller => "pain_diaries", :action => "destroy" })
-
-  # Routes for the User account:
-
-  # EDIT PROFILE FORM        
-  get("/edit_user_profile", { :controller => "user_authentication", :action => "edit_profile_form" })       
-  # UPDATE RECORD
-  post("/modify_user", { :controller => "user_authentication", :action => "update" })
-  
-  # DELETE RECORD
-  get("/cancel_user_account", { :controller => "user_authentication", :action => "destroy" })
+  get    'cancel_user_account'  => 'user_authentication#destroy'
 
 end
