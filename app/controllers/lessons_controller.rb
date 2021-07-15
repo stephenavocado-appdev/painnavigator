@@ -31,7 +31,7 @@ class LessonsController < ApplicationController
 
     @previous_lesson = previous_lesson.at(0)
 
-    if @the_lesson.name != "Intro to Pain Navigator"
+    if @the_lesson.name != "Intro"
       @previous_lesson.status = "Completed"
       @previous_lesson.save
     end
