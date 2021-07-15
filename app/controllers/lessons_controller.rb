@@ -31,7 +31,7 @@ class LessonsController < ApplicationController
 
     @previous_lesson = previous_lesson.at(0)
 
-    if @the_lesson.name != "Intro"
+    if @the_lesson.name != Video.all.first.display_name
       @previous_lesson.status = "Completed"
       @previous_lesson.save
     end
