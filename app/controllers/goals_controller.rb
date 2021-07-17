@@ -16,6 +16,10 @@ class GoalsController < ApplicationController
 
   def index 
     @list_of_goals = @current_user.goals.order({ :target_date => :asc })
+    
+    matching_goal_categories = GoalCategory.all
+
+    @list_of_goal_categories = matching_goal_categories.order({ :id => :asc })
 
     render({ :template => "goals/index.html.erb" })
   end
