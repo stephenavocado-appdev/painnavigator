@@ -9,7 +9,7 @@
     
       <a class="rangetext">My pain is a </a>
       
-      <output></output> 
+      <output id="painscoreoutput"></output> 
       
       <a class="rangetext">out of 10</a>
   
@@ -46,7 +46,7 @@
 <script>
 
   let i = document.querySelector('#painscorerange'),
-      o = document.querySelector('output');
+      o = document.querySelector('#painscoreoutput');
       o.innerHTML = i.value;
 
   i.addEventListener('input', function () {

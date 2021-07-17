@@ -1,6 +1,6 @@
 <div class="offcanvas offcanvas-bottom offcanvasbutton" tabindex="-1" id="updategoal" aria-labelledby="updategoalLabel">
   <div class="offcanvas-header">
-    <h4 class="offcanvas-title" id="updategoalLabel">Update Goal</h4>
+    <h4 class="offcanvas-title" id="updategoalLabel" style="color: #61C7ED">Update Goal: <%= your_goal.category %></h4>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body small">
@@ -14,7 +14,7 @@
 
   <div class="row homebtncol">
 
-  <h4 style="color: #61C7ED"><%= your_goal.user_goal %>  minutes of <%= your_goal.category %></h4> 
+  <h1 style="color: #61C7ED"><%= your_goal.user_goal %>  minutes</h1> 
   
   </div>
 
@@ -24,15 +24,15 @@
   
   </div>
 
-  <div class="row homebtncol">
-
-  <h4 style="color: #61C7ED"><%= your_goal.user_goal %>  minutes of <%= your_goal.category %></h4> 
-  
+  <div class="row homebtncol mt-2">
+  <div class="col-md-4 d-grid needs-validation" novalidate>
+    <input type="text" class="form-control textinput" id="updategoal" name="query_user_result" placeholder="minutes" required>
+     <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
   </div>
 
-  <div class="row homebtncol mt-5">
-    <input type="range" class="form-range painscorerange" style="color: white" id="customRange1" name="query_pain_score" min="0" max="10">
-  </div>
 
   <div class="row mt-5 homebtncol">
   <div class="d-grid gap-2">
