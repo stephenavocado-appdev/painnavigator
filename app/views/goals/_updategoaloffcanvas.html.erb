@@ -6,11 +6,39 @@
   <div class="offcanvas-body small">
     
 
-  <div class="row">
+  <div class="row homebtncol">
 
-  <%= your_goal.category %>
-
+  <h4> Your Goal:</h4> 
+  
   </div>
+
+  <div class="row homebtncol">
+
+  <h4 style="color: #61C7ED"><%= your_goal.user_goal %>  minutes of <%= your_goal.category %></h4> 
+  
+  </div>
+
+  <div class="row mt-3 homebtncol">
+
+  <h4> You Completed:</h4> 
+  
+  </div>
+
+  <div class="row homebtncol">
+
+  <h4 style="color: #61C7ED"><%= your_goal.user_goal %>  minutes of <%= your_goal.category %></h4> 
+  
+  </div>
+
+  <div class="row homebtncol mt-5">
+    <input type="range" class="form-range painscorerange" style="color: white" id="customRange1" name="query_pain_score" min="0" max="10">
+  </div>
+
+  <div class="row mt-5 homebtncol">
+  <div class="d-grid gap-2">
+    <button class="btn homebtn">Complete Goal</button>
+  </div>
+</div>
 
   </div>
 </div>
