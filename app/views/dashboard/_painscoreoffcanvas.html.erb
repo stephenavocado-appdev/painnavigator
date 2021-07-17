@@ -19,7 +19,7 @@
   <form action="/pain_diary/1">
 
     <div class="row homebtncol mt-5">
-      <input type="range" class="form-range painscorerange" style="color: white" id="customRange1" name="query_pain_score" min="0" max="10">
+      <input type="range" class="form-range painscorerange" style="color: white" id="painscorerange" name="query_pain_score" min="0" max="10">
     </div>
 
     <div class="row mt-4 homebtncol mt-5">
@@ -45,7 +45,7 @@
 
 <script>
 
-  let i = document.querySelector('input'),
+  let i = document.querySelector('#painscorerange'),
       o = document.querySelector('output');
       o.innerHTML = i.value;
 
