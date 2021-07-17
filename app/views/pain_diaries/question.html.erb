@@ -35,6 +35,8 @@
   </div>
 </div>
 
+<% if @q.input_type == "input" || @q.input_type == "select" %>
+
 <div class="row mt-3">
 
   <div class="col">
@@ -49,6 +51,8 @@
   <div class="col">
   </div>
 </div>
+
+<% end %>
 
 <% if @q.input_type == "input" %>
 <div class="row mt-4">
@@ -71,7 +75,7 @@
 
 <form action="/pain_diary/<%=@q.id+1%>">
 
-<% else %>
+<% elsif @q.input_type == "select" %>
 
 <% @q.answer_options.split(",").each do |a_option| %>
 
@@ -108,3 +112,47 @@
   <div class="col">
   </div>
 </div>
+
+<div class="row text-center">
+    
+      <a class="rangetext">After this episode my pain was a</a>
+      
+      <output></output> 
+      
+      <a class="rangetext">out of 10</a>
+  
+  </div>
+  
+  <% if @q.input_type == "range" %>
+
+  <form action="/pain_diary/<%=@q.id+1%>">
+
+
+    <div class="row homebtncol mt-5">
+      <input type="range" class="form-range painscorerange" style="color: white" id="customRange1" name="query_pain_score" min="0" max="10">
+    </div>
+
+    <div class="row mt-4 homebtncol mt-5">
+      <div class="d-grid gap-2">
+        <button class="btn homebtn">Log Pain Score</button>
+      </div>
+    </div>
+
+    </form>
+  
+  </div>
+</div>
+
+<script>
+
+  let i = document.querySelector('input'),
+      o = document.querySelector('output');
+      o.innerHTML = i.value;
+
+  i.addEventListener('input', function () {
+    o.innerHTML = i.value;
+  }, false);
+
+</script>
+
+<% end %>
