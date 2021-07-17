@@ -3,12 +3,18 @@
 <% the_category = GoalCategory.where({ :category => category }).at(0) %>
 
 <div class="row mt-2 homebtncol">
-    <div class="card goalcard">
-        <div class="card-body">
-            <div class="row no-gutters">
+<button class="btn goalcard text-start" style="height: 100%; width: 100%; background-color: white;" data-bs-toggle="offcanvas" data-bs-target="#updategoal" aria-controls="updategoal">
 
+            <div class="row no-gutters mt-2">  
+                
+                <div class="col-auto">
+                </div>
+                
                 <div class="col-auto">
                     <h6><i class="<%= the_category.icon %> fa-4x"></i></h6>
+                </div>
+
+                <div class="col-auto">
                 </div>
 
                 <div class="col-auto">
@@ -17,7 +23,7 @@
                     </div>
 
                     <div class="row no-gutters mt-1">
-                        <h6><%= the_goal.user_goal %> <% if the_goal.user_goal = 1 %> <%= the_category.unit.singularize%><% end %></h6>
+                        <h6><%= the_goal.user_goal %> <%= the_category.unit %></h6>
                     </div>
 
                     <div class="row no-gutters">
@@ -25,7 +31,12 @@
                     </div>
                     
                 </div>
+
+                <div class="col-auto">
+                </div>  
             </div>
-        </div>
-    </div>
+    </button>
+  
 </div>  
+
+<%= render "goals/updategoaloffcanvas.html.erb", {:your_goal => the_goal} %>
