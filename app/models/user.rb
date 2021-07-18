@@ -31,7 +31,7 @@ class User < ApplicationRecord
   has_many(:lessons, { :class_name => "Lesson", :foreign_key => "user_id", :dependent => :destroy })
 
   def todays_goals
-    return self.goals.where({ :target_date => Date.current })
+    return self.goals.where({ :target_date => Date.current, :status => "Created" })
     #self method is implied if there is an instance method or column for user called goals
   end
 
