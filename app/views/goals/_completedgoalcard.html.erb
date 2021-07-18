@@ -1,0 +1,39 @@
+<% category = the_goal.category %>
+
+<% the_category = GoalCategory.where({ :category => category }).at(0) %>
+
+<div class="row mt-2 homebtncol">
+<button class="btn goalcard text-start" style="height: 100%; width: 100%; background-color: white;" data-bs-toggle="offcanvas" data-bs-target="#updategoal_<%= the_goal.id %>" aria-controls="updategoal_<%= the_goal.id %>">
+
+            <div class="row no-gutters mt-2">  
+                
+                <div class="col-auto">
+                </div>
+                
+                <div class="col-auto">
+                    <h6><i class="<%= the_category.icon %> fa-4x"></i></h6>
+                </div>
+
+                <div class="col-auto">
+                </div>
+
+                <div class="col-auto">
+                    <div class="row no-gutters">
+                        <a><%= the_goal.category %></a>
+                    </div>
+
+                    <div class="row no-gutters mt-1">
+                        <h6><%= the_goal.user_result %> <%= the_category.unit %></h6>
+                    </div>
+
+                    <div class="row no-gutters">
+                    </div>
+                    
+                </div>
+
+                <div class="col-auto">
+                </div>  
+            </div>
+    </button>
+  
+</div>  

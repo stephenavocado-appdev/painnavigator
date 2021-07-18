@@ -35,6 +35,16 @@ class User < ApplicationRecord
     #self method is implied if there is an instance method or column for user called goals
   end
 
+  def completed_goals
+    return self.goals.where({ :status => "Complete" })
+    #self method is implied if there is an instance method or column for user called goals
+  end
+
+  def future_goals
+    return self.goals.where({ :target_date => Date.current, :status => "Created" })
+    #self method is implied if there is an instance method or column for user called goals
+  end
+
   def next_lessons
     return self.lessons.where({ :status => "In Progress" })
   end

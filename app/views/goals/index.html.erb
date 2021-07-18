@@ -13,19 +13,17 @@
 <% end %>
 
 <div class="row homebtncol">
-<div class="row mt-2">
+<div class="row mt-4">
 </div>
   <div class="col">
-    <h4>Your Goals</h4>
+    <h4>Completed Goals</h4>
   </div>
 </div>
 
-<% @list_of_goals.each do |a_goal| %>
-  <% if a_goal.status == "Created" %>
+<% @current_user.completed_goals.each do |a_goal| %>
 
-      <%= render "/dashboard/goalcard", {:the_goal => a_goal} %>
+  <%= render "/goals/completedgoalcard", {:the_goal => a_goal} %>
 
-  <% end %>
 <% end %>
 
 <div class="row mt-1 g-1">
@@ -35,17 +33,6 @@
       <button class="btn addcard" style="height: 100%; width: 100%; background-color: white;" data-bs-toggle="offcanvas" data-bs-target="#selectgoalcategory" aria-controls="selectgoalcategory">
         <h6 class="mt-2"><i class="fas fa-trophy fa-3x"></i></h6>
         <a>New Goal</a>
-      </button>
-
-  </div>
-</div>
-
-<div class="col-6 text-center">
-  <div class="row mt-2 homebtncol">
-   
-      <button class="btn addcard" style="height: 100%; width: 100%; background-color: white;" data-bs-toggle="offcanvas" data-bs-target="#painscore" aria-controls="painscore">
-        <h6 class="mt-2"><i class="fas fa-book-medical fa-3x"></i></h6>
-        <a>Pain Score</a>
       </button>
 
   </div>
