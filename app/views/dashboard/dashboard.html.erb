@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<% @current_user.next_lessons.each do |a_lesson| %>
+<% @current_user.next_education_lesson.each do |a_lesson| %>
 
   <%= render "/dashboard/lessoncard", {:the_lesson => a_lesson} %>
 

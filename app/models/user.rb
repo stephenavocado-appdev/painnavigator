@@ -39,6 +39,14 @@ class User < ApplicationRecord
     return self.lessons.where({ :status => "In Progress" })
   end
 
+  def next_education_lesson
+    return self.lessons.where({ :status => "In Progress" })
+  end
+
+  def next_exercise_lesson
+    return self.lessons.where({ :status => "In Progress" })
+  end
+
   def upcoming_lessons
     return self.lessons.where({ :status => "Enrolled" })
   end
