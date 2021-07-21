@@ -42,7 +42,7 @@
 
   <div class="col-md-4 text-center">
     <h5>
-      <%= @q.question %>
+      <%= @q.question %> <% if @q.id == 6 %> <%= @the_new_user_survey.q_5 %> <% end %>
     </h5>
   </div>
 
@@ -71,7 +71,7 @@
 
 <% end %>
 
-<% if @q.input_type == "Select" %>
+<% if @q.input_type == "Select" && !@q.answer_options.nil? %>
 
 <% @q.answer_options.strip.split(",").each do |a_option| %>
 

@@ -65,11 +65,11 @@ class NewUserSurveysController < ApplicationController
     @q = @list_of_questions.at(5)
     
     the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_5 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
+    @the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    @the_new_user_survey.q_5 = params.fetch("query_q_#{@q.id-1}")
+    @the_new_user_survey.save
 
-    if the_new_user_survey.q_5 == "No"
+    if @the_new_user_survey.q_5 == "No"
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
     @q = @list_of_questions.at(7)
