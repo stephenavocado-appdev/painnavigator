@@ -1,0 +1,18 @@
+question_tag,question,input_type,answer_options,dependency
+q_1,Enter your date of birth:,Date,,
+q_2,What is your gender identity?,Select,"Man,Woman,Other,Prefer not to answer",
+q_3,How long have you been experiencing low back pain?,Select,"Less than 1 month,1 - 3 months,3 - 6 months,6 months - 1 year,1 - 3 years,More than 3 years",
+q_4,Are you currently taking any prescription opioid pain medication for your chronic pain?,Select,"Yes,No",
+q_5,Which medication are your taking?,Select,"Codeine,Tylenol-codeine #3,Tylenol-codeine #4,Tramadol (Ultram),Tapentadol (Nucynta),Hydrocodone/Acetaminophen (Anexsia, Dicodid, Hycodan, Hycomine, Lorcet, Lortab, Norco, Tussionex, Vicodin),Hydrocodone/Ibuprofen (Vicoprofen),Oxycodone/Acetaminophen (Percocet, Tylox, Primlev, Roxicet, Endocet, and Xartemis XR),Oxycodone/Aspirin (Percodan, Percodan-Demi, Roxiprin, Endodan),Oxycodone/Ibuprofen (Combunex),Oxycodone IR (immediate release) (Roxicodone),Oxycodone ER (extended release (OxyContin, Xtampza ER, Oxaydo),Morphine IR (immediate release) (Avinza, Kadian, Roxanol),Morphine ER (extended release (Kadian, Morphabond, MS Contin, Oramorph SR),Fentanyl transdermal patch,Hydromorphone IR (immediate release) (Dilaudid),Hydromorphone ER (extended release) (Exalgo),Methadone,Buprenorphine (Subutex, Buprenex),Buprenorphine/Naloxone (Suboxone) ","q_4, yes"
+q_6,What is your current dosage?,Select,,"q_4, yes"
+q_7,How frequently do you take this medication?,Select,"1x/day,2x/day,3x/day,4x/day,5x/day,6x/day,7x/day,8x/day,>8x/day","q_4, yes"
+q_8,How likely are you to use prescription opioid pain medication for your chronic pain?,Select,"Extremely likely,Very likely,Moderately likely,Slightly likely,Not at all likely","q_4, no"
+q_9,How likely are you to get surgery for your chronic pain? ,Select,"Extremely likely,Very likely,Moderately likely,Slightly likely,Not at all likely",
+q_10,How would you rank your pain over the past 1 week?,Range,"min: 1, max: 10, step :1",
+q_11,"What number best describes how, during the past week, pain has interfered with your enjoyment of life?",Range,"min: 1, max: 10, step :1",
+q_12,"What number best describes how, during the past week, pain has interfered with your general activity?",Range,"min: 1, max: 10, step :1",
+q_13,How would you describe your activity level on average?,Select,"Not active,Mildly active (walk 30 minutes 5+ days/week),Moderately active (vigorous exercise 3+ days/week),Very active (vigorous exercise 5+ days/week)",
+q_14,"Over the past 2 weeks, how often have you felt anxious or nervous?",Select,"Never,Infrequently,Occasionally,Often,Always",
+q_15,"Over the past 2 weeks, how often have you had difficulty reducing the amount of time you worry?",Select,"Never,Infrequently,Occasionally,Often,Always",
+q_16,"Over the past 2 weeks, how often have you felt concerned by your lack of interest or pleasure in doing things?",Select,"Never,Infrequently,Occasionally,Often,Always",
+q_17,"Over the past 2 weeks, how often have you felt depressed, sad or hopeless?",Select,"Never,Infrequently,Occasionally,Often,Always",

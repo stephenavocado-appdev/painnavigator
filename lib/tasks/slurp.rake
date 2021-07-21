@@ -22,10 +22,10 @@ namespace :slurp do
 
   end
 
-  task questions: :environment do
+  task newusersurveyquestions: :environment do
     require "csv"
 
-    csv_text = File.read(Rails.root.join("lib", "csvs", "questions.csv"))
+    csv_text = File.read(Rails.root.join("lib", "csvs", "new_user_survey_questions.csv"))
     csv = CSV.parse(csv_text.scrub, :headers => true, :encoding => "ISO-8859-1")
     puts csv_text
     csv.each do |row|
