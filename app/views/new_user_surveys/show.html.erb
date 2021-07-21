@@ -73,7 +73,7 @@
 
 <% if @q.input_type == "Select" %>
 
-<% @q.answer_options.split(",").strip.each do |a_option| %>
+<% @q.answer_options.strip.split(",").each do |a_option| %>
 
 <form action="/new_user/<%=@q.id+1%>">
 
