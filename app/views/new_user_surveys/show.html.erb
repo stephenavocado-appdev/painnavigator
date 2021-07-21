@@ -69,8 +69,9 @@
   </div>
 </div>
 
+<% end %>
 
-<% elsif @q.input_type == "Select" %>
+<% if @q.input_type == "Select" %>
 
 <% @q.answer_options.split(",").strip.each do |a_option| %>
 
@@ -90,8 +91,6 @@
   </div>
 </div>
 </form> 
-<% end %>
-
 <% end %>
 
 <% if @q.input_type == "Range" %>
@@ -115,7 +114,7 @@
 
   <div class="row mt-4 homebtncol mt-5">
     <div class="d-grid gap-2">
-      <button class="btn homebtn">Log Pain Score</button>
+      <button class="btn homebtn">Next</button>
     </div>
   </div>
 

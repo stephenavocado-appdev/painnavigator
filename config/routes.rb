@@ -27,12 +27,6 @@ Rails.application.routes.draw do
   get   'new_user/16'          => 'new_user_surveys#q_16'
   get   'new_user/17'          => 'new_user_surveys#q_17'
   get   'new_user/18'          => 'new_user_surveys#q_18'
-  get   'new_user/19'          => 'new_user_surveys#q_19'
-  get   'new_user/20'          => 'new_user_surveys#q_20'
-  get   'new_user/21'          => 'new_user_surveys#q_21'
-  get   'new_user/22'          => 'new_user_surveys#q_22'
-  get   'new_user/23'          => 'new_user_surveys#q_23'
-  get   'new_user/24'          => 'new_user_surveys#q_24'
 
   get   'creategoal'           => 'goals#selectcategory'
   get   'creategoal/:category' => 'goals#creategoal'
