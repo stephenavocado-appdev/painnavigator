@@ -80,4 +80,23 @@ namespace :slurp do
 
   end
 
+  task medications: :environment do
+    require "csv"
+
+    csv_text = File.read(Rails.root.join("lib", "csvs", "medications.csv"))
+    csv = CSV.parse(csv_text.scrub, :headers => true, :encoding => "ISO-8859-1")
+    puts csv_text
+    csv.each do |row|
+      p = Medication.new
+      p.medication = row["medication"]
+      p.dosage = row["dosage"]
+      p.frequency = row["frequency"]
+      p.save
+      puts "#{p.category} saved" 
+    end
+
+    puts "There are now #{PainDiaryQuestion.count} rows in the Pain Diary Questions table"
+
+  end
+
 end
