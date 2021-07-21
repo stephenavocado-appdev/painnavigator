@@ -57,25 +57,39 @@ class UserAuthenticationController < ApplicationController
     the_new_user_survey.status = "Started"
     the_new_user_survey.save
 
-    @list_of_videos = Video.all.order({ :id => :asc })
+    @education_videos = EducationVideo.all.order({ :id => :asc })
     
-    @list_of_videos.each do |a_video|
-        #if a_video.course == "lbp_1"
+    @education_videos.each do |a_video|
 
-          the_lesson = Lesson.new
-          #the_lesson.course_id = @the_course.id
-          the_lesson.status = "Enrolled"
-          the_lesson.name = a_video.display_name
-          the_lesson.video_id = a_video.id
-          the_lesson.user_id = @user.id
-      
-          the_lesson.save
-        #end
+      the_lesson = EducationLessson.new
+      the_lesson.status = "Enrolled"
+      the_lesson.name = a_video.display_name
+      the_lesson.video_id = a_video.id
+      the_lesson.user_id = @user.id
+      the_lesson.save
 
-    @list_of_lessons = @user.lessons.order({ :id => :asc })
-    first_lesson = @list_of_lessons.first
-    first_lesson.status = "In Progress"
-    first_lesson.save
+    @list_of_education_lessons = @user.education_lesssons.order({ :id => :asc })
+    first_education_lesson = @list_of_education_lessons.first
+    first_education_lesson.status = "In Progress"
+    first_education_lesson.save
+
+    end
+
+    @exercise_videos = ExerciseVideo.all.order({ :id => :asc })
+    
+    @exercise_videos.each do |a_video|
+
+      the_lesson = ExerciseLessson.new
+      the_lesson.status = "Enrolled"
+      the_lesson.name = a_video.display_name
+      the_lesson.video_id = a_video.id
+      the_lesson.user_id = @user.id
+      the_lesson.save
+
+    @list_of_exercise_lessons = @user.exercise_lesssons.order({ :id => :asc })
+    first_exercise_lesson = @list_of_exercise_lessons.first
+    first_exercise_lesson.status = "In Progress"
+    first_exercise_lesson.save
     
     end
 

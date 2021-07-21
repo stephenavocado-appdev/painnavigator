@@ -1,14 +1,17 @@
-<div class="offcanvas offcanvas-start" style="width: 90%" tabindex="-1" id="menu" aria-labelledby="menu">
+<div class="offcanvas offcanvas-start" style="width: 85%; border: none" tabindex="-1" id="menu" aria-labelledby="menu">
   <div class="offcanvas-header">
   <ul style="list-style-type:none;">
   <li>
+    <h4>Hello, <%=@current_user.first_name%>!</h4>
+  </li>
+  <li>
     <a href="/dashboard">
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group me-2" role="group" aria-label="First group">
-          <h5><i class="fas fa-angle-right"></i></h5>
+        <div class="btn-group me-2" role="group" aria-label="First group" style="color: #797B7D">
+          <h6><i class="fas fa-home fa-fw"></i></h6>
         </div>
         <div class="btn-group me-2" role="group" aria-label="Second group">
-          <h5>Dashboard</h5>
+          <h6>Dashboard</h6>
         </div>
       </div>
     </a>
@@ -16,11 +19,11 @@
   <li>
     <a href="/lessons">
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group me-2" role="group" aria-label="First group">
-          <h5><i class="fas fa-angle-right"></i></h5>
+        <div class="btn-group me-2" role="group" aria-label="First group" style="color: #797B7D">
+          <h6><i class="fas fa-play fa-fw"></i></h6>
         </div>
         <div class="btn-group me-2" role="group" aria-label="Second group">
-          <h5>Lessons</h5>
+          <h6>Lessons</h6>
         </div>
       </div>
     </a>
@@ -28,11 +31,35 @@
   <li>
     <a href="/goals">
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group me-2" role="group" aria-label="First group">
-          <h5><i class="fas fa-angle-right"></i></h5>
+        <div class="btn-group me-2" role="group" aria-label="First group" style="color: #797B7D">
+          <h6><i class="fas fa-trophy fa-fw"></i></h6>
         </div>
         <div class="btn-group me-2" role="group" aria-label="Second group">
-          <h5>Goals</h5>
+          <h6>Goals</h6>
+        </div>
+      </div>
+    </a>
+  </li>
+  <li>
+  <a href="#painscore" class="addcard" data-bs-toggle="offcanvas" data-bs-target="#painscore" aria-controls="painscore">
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group me-2" role="group" aria-label="First group">
+        <h6><i class="fas fa-plus fa-fw"></i></h6>
+      </div>
+      <div class="btn-group me-2" role="group" aria-label="Second group">
+        <h6>Pain Score</h6>
+      </div>
+    </div>
+  </a>
+</li>
+  <li>
+    <a href="#" class="addcard">
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+          <h6><i class="fas fa-book-medical fa-fw"></i></h6>
+        </div>
+        <div class="btn-group me-2" role="group" aria-label="Second group">
+          <h6>Pain Diary</h6>
         </div>
       </div>
     </a>
@@ -41,10 +68,10 @@
     <a href="#" class="addcard">
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group me-2" role="group" aria-label="First group">
-          <h5><i class="fas fa-book"></i></h5>
+          <h6><i class="fas fa-book fa-fw"></i></h6>
         </div>
         <div class="btn-group me-2" role="group" aria-label="Second group">
-          <h5>Mood Journal</h5>
+          <h6>Mood Journal</h6>
         </div>
       </div>
     </a>
@@ -53,10 +80,10 @@
     <a href="#" class="addcard">
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group me-2" role="group" aria-label="First group">
-          <h5><i class="fas fa-book-medical"></i></h5>
+          <h6><i class="fas fa-utensils fa-fw"></i></h6>
         </div>
         <div class="btn-group me-2" role="group" aria-label="Second group">
-          <h5>Pain Diary</h5>
+          <h6>Food Log</h6>
         </div>
       </div>
     </a>
@@ -65,22 +92,10 @@
     <a href="#" class="addcard">
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group me-2" role="group" aria-label="First group">
-          <h5><i class="fas fa-utensils"></i></h5>
+          <h6><i class="fas fa-toolbox fa-fw"></i></h6>
         </div>
         <div class="btn-group me-2" role="group" aria-label="Second group">
-          <h5>Food Log</h5>
-        </div>
-      </div>
-    </a>
-  </li>
-  <li>
-    <a href="#" class="addcard">
-      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group me-2" role="group" aria-label="First group">
-          <h5><i class="fas fa-toolbox"></i></h5>
-        </div>
-        <div class="btn-group me-2" role="group" aria-label="Second group">
-          <h5>Resources</h5>
+          <h6>Resources</h6>
         </div>
       </div>
     </a>
@@ -89,10 +104,10 @@
     <a href="/user_sign_out" class="addcard">
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group me-2" role="group" aria-label="First group">
-          <h5><i class="fas fa-sign-out-alt"></i></h5>
+          <h6><i class="fas fa-sign-out-alt fa-fw"></i></h6>
         </div>
         <div class="btn-group me-2" role="group" aria-label="Second group">
-          <h5>Sign Out</h5>
+          <h6>Sign Out</h6>
         </div>
       </div>
     </a>
@@ -105,3 +120,5 @@
     </div>
   </div>
 </div>
+
+<%= render "dashboard/painscoreoffcanvas.html.erb" %>

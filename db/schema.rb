@@ -10,13 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_25_214901) do
+ActiveRecord::Schema.define(version: 2021_07_24_020048) do
 
   create_table "courses", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
     t.string "status"
     t.integer "lessons_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "education_lesssons", force: :cascade do |t|
+    t.string "status"
+    t.string "name"
+    t.integer "video_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "education_videos", force: :cascade do |t|
+    t.string "name"
+    t.string "display_name"
+    t.string "video_ref"
+    t.string "seconds"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "exercise_lesssons", force: :cascade do |t|
+    t.string "status"
+    t.string "name"
+    t.integer "video_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "exercise_videos", force: :cascade do |t|
+    t.string "name"
+    t.string "display_name"
+    t.string "video_ref"
+    t.string "seconds"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -49,6 +85,24 @@ ActiveRecord::Schema.define(version: 2021_06_25_214901) do
     t.string "name"
     t.integer "video_id"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "medication_lists", force: :cascade do |t|
+    t.string "medication"
+    t.string "dosage"
+    t.string "unit"
+    t.string "frequency"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "medications", force: :cascade do |t|
+    t.string "medication"
+    t.string "dosage"
+    t.string "unit"
+    t.string "frequency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

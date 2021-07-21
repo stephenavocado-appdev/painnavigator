@@ -29,10 +29,11 @@ class User < ApplicationRecord
   has_many(:pain_diaries, { :class_name => "PainDiary", :foreign_key => "user_id", :dependent => :destroy })
   has_one(:new_user_survey, { :class_name => "NewUserSurvey", :foreign_key => "user_id", :dependent => :destroy })
   has_many(:lessons, { :class_name => "Lesson", :foreign_key => "user_id", :dependent => :destroy })
+  has_many(:education_lesssons, { :class_name => "EducationLessson", :foreign_key => "user_id", :dependent => :destroy })
+  has_many(:exercise_lesssons, { :class_name => "ExerciseLessson", :foreign_key => "user_id", :dependent => :destroy })
 
-  def todays_goals
+  def next_goal
     return self.goals.where({ :target_date => Date.current, :status => "Created" })
-    #self method is implied if there is an instance method or column for user called goals
   end
 
   def completed_goals
@@ -50,15 +51,27 @@ class User < ApplicationRecord
   end
 
   def next_education_lesson
-    return self.lessons.where({ :status => "In Progress" })
+    return self.education_lesssons.where({ :status => "In Progress" })
   end
 
   def next_exercise_lesson
-    return self.lessons.where({ :status => "In Progress" })
+    return self.exercise_lesssons.where({ :status => "In Progress" })
   end
 
-  def upcoming_lessons
-    return self.lessons.where({ :status => "Enrolled" })
+  def upcoming_education_lessons
+    return self.education_lesssons.where({ :status => "Enrolled" }).order({ :id => :asc })
+  end
+
+  def upcoming_exercise_lessons
+    return self.exercise_lesssons.where({ :status => "Enrolled" }).order({ :id => :asc })
+  end
+
+  def completed_education_lessons
+    return self.education_lesssons.where({ :status => "Completed" }).order({ :id => :asc })
+  end
+
+  def completed_exercise_lessons
+    return self.exercise_lesssons.where({ :status => "Completed" }).order({ :id => :asc })
   end
 
 

@@ -1,28 +1,114 @@
-<div class="row homebtncol">
+<div class="row">
 <div class="row mt-2">
 </div>
   <div class="col">
-    <h5>Up Next</h5>
+    <h4 class="lessonheader">Education</h4>
   </div>
 </div>
 
-<% @current_user.next_lessons.each do |a_lesson| %>
-
-  <%= render "/lessons/nextlessoncard", {:the_lesson => a_lesson} %>
-
-<% end %>
-
-<div class="row mt-4 homebtncol">
+<div class="row mt-1">
   <div class="col">
-    <h5>Upcoming</h5>
+    <p class="subheader">Next Lesson</p>
   </div>
 </div>
 
-<% @current_user.upcoming_lessons.each do |a_lesson| %>
+<% @current_user.next_education_lesson.each do |a_lesson| %>
 
-  <%= render "/lessons/upcominglessoncard", {:the_lesson => a_lesson} %>
+  <%= render "/dashboard/educationlessoncard", {:the_lesson => a_lesson} %>
 
 <% end %>
+
+<div class="row mt-4">
+  <div class="col">
+    <a class="subheader" data-bs-toggle="collapse" href="#upcomingeducation" role="button" 
+    aria-expanded="false" aria-controls="upcomingeducation">
+    Upcoming <i class="fas fa-chevron-down fa-xs fa-fw"></i></a>
+  </div>
+</div>
+
+<div class="collapse" id="upcomingeducation">
+  <div class="card card-body" style="border: none">
+  <% @current_user.upcoming_education_lessons.each do |a_lesson| %>
+
+    <%= render "/dashboard/educationlessoncard", {:the_lesson => a_lesson} %>
+  
+  <% end %>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col">
+    <a class="subheader" data-bs-toggle="collapse" href="#completededucation" role="button" 
+    aria-expanded="false" aria-controls="completededucation">
+    Completed <i class="fas fa-chevron-down fa-xs fa-fw"></i></a>
+  </div>
+</div>
+
+<div class="collapse" id="completededucation">
+  <div class="card card-body" style="border: none">
+  <% @current_user.completed_education_lessons.each do |a_lesson| %>
+
+    <%= render "/dashboard/educationlessoncard", {:the_lesson => a_lesson} %>
+  
+  <% end %>
+  </div>
+</div>
+
+<div class="row mt-4">
+<div class="row mt-2">
+</div>
+  <div class="col">
+    <h4 class="lessonheader">Exercise</h4>
+  </div>
+</div>
+
+<div class="row mt-1">
+  <div class="col">
+    <p class="subheader">Next Lesson</p>
+  </div>
+</div>
+
+<% @current_user.next_exercise_lesson.each do |a_lesson| %>
+
+  <%= render "/dashboard/exerciselessoncard", {:the_lesson => a_lesson} %>
+
+<% end %>
+
+<div class="row mt-4">
+  <div class="col">
+    <a class="subheader" data-bs-toggle="collapse" href="#upcomingexercise" role="button" 
+    aria-expanded="false" aria-controls="upcomingexercise">
+    Upcoming <i class="fas fa-chevron-down fa-xs fa-fw"></i></a>
+  </div>
+</div>
+
+<div class="collapse" id="upcomingexercise">
+  <div class="card card-body" style="border: none">
+    <% @current_user.upcoming_exercise_lessons.each do |a_lesson| %>
+
+      <%= render "/dashboard/exerciselessoncard", {:the_lesson => a_lesson} %>
+    
+    <% end %>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col">
+    <a class="subheader" data-bs-toggle="collapse" href="#completedexercise" role="button" 
+    aria-expanded="false" aria-controls="completedexercise">
+    Completed <i class="fas fa-chevron-down fa-xs fa-fw"></i></a>
+  </div>
+</div>
+
+<div class="collapse" id="completedexercise">
+  <div class="card card-body" style="border: none">
+  <% @current_user.completed_exercise_lessons.each do |a_lesson| %>
+
+    <%= render "/dashboard/exerciselessoncard", {:the_lesson => a_lesson} %>
+  
+  <% end %>
+  </div>
+</div>
 
 <div class="row mt-2">
   <a style="color: white"> a </a>

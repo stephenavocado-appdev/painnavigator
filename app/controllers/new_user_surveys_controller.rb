@@ -49,14 +49,22 @@ class NewUserSurveysController < ApplicationController
   def q_5
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
-    @q = @list_of_questions.at(4)  
+    @q = @list_of_questions.at(4)
 
     the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_4 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
+    @the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    @the_new_user_survey.q_4 = params.fetch("query_q_#{@q.id-1}")
+    @the_new_user_survey.save
+
+    if 
+      @the_new_user_survey.q_4 == "No"
+      matching_questions = Question.all
+      @list_of_questions = matching_questions.order({ :id => :asc })
+      @q = @list_of_questions.at(7)
+    end
 
     render({ :template => "new_user_surveys/show.html.erb" })
+
   end
 
   def q_6
@@ -65,24 +73,13 @@ class NewUserSurveysController < ApplicationController
     @q = @list_of_questions.at(5)
     
     the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_5 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
+    @the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    @the_new_user_survey.q_5 = params.fetch("query_q_#{@q.id-1}")
+    @the_new_user_survey.save
 
-    if the_new_user_survey.q_5 == "No"
-    matching_questions = Question.all
-    @list_of_questions = matching_questions.order({ :id => :asc })
-    @q = @list_of_questions.at(7)
+    @the_medication = MedicationList.where({ :medication => @the_new_user_survey.q_5 })
 
     render({ :template => "new_user_surveys/show.html.erb" })
-    
-    else
-    matching_questions = Question.all
-    @list_of_questions = matching_questions.order({ :id => :asc })
-    @q = @list_of_questions.at(5)
-
-    render({ :template => "new_user_surveys/show.html.erb" })
-    end
   end
 
   def q_7
@@ -91,9 +88,11 @@ class NewUserSurveysController < ApplicationController
     @q = @list_of_questions.at(6)
 
     the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_6 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
+    @the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    @the_new_user_survey.q_6 = params.fetch("query_q_#{@q.id-1}")
+    @the_new_user_survey.save
+
+    @the_medication = MedicationList.where({ :medication => @the_new_user_survey.q_5 })
 
     render({ :template => "new_user_surveys/show.html.erb" })
   end
@@ -102,12 +101,21 @@ class NewUserSurveysController < ApplicationController
     matching_questions = Question.all
     @list_of_questions = matching_questions.order({ :id => :asc })
     @q = @list_of_questions.at(7)
-
+    
     the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_7 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
-
+    @the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    @the_new_user_survey.q_7 = params.fetch("query_q_#{@q.id-1}")
+    @the_new_user_survey.save
+    
+    if @the_new_user_survey.q_4 == "Yes"
+      matching_questions = Question.all
+      @list_of_questions = matching_questions.order({ :id => :asc })
+      @q = @list_of_questions.at(8)
+    else
+      matching_questions = Question.all
+      @list_of_questions = matching_questions.order({ :id => :asc })
+      @q = @list_of_questions.at(7)
+    end
 
     render({ :template => "new_user_surveys/show.html.erb" })
   end
@@ -230,87 +238,10 @@ class NewUserSurveysController < ApplicationController
   end
 
   def q_18
-    matching_questions = Question.all
-    @list_of_questions = matching_questions.order({ :id => :asc })
-    @q = @list_of_questions.at(17)
-
     the_id = @current_user.new_user_survey.id
     the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_17 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
+    the_new_user_survey.q_17 = params.fetch("query_q_17")
 
-    render({ :template => "new_user_surveys/show.html.erb" })
-  end
-
-  def q_19
-    matching_questions = Question.all
-    @list_of_questions = matching_questions.order({ :id => :asc })
-    @q = @list_of_questions.at(18)
-
-    the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_18 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
-
-    render({ :template => "new_user_surveys/show.html.erb" })
-  end
-
-  def q_20
-    matching_questions = Question.all
-    @list_of_questions = matching_questions.order({ :id => :asc })
-    @q = @list_of_questions.at(19)
-
-    the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_19 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
-
-    render({ :template => "new_user_surveys/show.html.erb" })
-  end
-  
-  def q_21
-    matching_questions = Question.all
-    @list_of_questions = matching_questions.order({ :id => :asc })
-    @q = @list_of_questions.at(20)
-
-    the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_20 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
-
-    render({ :template => "new_user_surveys/show.html.erb" })
-  end
-  
-  def q_22
-    matching_questions = Question.all
-    @list_of_questions = matching_questions.order({ :id => :asc })
-    @q = @list_of_questions.at(21)
-
-    the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_21 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
-
-    render({ :template => "new_user_surveys/show.html.erb" })
-  end
-
-  def q_23
-    matching_questions = Question.all
-    @list_of_questions = matching_questions.order({ :id => :asc })
-    @q = @list_of_questions.at(22)
-
-    the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_22 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
-
-    render({ :template => "new_user_surveys/show.html.erb" })
-  end
-
-  def q_24
-    the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_23 = params.fetch("query_q_23")
     the_new_user_survey.status = "Complete"
     the_new_user_survey.save
 

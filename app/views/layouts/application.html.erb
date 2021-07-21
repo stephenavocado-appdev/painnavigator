@@ -48,14 +48,15 @@
 
 <style>
 
-    {
-      border: thin red solid;
+    {  border: thin red solid;
     }
     
     .background {
-       background-color: #F6F8F9; 
+       #background-color: #F6F8F9; 
        height: 100%; 
        min-height: 100vh;
+       padding-left : 25px; 
+       padding-right: 25px
     }
     
     .offcanvasbutton {
@@ -88,32 +89,60 @@
       text-weight: 500;
       font-family: 'Poppins', sans-serif;
       font-size: 12px;
-      color: #80C976;
+      background-color: #F1F9FF;
       border: none;
-      /* background-color: #D0FFCA; */
       box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+      height: 100%; 
+      width: 100%;
     }
     
     .dashbtn-goal {
       text-decoration: none;
       text-weight: 500;
       font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      color: /* #5AAAEF */ #61C7ED;
+      font-size: 18px;
+      color: #797B7D;
     }
-    
-    .goalcard {
+
+    .nextlesson {
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
       color: #61C7ED;
+      font-size: 25px;
+      border: none;
+      background-color: white;
+    }
+
+    .morebtn {
+      text-decoration: none;
+      text-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: #797B7D;
+    }
+
+    .goalcard {
+      background-color: #EBFFE9;
+      color: #0AB211;
       border: none;
       border-radius: 5px;
       text-decoration: none;
       text-weight: 500;
       font-family: 'Poppins', sans-serif;
-      font-size: 12px;
-      #box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-      #box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-      #box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+      text-align: start;
+    }
+    
+    .newgoalcard {
+      background-color: #EBFFE9;
+      color: #0AB211;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      text-align: start;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     }
     
      .addcard {
@@ -157,6 +186,27 @@
       font-family: 'Poppins', sans-serif;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     }
+
+    .lessonheader {
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      color: #61C7ED;
+      font-size: 30px;
+    }
+
+    .goalheader {
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      color: #0AB211;
+      font-size: 30px;
+    }
+
+    .subheader {
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      color:  #797B7D;
+      font-size: 18px;
+    }
     
     .homebtncol {
       padding-left: 20px;
@@ -189,8 +239,8 @@
     }
     
     .backgrounddiv {
-      color: #F6F8F9;
-      background-color: #F6F8F9
+      color: white;
+      background-color: white
     }
     
     ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -221,7 +271,7 @@
       outline: 0;
       border-bottom: 2px solid #B0B0B4;
       border-radius:none;
-      #text-align: center
+      text-align: center
     }
     
     .rangetext {
@@ -264,9 +314,9 @@
 
 <% if request.path != "/" && request.path != "/user_sign_in" && request.path != "/user_sign_up" && request.path.first(9) != "/new_user" && request.path.first(11) != "/pain_diary" %>
 
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light" style="color: white>
   <div class="container-fluid">
-    <div class="col-md-1">
+    <div class="col-md-1" style="padding-left: 10px">
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu" style="border: none">
       <span class="navbar-toggler-icon"></span>
     </button>

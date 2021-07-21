@@ -1,0 +1,24 @@
+<div class="row">
+<div class="row mt-2">
+</div>
+  <div class="col">
+    <h4 class="lessonheader">Exercise</h4>
+  </div>
+</div>
+
+<div class="row mt-2 align-items-center">
+
+  <iframe class="rounded" src="<%=@the_lesson.exercise_video.video_ref%>" frameborder="0" width="560" height="315" controls allowfullscreen>
+  </iframe>
+
+</div>
+
+  <form action="/markcompleteexercise">
+
+    <div class="row mt-5">
+      <div class="d-grid gap-2">
+        <input type="hidden" name="lesson_id" value="<%=@the_lesson.id%>">
+        <button class="nextlesson">Next Lesson <i class="fas fa-arrow-right fa-fw"></i></button>
+      </div>
+    </div>
+  </form>

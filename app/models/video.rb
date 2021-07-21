@@ -17,4 +17,6 @@
 #
 class Video < ApplicationRecord
   has_many(:lessons, { :class_name => "Lesson", :foreign_key => "video_id", :dependent => :destroy })
+  has_many(:exercise_lesssons, { :class_name => "ExerciseLessson", :foreign_key => "video_id", :dependent => :destroy })
+  has_many(:education_lesssons, { :class_name => "EducationLessson", :foreign_key => "video_id", :dependent => :destroy })
 end

@@ -13,7 +13,7 @@
 
   <div class="col-md-4 mt-2">
     <div class="progress" style="height: 10px;">
-      <div class="progress-bar" role="progressbar" style="background-color: #61C7ED; width: <%= @q.id * 100 / 23 %>%;" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="progress-bar" role="progressbar" style="background-color: #61C7ED; width: <%= @q.id * 100 / Question.all.length %>%;" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
   </div>
 
@@ -42,7 +42,7 @@
 
   <div class="col-md-4 text-center">
     <h5>
-      <%= @q.question %>
+      <%= @q.question %> <% if @q.id == 6 || @q.id == 7 %> <%= @the_new_user_survey.q_5 %>? <% end %>
     </h5>
   </div>
 
@@ -59,7 +59,7 @@
   
   <div class="col-md-4 text-center d-grid needs-validation" novalidate>
   <form action="/new_user/<%=@q.id.to_i+1%>">
-    <input type="text" class="form-control textinput" id="<%= @q.id %>_box" name="query_q_<%= @q.id %>" required>
+    <input type="date" class="form-control textinput" id="<%= @q.id %>_box" name="query_q_<%= @q.id %>" required>
      <div class="valid-feedback">
       Looks good!
     </div>
@@ -69,10 +69,35 @@
   </div>
 </div>
 
+<% end %>
 
-<% else %>
+<% if @q.input_type == "Select" && !@q.answer_options.nil? %>
 
-<% @q.answer_options.split(",").each do |a_option| %>
+<% if @q.id == 6 %>
+
+<% @the_medication.first.dosage.strip.split(",").each do |a_dose| %>
+
+  <form action="/new_user/<%=@q.id+1%>">
+    <div class="row mt-4">
+
+      <div class="col">
+      </div>
+
+      <div class="col-md-4 text-center d-grid">
+          <input type="hidden" value="<%= a_dose %>" name="query_q_<%=@q.id%>">
+          <button class="btn btn-outline btn-lg homebtn" type="submit"><%= a_dose %> <%= @the_medication.first.unit %></button>
+      </div>
+
+      <div class="col">
+      </div>
+    </div>
+</form> 
+
+<% end %>
+
+<% end %>
+
+<% @q.answer_options.strip.split(",").each do |a_option| %>
 
 <form action="/new_user/<%=@q.id+1%>">
 
@@ -93,12 +118,53 @@
 <% end %>
 <% end %>
 
+<% if @q.input_type == "Range" %>
+
+<div class="row text-center">
+      
+    <output id="<%=@q.id%>_output"></output> 
+
+</div>
+
+<form action="/new_user/<%=@q.id+1%>">
+
+
+  <div class="row homebtncol mt-5">
+    <input type="range" class="form-range painscorerange" style="color: white" id="<%=@q.id%>_input" name="query_q_<%= @q.id %>" min="0" max="10">
+  </div>
+
+  <div class="row mt-4 homebtncol mt-5">
+    <div class="d-grid gap-2">
+      <button class="btn homebtn">Next</button>
+    </div>
+  </div>
+
+  </form>
+
+</div>
+</div>
+
+<script>
+
+let i = document.querySelector('#<%= @q.id %>_input'),
+    o = document.querySelector('#<%= @q.id %>_output');
+    o.innerHTML = i.value;
+
+i.addEventListener('input', function () {
+  o.innerHTML = i.value;
+}, false);
+
+</script>
+
+<% end %>
+
+
 <div class="row mt-4 mb-4">
   <div class="col">
   </div>
 
   <div class="col-md-4 text-center d-grid">
-    <% if @q.input_type == "Input"%>
+    <% if @q.input_type == "Date"%>
       <button class="btn btn-primary homebtn">Next</button>
     <% end %>
     </form>

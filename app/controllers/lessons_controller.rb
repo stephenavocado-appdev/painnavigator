@@ -7,15 +7,76 @@ class LessonsController < ApplicationController
     render({ :template => "lessons/index.html.erb" })
   end
 
-  def markcomplete
+  def markcompleteeducation
     lesson_id = params.fetch("lesson_id").to_i
     next_lesson_id = lesson_id+1
 
-    the_lesson = Lesson.where({ :id => lesson_id }).at(0)
+    the_lesson = EducationLessson.where({ :id => lesson_id }).at(0)
     the_lesson.status = "Completed"
     the_lesson.save
     
+    next_lesson = EducationLessson.where({ :id => next_lesson_id }).at(0)
+    next_lesson.status = "In Progress"
+    next_lesson.save
+
     render({ :template => "lessons/congratulations" })
+  end
+
+  def markcompleteexercise
+    lesson_id = params.fetch("lesson_id").to_i
+    next_lesson_id = lesson_id+1
+
+    the_lesson = ExerciseLessson.where({ :id => lesson_id }).at(0)
+    the_lesson.status = "Completed"
+    the_lesson.save
+
+    next_lesson = ExerciseLessson.where({ :id => next_lesson_id }).at(0)
+    next_lesson.status = "In Progress"
+    next_lesson.save
+    
+    render({ :template => "lessons/congratulations" })
+  end
+
+  def showeducation
+    the_id = params.fetch("path_id").to_i
+    previous_id = the_id-1
+
+    matching_lessons = EducationLessson.where({ :id => the_id })
+    previous_lesson = EducationLessson.where({ :id => previous_id })
+
+    @the_lesson = matching_lessons.at(0)
+    @the_lesson.status = "In Progress"
+    @the_lesson.save
+
+    @previous_lesson = previous_lesson.at(0)
+
+    if @the_lesson.name != EducationVideo.all.first.display_name
+      @previous_lesson.status = "Completed"
+      @previous_lesson.save
+    end
+
+    render({ :template => "lessons/educationshow.html.erb" })
+  end
+
+  def showexercise
+    the_id = params.fetch("path_id").to_i
+    previous_id = the_id-1
+
+    matching_lessons = ExerciseLessson.where({ :id => the_id })
+    previous_lesson = ExerciseLessson.where({ :id => previous_id })
+
+    @the_lesson = matching_lessons.at(0)
+    @the_lesson.status = "In Progress"
+    @the_lesson.save
+
+    @previous_lesson = previous_lesson.at(0)
+
+    if @the_lesson.name != ExerciseVideo.all.first.display_name
+      @previous_lesson.status = "Completed"
+      @previous_lesson.save
+    end
+
+    render({ :template => "lessons/exerciseshow.html.erb" })
   end
 
   def show

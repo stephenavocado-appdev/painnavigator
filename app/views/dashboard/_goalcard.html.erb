@@ -2,39 +2,41 @@
 
 <% the_category = GoalCategory.where({ :category => category }).at(0) %>
 
-<div class="row mt-2 homebtncol">
-<button class="btn goalcard text-start" style="height: 100%; width: 100%; background-color: white;" data-bs-toggle="offcanvas" data-bs-target="#updategoal_<%= the_goal.id %>" aria-controls="updategoal_<%= the_goal.id %>">
+<div class="row mt-2">
+<button class="btn goalcard" style="background-color: white;" data-bs-toggle="offcanvas" data-bs-target="#updategoal_<%= the_goal.id %>" aria-controls="updategoal_<%= the_goal.id %>">
 
-            <div class="row no-gutters mt-2">  
-                
-                <div class="col-auto">
-                </div>
-                
-                <div class="col-auto">
-                    <h6><i class="<%= the_category.icon %> fa-4x"></i></h6>
-                </div>
+    <div class="row no-gutters">  
+        
+        <div class="col-auto">
+        </div>
+        
+        <div class="col-auto">
+            <h6 style="color:#797B7D"><i class="<%= the_category.icon %> fa-4x fa-fw"></i></h6>
+        </div>
 
-                <div class="col-auto">
-                </div>
+        <div class="col-auto">
+        </div>
 
-                <div class="col-auto">
-                    <div class="row no-gutters">
-                        <a><%= the_goal.category %></a>
-                    </div>
-
-                    <div class="row no-gutters mt-1">
-                        <h6><%= the_goal.user_goal %> <%= the_category.unit %></h6>
-                    </div>
-
-                    <div class="row no-gutters">
-                        <a><i class="fas fa-calendar-alt"></i> Today</a>
-                    </div>
-                    
-                </div>
-
-                <div class="col-auto">
-                </div>  
+        <div class="col-auto">
+            <div class="row no-gutters">
+                <a style="padding-left: 0px"><%= the_goal.category %> for <%= the_goal.user_goal %> minutes</a>
             </div>
+
+            <div class="row no-gutters mt-2">
+                <div class="progress" style="height: 8px; padding-left: 0px">
+                <div class="progress-bar" role="progressbar" style="background-color: #0AB211; width: <%= the_goal.user_result.to_i * 100 / the_goal.user_goal.to_i %>%;" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+
+            <div class="row no-gutters mt-2">
+                <a style="color: #797B7D; font-size: 12px; padding-left: 0px"><i class="fas fa-calendar-alt fa-fw"></i><% diff = the_goal.target_date - Date.today %> <%= diff.to_i%> days left!</a>
+            </div>
+            
+        </div>
+
+        <div class="col-auto">
+        </div>  
+    </div>
     </button>
   
 </div>  
