@@ -92,6 +92,7 @@
 </div>
 </form> 
 <% end %>
+<% end %>
 
 <% if @q.input_type == "Range" %>
 
@@ -143,7 +144,7 @@ i.addEventListener('input', function () {
   </div>
 
   <div class="col-md-4 text-center d-grid">
-    <% if @q.input_type == "Input"%>
+    <% if @q.input_type == "Date"%>
       <button class="btn btn-primary homebtn">Next</button>
     <% end %>
     </form>
