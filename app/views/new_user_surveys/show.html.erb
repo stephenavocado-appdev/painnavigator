@@ -71,6 +71,33 @@
 
 <% end %>
 
+<% if @q.id == 5 %>
+
+<form action="/new_user/<%=@q.id+1%>">
+
+<div class="row mt-4">
+
+  <div class="col">
+  </div>
+
+  <div class="col-md-4 text-center d-grid">
+
+
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      <option selected>Select Medication</option>
+      <% Medication.all.each do |a_medication| %>
+      <option value="<%=a_medication.id%>"><%=a_medication.medication%></option>
+      <% end %>
+    </select>
+
+  </div>
+
+  <div class="col">
+  </div>
+</div>
+</form> 
+<% end %>
+
 <% if @q.input_type == "Select" && !@q.answer_options.nil? %>
 
 <% @q.answer_options.strip.split(",").each do |a_option| %>
