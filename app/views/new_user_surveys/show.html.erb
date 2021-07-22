@@ -50,8 +50,17 @@
   </div>
 </div>
 
-<% form_with(model: @the_new_user_survey, local: true) do |f| %>
+<%= @the_new_user_survey %>
+
 <% if @q.input_type == "Date" %>
+<%= form_with(model: @the_new_user_survey) do |f| %>
+ 
+<%= hidden_field_tag :question_id, :id, value: @q.id %>
+<%= f.date_field "q_#{@q.id}".to_sym, class: 'form-control textinput', name: 'question_response' %>
+
+<%= f.submit "Next", class: "btn btn-primary" %>
+<% end %>
+
 <div class="row mt-4">
 
   <div class="col">
