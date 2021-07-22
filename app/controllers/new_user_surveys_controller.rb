@@ -309,11 +309,13 @@ class NewUserSurveysController < ApplicationController
 
     @the_new_user_survey.update(hash)
 
-    @q = question_id.to_i + 1   
+    new_q_id = question_id.to_i + 1   
+    matching_questions = Question.all
+    @q = matching_questions.where({ :id => new_q_id })
 
     if @the_new_user_survey.valid?
       @the_new_user_survey.save
-      redirect_to("/new_user_surveys/#{@the_new_user_survey.id}", { :notice => "New user survey updated successfully."} )
+      redirect_to("/new_user_surveys/show" })
     else
       redirect_to("/new_user_surveys/#{@the_new_user_survey.id}", { :alert => "New user survey failed to update successfully." })
     end
