@@ -91,9 +91,9 @@ class NewUserSurveysController < ApplicationController
     @q = @list_of_questions.at(6)
 
     the_id = @current_user.new_user_survey.id
-    the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
-    the_new_user_survey.q_6 = params.fetch("query_q_#{@q.id-1}")
-    the_new_user_survey.save
+    @the_new_user_survey = NewUserSurvey.where({ :id => the_id }).at(0)
+    @the_new_user_survey.q_6 = params.fetch("query_q_#{@q.id-1}")
+    @the_new_user_survey.save
 
     render({ :template => "new_user_surveys/show.html.erb" })
   end

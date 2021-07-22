@@ -82,8 +82,31 @@
 
   <div class="col-md-4 text-center d-grid">
 
+  <form action="/new_user/<%=@q.id+1%>">
 
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <% Medication.all.each do |a_medication| %>
+  <input type="checkbox" class="btn-check" id="btn-check-outlined_<%=a_medication.id%>" autocomplete="off" value="<%=a_medication.id%>">
+  <label class="btn btn-outline-primary" for="btn-check-outlined_<%=a_medication.id%>"><%=a_medication.medication%></label>
+  <% end %>
+
+
+<div class="row mt-4">
+
+  <div class="col">
+  </div>
+
+  <div class="col-md-4 text-center d-grid">
+      <input type="hidden" name="query_q_<%=@q.id%>">
+      <button class="btn btn-outline btn-lg homebtn" type="submit">Next</button>
+  </div>
+
+  <div class="col">
+  </div>
+</div>
+</form> 
+
+
+    <select class="form-select form-select-lg mb-3 text-input" aria-label=".form-select-lg example">
       <option selected>Select Medication</option>
       <% Medication.all.each do |a_medication| %>
       <option value="<%=a_medication.id%>"><%=a_medication.medication%></option>
@@ -119,6 +142,29 @@
 </div>
 </form> 
 <% end %>
+<% end %>
+
+<% if @q.id == 6 %>
+
+<%# Medication.all.where({ :medication => @the_new_user_survey.q_5}).dosage.each do |a_dose| %>
+
+<form action="/new_user/<%=@q.id+1%>">
+
+<div class="row mt-4">
+
+  <div class="col">
+  </div>
+
+  <div class="col-md-4 text-center d-grid">
+      <input type="hidden" value="<%#= a_dose %>" name="query_q_<%=@q.id%>">
+      <button class="btn btn-outline btn-lg homebtn" type="submit"><%#= a_dose %></button>
+  </div>
+
+  <div class="col">
+  </div>
+</div>
+</form> 
+<%# end %>
 <% end %>
 
 <% if @q.input_type == "Range" %>
