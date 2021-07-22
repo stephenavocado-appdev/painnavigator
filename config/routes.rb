@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post  'sign_in'              => 'user_authentication#create_cookie'
   get   'user_sign_out'        => 'user_authentication#destroy_cookies'
 
+  resources :new_user_surveys
+
   get   'new_user/1'           => 'new_user_surveys#q_1'
   get   'new_user/2'           => 'new_user_surveys#q_2'
   get   'new_user/3'           => 'new_user_surveys#q_3'
