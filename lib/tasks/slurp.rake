@@ -93,10 +93,10 @@ namespace :slurp do
       p.unit = row["unit"]
       p.frequency = row["frequency"]
       p.save
-      puts "#{p.category} saved" 
+      puts "#{p.medication} saved" 
     end
 
-    puts "There are now #{PainDiaryQuestion.count} rows in the Pain Diary Questions table"
+    puts "There are now #{Medication.count} rows in the Medications table"
 
   end
 
