@@ -90,6 +90,7 @@ namespace :slurp do
       p = Medication.new
       p.medication = row["medication"]
       p.dosage = row["dosage"]
+      p.unit = row["unit"]
       p.frequency = row["frequency"]
       p.save
       puts "#{p.category} saved" 
