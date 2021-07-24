@@ -1,7 +1,7 @@
 <div class="row homebtncol">
-  <h2>
+  <h4 class="goalheader">
     Create Goal
-  </h2>
+  </h4>
 </div>
 
 <div class="row homebtncol mt-2">
@@ -19,6 +19,57 @@
 
   <div>
     <form action="/insert_goal" method="post">
+
+    <div class="row text-center">
+    
+    <a class="rangetext">My pain is a </a>
+    
+    <output id="goaloutput"></output> 
+    
+    <a class="rangetext">out of 10</a>
+
+</div>
+
+
+<form action="/pain_diary/1">
+
+  <div class="row homebtncol mt-5">
+    <input type="range" class="form-range painscorerange" style="color: white" id="goalrange" name="query_pain_score" min="10" max="60" step="5">
+  </div>
+
+  <div class="row mt-4 homebtncol mt-5">
+    <div class="d-grid gap-2">
+      <button class="btn homebtn">Log Pain Score</button>
+    </div>
+  </div>
+
+  </form>
+
+  <form action="/pain_diary/2">
+
+  <div class="row mt-4 homebtncol">
+    <div class="d-grid gap-2">
+      <button class="btn homebtn">Enter Pain  Diary</button>
+    </div>
+  </div>
+
+  </form>
+
+</div>
+</div>
+
+<script>
+
+let i = document.querySelector('#goalrange'),
+    o = document.querySelector('#goaloutput');
+    o.innerHTML = i.value;
+
+i.addEventListener('input', function () {
+  o.innerHTML = i.value;
+}, false);
+
+</script>
+
       <div class="row mt-4 homebtncol needs-validation" novalidate>
         <div">
           <label for="target_box" class="form-label formlabel"><h6>Goal</h6></label>
