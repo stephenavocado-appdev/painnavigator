@@ -1,6 +1,6 @@
 <div class="row homebtncol">
   <h4 class="goalheader">
-    Create Goal: <%=@category.category%>
+    <%=@category.category%>
   </h4>
 </div>
 
@@ -9,28 +9,28 @@
       <div class="row mt-3 homebtncol">
       <div>
           <label for="steps_box" class="form-label"><p class="subheader">I want to <%=@category.category%> for</p></label>
-          <input id="steps_box" class="form-control textinput" name="query_user_goal" placeholder="Enter number of minutes" type="text">
+          <input id="steps_box" class="form-control" name="query_user_goal" placeholder="Enter number of minutes" type="text">
         </div>
       </div>
 
       <div class="row mt-3 homebtncol needs-validation" novalidate>
         <div>
           <label for="date_box" class="form-label formlabel"><p class="subheader">By</p></label>
-          <input type="date" class="form-control textinput" id="date_box" name="query_target_date" required>
+          <input type="date" class="form-control" id="date_box" name="query_target_date" required>
         </div>
       </div>
 
        <div class="row mt-3 homebtncol">
         <div>
           <label for="steps_box" class="form-label"><p class="subheader">Incremental Steps</p></label>
-          <input id="steps_box" class="form-control textinput" name="query_incremental_steps" placeholder="What steps will you take?" type="text">
+          <input id="steps_box" class="form-control" name="query_incremental_steps" placeholder="What steps will you take?" type="text">
         </div>
       </div>
 
       <div class="row mt-3 homebtncol">
         <div>
           <label for="steps_box" class="form-label"><p class="subheader">Reward</p></label>
-          <input id="steps_box" class="form-control textinput" name="query_reward" placeholder="How will you celebrate your win?" type="text">
+          <input id="steps_box" class="form-control" name="query_reward" placeholder="How will you celebrate your win?" type="text">
         </div>
         <div>
           <input id="category_box" class="form-control" name="query_category" value="<%=@category.category%>" type="hidden">

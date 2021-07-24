@@ -36,6 +36,8 @@
   </div>
 </div>
 
+<% if @current_user.completed_education_lessons.count > 0 %>
+
 <div class="row mt-4">
   <div class="col">
     <a class="subheader" data-bs-toggle="collapse" href="#completededucation" role="button" 
@@ -53,6 +55,8 @@
   <% end %>
   </div>
 </div>
+
+<% end %>
 
 <div class="row mt-4">
 <div class="row mt-2">
@@ -92,6 +96,8 @@
   </div>
 </div>
 
+<% if @current_user.completed_exercise_lessons.count > 0 %>
+
 <div class="row mt-4">
   <div class="col">
     <a class="subheader" data-bs-toggle="collapse" href="#completedexercise" role="button" 
@@ -110,6 +116,4 @@
   </div>
 </div>
 
-<div class="row mt-2">
-  <a style="color: white"> a </a>
-</div>
+<% end %>

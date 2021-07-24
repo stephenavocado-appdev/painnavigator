@@ -9,23 +9,11 @@
   </div>
 </div>
 
-<div class="row mt-1">
-  <div class="col">
-    <p class="subheader">Education</p>
-  </div>
-</div>
-
 <% @current_user.next_education_lesson.each do |a_lesson| %>
 
   <%= render "/dashboard/educationlessoncard", {:the_lesson => a_lesson} %>
 
 <% end %>
-
-<div class="row mt-4">
-  <div class="col">
-    <p class="subheader">Exercise</p>
-  </div>
-</div>
 
 <% @current_user.next_exercise_lesson.each do |a_lesson| %>
 
