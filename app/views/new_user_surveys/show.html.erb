@@ -13,7 +13,8 @@
 
   <div class="col-md-4 mt-2">
     <div class="progress" style="height: 10px;">
-      <div class="progress-bar" role="progressbar" style="background-color: #61C7ED; width: <%= @q.id * 100 / Question.all.length %>%;" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="progress-bar" role="progressbar" style="background-color: #61C7ED; 
+      width: <%= @q.id * 100 / Question.all.length %>%;" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
   </div>
 
@@ -71,8 +72,6 @@
 
 <% end %>
 
-<% if @q.input_type == "Select" && !@q.answer_options.nil? %>
-
 <% if @q.id == 6 %>
 
 <% @the_medication.first.dosage.strip.split(",").each do |a_dose| %>
@@ -92,8 +91,6 @@
       </div>
     </div>
 </form> 
-
-<% end %>
 
 <% end %>
 

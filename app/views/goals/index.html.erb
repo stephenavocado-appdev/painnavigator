@@ -6,6 +6,8 @@
   </div>
 </div>
 
+<% if @current_user.in_progress_goals.count > 0 %>
+
 <div class="row mt-1">
   <div class="col">
     <h4 class="subheader">In Progress</h4>
@@ -16,6 +18,8 @@
 <% @current_user.in_progress_goals.each do |a_goal| %>
 
   <%= render "/dashboard/goalcard", {:the_goal => a_goal} %>
+
+<% end %>
 
 <% end %>
 
