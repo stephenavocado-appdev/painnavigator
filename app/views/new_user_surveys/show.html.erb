@@ -56,7 +56,6 @@
 
   <div class="col">
   </div>
-
   
   <div class="col-md-4 text-center d-grid needs-validation" novalidate>
   <form action="/new_user/<%=@q.id.to_i+1%>">
@@ -93,6 +92,9 @@
 </form> 
 
 <% end %>
+<% end %>
+
+<% if @q.input_type == "Select" && !@q.answer_options.nil? %>
 
 <% @q.answer_options.strip.split(",").each do |a_option| %>
 
@@ -143,8 +145,8 @@
 
 <script>
 
-let i = document.querySelector('#<%= @q.id %>_input'),
-    o = document.querySelector('#<%= @q.id %>_output');
+let i = document.querySelector("#<%= @q.id %>_input"),
+    o = document.querySelector("#<%= @q.id %>_output");
     o.innerHTML = i.value;
 
 i.addEventListener('input', function () {
@@ -154,7 +156,6 @@ i.addEventListener('input', function () {
 </script>
 
 <% end %>
-
 
 <div class="row mt-4 mb-4">
   <div class="col">
