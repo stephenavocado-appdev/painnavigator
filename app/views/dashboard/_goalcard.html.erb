@@ -11,7 +11,7 @@
         </div>
         
         <div class="col-auto">
-            <h6 style="color:#797B7D"><i class="<%= the_category.icon %> fa-4x fa-fw"></i></h6>
+            <h6 style="color:#0AB211"><i class="<%= the_category.icon %> fa-4x fa-fw"></i></h6>
         </div>
 
         <div class="col-auto">
@@ -19,11 +19,11 @@
 
         <div class="col-auto">
             <div class="row no-gutters">
-                <a style="padding-left: 0px"><%= the_goal.category %> for <%= the_goal.user_goal %> minutes</a>
+                <a style="padding-left: 0px; color: #797B7D"><%= the_goal.category %> for <%= the_goal.user_goal %> minutes</a>
             </div>
 
             <div class="row no-gutters mt-2">
-                <div class="progress" style="height: 8px; padding-left: 0px">
+                <div class="progress" style="height: 8px; padding-left: 0px; padding-right: 0px">
                 <div class="progress-bar" role="progressbar" style="background-color: #0AB211; width: <%= the_goal.user_result.to_i * 100 / the_goal.user_goal.to_i %>%;" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>

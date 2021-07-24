@@ -58,7 +58,6 @@ class GoalsController < ApplicationController
     the_id = params.fetch("path_id")
     the_goal = Goal.where({ :id => the_id }).at(0)
     the_goal.user_result = params.fetch("query_user_result")
-    the_goal.status = "Complete"
 
     if the_goal.valid?
       the_goal.save
