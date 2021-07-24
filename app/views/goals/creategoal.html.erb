@@ -1,104 +1,36 @@
 <div class="row homebtncol">
   <h4 class="goalheader">
-    Create Goal
+    Create Goal: <%=@category.category%>
   </h4>
 </div>
 
-<div class="row homebtncol mt-2">
-  <div class="card addcard text-center">
-    <div class="card-body">
-      <div class="col">
-        <i class="<%=@category.icon%> fa-3x mt-2"></i>
-      </div>
-      <div class="col mt-2">
-        <a><%=@category.category%></a>
-      </div>
-    </div>
-  </div>
-</div>
+<form action="/insert_goal" method="post">
 
-  <div>
-    <form action="/insert_goal" method="post">
-
-    <div class="row text-center">
-    
-    <a class="rangetext">My pain is a </a>
-    
-    <output id="goaloutput"></output> 
-    
-    <a class="rangetext">out of 10</a>
-
-</div>
-
-
-<form action="/pain_diary/1">
-
-  <div class="row homebtncol mt-5">
-    <input type="range" class="form-range painscorerange" style="color: white" id="goalrange" name="query_pain_score" min="10" max="60" step="5">
-  </div>
-
-  <div class="row mt-4 homebtncol mt-5">
-    <div class="d-grid gap-2">
-      <button class="btn homebtn">Log Pain Score</button>
-    </div>
-  </div>
-
-  </form>
-
-  <form action="/pain_diary/2">
-
-  <div class="row mt-4 homebtncol">
-    <div class="d-grid gap-2">
-      <button class="btn homebtn">Enter Pain  Diary</button>
-    </div>
-  </div>
-
-  </form>
-
-</div>
-</div>
-
-<script>
-
-let i = document.querySelector('#goalrange'),
-    o = document.querySelector('#goaloutput');
-    o.innerHTML = i.value;
-
-i.addEventListener('input', function () {
-  o.innerHTML = i.value;
-}, false);
-
-</script>
-
-      <div class="row mt-4 homebtncol needs-validation" novalidate>
-        <div">
-          <label for="target_box" class="form-label formlabel"><h6>Goal</h6></label>
-          <select class="form-select" aria-label="Default select example" name="query_user_goal">
-            <option value="1">1 <%=@category.unit.singularize%></option>
-            <option value="2">2 <%=@category.unit%></option>
-            <option value="3">3 <%=@category.unit%></option>
-          </select>
-        </div>
-      </div>
-              
-      <div class="row mt-2 homebtncol needs-validation" novalidate>
-        <div>
-          <label for="date_box" class="form-label formlabel"><h6>Target Date</h6></label>
-          <input type="date" class="form-control" id="date_box" name="query_target_date" required>
+      <div class="row mt-3 homebtncol">
+      <div>
+          <label for="steps_box" class="form-label"><p class="subheader">I want to walk for</p></label>
+          <input id="steps_box" class="form-control textinput" name="query_incremental_steps" placeholder="Enter number of minutes" type="text">
         </div>
       </div>
 
-       <div class="row mt-2 homebtncol">
+      <div class="row mt-3 homebtncol needs-validation" novalidate>
         <div>
-          <label for="steps_box" class="form-label"><h6>Incremental Steps</h6></label>
-          <input id="steps_box" class="form-control" name="query_incremental_steps" placeholder="What steps will you take?" type="text">
+          <label for="date_box" class="form-label formlabel"><p class="subheader">By</p></label>
+          <input type="date" class="form-control textinput" id="date_box" name="query_target_date" required>
         </div>
       </div>
 
-      <div class="row mt-2 homebtncol">
+       <div class="row mt-3 homebtncol">
         <div>
-          <label for="steps_box" class="form-label"><h6>Reward</h6></label>
-          <input id="steps_box" class="form-control" name="query_reward" placeholder="How will you celebrate your win?" type="text">
+          <label for="steps_box" class="form-label"><p class="subheader">Incremental Steps</p></label>
+          <input id="steps_box" class="form-control textinput" name="query_incremental_steps" placeholder="What steps will you take?" type="text">
+        </div>
+      </div>
+
+      <div class="row mt-3 homebtncol">
+        <div>
+          <label for="steps_box" class="form-label"><p class="subheader">Reward</p></label>
+          <input id="steps_box" class="form-control textinput" name="query_reward" placeholder="How will you celebrate your win?" type="text">
         </div>
         <div>
           <input id="category_box" class="form-control" name="query_category" value="<%=@category.category%>" type="hidden">
@@ -108,7 +40,7 @@ i.addEventListener('input', function () {
 
       <div class="row mt-4 homebtncol">
         <div class="d-grid gap-2">
-          <button class="btn homebtn">Create Goal</button>
+          <button class="creategoalbtn">Create Goal <i class="fas fa-arrow-right fa-fw"></i></button>
         </div>
       </div>
 
